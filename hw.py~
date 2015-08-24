@@ -1,1 +1,2 @@
-ppprint"hello world!"
+#!/usr/bin/env python
+print"helloword"
