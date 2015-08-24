@@ -1,5 +1,5 @@
 #!/usr/bin/python
 import sys
 
-for arg in sys.argv:
-    print "hello, " + arg + "!"
+print "hello, " + sys.argv[1] + "!"
+
