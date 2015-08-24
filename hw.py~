@@ -1,1 +1,5 @@
-print 'hello world'
+<<<<<<< HEAD
+print 'hello world!'
+=======
+print('Hello world!')
+>>>>>>> origin/master

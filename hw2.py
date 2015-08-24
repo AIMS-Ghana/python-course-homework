@@ -1,4 +1,6 @@
 import sys
-print 'hello,' + sys.argv[1] + "!"
+kweku = 'hello,'
+print kweku + sys.argv[1] + "!"
  
+
 
