@@ -1,7 +1,6 @@
-#Solution to second assignment
-#Obtain name as system argument and print to screen in example text. 
-
+#!/usr/bin/env python
 import sys
+
 print('hello, '+str(sys.argv[1])+'!')
 
 
