@@ -1,1 +1,5 @@
-print"hello" +sys.argv[1]" 
+<<<<<<< HEAD
+print"hello"
+=======
+print('Hello, Carl !')
+>>>>>>> origin/master
