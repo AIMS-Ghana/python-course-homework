@@ -33,8 +33,8 @@ if __name__ == "__main__":
 		
 			#checking
 			if sum_>float(sys.argv[3]) and diff_ < float(sys.argv[3]):
-				print (area(sys.argv[1], sys.argv[2],sys.argv[3]))
-				print(perimeter(sys.argv[1],sys.argv[2],sys.argv[3]))
+				print('area = '+area(sys.argv[1], sys.argv[2],sys.argv[3]))
+				print('perimeter = '+perimeter(sys.argv[1],sys.argv[2],sys.argv[3]))
 			else:
 				print "Values provided can't be the sides of a triangle"
 
