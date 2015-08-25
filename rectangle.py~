@@ -12,14 +12,14 @@ def area(x,y):
 
 def perimeter(x,y):
 	perimeter_value = 2*float(x) + 2*float(y)
-	print(value_perimeter.format(perimeter_value))
+	return perimeter_value
 	
 if __name__ == "__main__":
 
-	if len(sys.argv)!=3:
-		print "Wrong input!! provide two values"
+	if len(sys.argv)== 2:
+		
 
-	else:
+	elif len(sys.argv)== 3:
 		#check if  int or not'3.14'.replace('.','',1).isdigit()
 		if sys.argv[1].replace('.','',1).isdigit() ==True and sys.argv[2].replace('.','',1).isdigit()==True: 
 			print(area(sys.argv[1],sys.argv[2]))
@@ -28,6 +28,9 @@ if __name__ == "__main__":
 		
 		else:
 			print "Wrong input!! enter a positive number!!"
+
+	else:
+		print "Wrong input!! provide two values"
 	
 
 
