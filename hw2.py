@@ -1,9 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 24 22:26:41 2015
+
+Created on Tue Aug 25 16:03:30 2015
 
 @author: joshua
 """
+
+"""#!/usr/bin/python3
 import sys
-for arg in sys.argv[1:]:
-    print ("hello, " + arg + "!")
+
+print("hello, " +sys.argv[1]+"!")
