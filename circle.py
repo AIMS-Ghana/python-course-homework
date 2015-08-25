@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usrcla/bin/python
 import sys
 greeting="Area={O}and perimetre={1}"
 x=intr(sys.argv[1])
