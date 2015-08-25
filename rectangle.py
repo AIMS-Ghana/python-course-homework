@@ -1,9 +1,10 @@
-#!/usr/local/bin/python3
+#!/usr/local/bin/python
+from math import pi
 import sys
-L=float(sys.argv[0])
-l=float(sys.argv[2])
-if(L>0 and l>0):
-print("the area is=",L*l)
-print("The perimeter is:",(L+l)*2)
+R=float(sys.argv[1])
+if(R<=0):
+print("error")
 else:
-print("impossible")
+print("the area is=",2*pi*R)
+print("The perimeter is:",2*pi*R)
+
