@@ -17,7 +17,7 @@ if __name__ == "__main__":
     if len(sys.argv) !=3:
         print "wrong inputs"
 elif len(sys.argv) !=1:
-	print print area(sys.argv[1],sys.argv[2])
+	print area(sys.argv[1],sys.argv[2])
             print perimeter(sys.argv[1],sys.argv[2]
     else:   
         if sys.argv[1].replace('.','',1).isdigit()==True:
