@@ -1,1 +1,3 @@
-print('Hello world!')
+#!/usr/bin/python
+greet = "hello world!"
+print greet
