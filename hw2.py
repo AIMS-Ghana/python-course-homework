@@ -1,3 +1,3 @@
-nom ="carl!"
-print "hello, {0}".format(nom)
+import sys
+print ("hello,"+sys.argv[1]+"!")
 
