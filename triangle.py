@@ -26,3 +26,7 @@ if __name__ == "__main__":
     c = float(sys.argv[3])
     print("area {}".format(area(a,b,c)))
     print("perimeter {}".format(perimeter(a,b,c)))
+
+# Carl Notes:
+#  - use different asserts for different kinds of errors;
+#  negative dims is one error, incompatible side lengths another

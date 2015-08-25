@@ -19,3 +19,7 @@ if __name__ == "__main__":
     b = float(sys.argv[2]) if (len(sys.argv) == 3) else a
     print("area {}".format(area(a,b)))
     print("perimeter {}".format(perimeter(a,b)))
+
+# Carl Notes:
+#  - combining conditions via & (and), | (or) let's you have one
+#  conditional, instead of a chain

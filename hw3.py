@@ -1,12 +1,12 @@
 #!/usr/local/bin/python3
 import sys
 greeting = "hello, {0}!"
-word = "world"
+who = "world"
 if (len(sys.argv) == 2):
-    word = sys.argv[1]
+    who = sys.argv[1]
 elif (len(sys.argv) > 2):
-    word = ", ".join(sys.argv[1:-1]) + " and " + sys.argv[-1]
-print(greeting.format(word))
+    who = ", ".join(sys.argv[1:-1]) + " and " + sys.argv[-1]
+print(greeting.format(who))
 # Carl keynotes:
 #  - first introduction to conditionals, lists
 #  - many tasks have a typical case covering most inputs, and an edge case or two
