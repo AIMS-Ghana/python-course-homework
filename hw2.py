@@ -1,6 +1,5 @@
-
-#!/usr/bin/env python
-#!/bin/bash
+#!/usr/bin/python
 
 import sys
-print "Hello ,",sys.argv[1], "!"
+x = sys.argv[1]
+print "Hello, ", x ,"!"
