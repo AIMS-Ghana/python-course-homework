@@ -1,2 +1,2 @@
-#kelechi-aims./hw.py
+#!/usr/bin/python
 print("hello world!")
