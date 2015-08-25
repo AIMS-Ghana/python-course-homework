@@ -1,5 +1,2 @@
-<<<<<<< HEAD
-print('Hello world!')
-=======
-print("hello world")
->>>>>>> origin/master
+#!/usr/local/bin/python3
+print("hello world!")
