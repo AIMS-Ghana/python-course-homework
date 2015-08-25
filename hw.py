@@ -2,4 +2,4 @@
 print('Hello world!')
 =======
 print("hello world")
->>>>>>> origin/master
+>>>>>>> origin/master./python-cour
