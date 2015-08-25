@@ -1,2 +1,3 @@
-a=raw_input(" ")
-print'hello,',a,'!'
+#!/usr/bin/python
+import sys
+print("hello, "+sys.argv[1]+"!")
