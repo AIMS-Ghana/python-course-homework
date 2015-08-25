@@ -1,4 +1,3 @@
+#!/usr/bin/python
 import sys
-for arg in sys.argv[1:]:
-    print ("hello, " +arg +"!")
-
+print('hello, '+ sys.argv[1]+'!')
