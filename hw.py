@@ -1,2 +1,3 @@
-# This is the first home work
+#!/usr/bin/python3
+
 print "hello world!"
