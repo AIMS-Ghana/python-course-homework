@@ -1,16 +1,27 @@
 #!/usr/bin/env python
-
-import sys
 import math
 
-a=float(sys.argv[1])
-b=float(sys.argv[2])
-if (a<0 and b<0):
- print "Please enter a non negative number"
-else:
+import sys
+input_area="{0}"
+input_perimeter="{0}"
+def area(x,y):
+    area_value=float(x)*float(y)
+    return area_value
+def perimeter(x,y):
+    perimeter_value=2*(float(x)+float(y))
+    return perimeter_value
 
-area=a*b
-perimeter=2*(a+b)
 
-print "area", area
-print "perimeter", perimeter
+if __name__ == "__main__":
+
+    if len(sys.argv) !=3:
+        print "wrong inputs"
+elif len(sys.argv) !=1:
+	print print area(sys.argv[1],sys.argv[2])
+            print perimeter(sys.argv[1],sys.argv[2]
+    else:   
+        if sys.argv[1].replace('.','',1).isdigit()==True:
+            print area(sys.argv[1],sys.argv[2])
+            print perimeter(sys.argv[1],sys.argv[2])
+        else :
+		print "have atleast two values"
