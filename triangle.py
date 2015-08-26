@@ -1,26 +1,29 @@
 #!/usr/bin/env python
-import math
 
-import sys
-input_area="{0}"
-input_perimeter="{0}"
+#check for negative numbers and triangle inequality
+
+def check(x,y,z):
+	s= x+y
+	d=x-y
+	assert x>0 and y>0 and z>0 , "Please input non negative numbers"
+	assert (s>z) and (d<z), "invalid input - triangle inequality"
+# calculate area
 def area(x,y,z):
-	sum_value=(float(x)+float(y)+float(z))/2
-    	area_value=(sum_value*(sum_value-float(x))*(sum_value-float(y))*(sum_value-float(z)))**0.5
+	check(x,y,z)
+	sum_value=(x+y+z)/2
+    	area_value=math.sqrt(sum_value*(sum_value-x)*(sum_value-y)*(sum_value-z))
     	return area_value
+#calculate perimeter
 def perimeter(x,y,z):
-    	perimeter_value=float(x)+float(y)+float(z)
+	check (x,y,z)
+    	perimeter_value=x+y+z
    	return perimeter_value
-
-
+import sys
+import math
 if __name__ == "__main__":
+	x=float(sys.argv[1])
+	y=float(sys.argv[2])
+	z=float(sys.argv[3])
+#print values
+print ("area is {}, perimeter is {}".format(area(x,y,z), perimeter(x,y,z)))
 
-    if len(sys.argv) !=4:
-        print "wrong inputs"
-
-    else:   
-        if sys.argv[1].replace('.','',1).isdigit()==True:
-            print "area",  area(sys.argv[1],sys.argv[2],sys.argv[3])
-            print "perimeter",  perimeter(sys.argv[1],sys.argv[2], sys.argv[3])
-        else :
-		print "have atleast three values"
