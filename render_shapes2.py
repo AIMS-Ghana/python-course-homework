@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python
 from draw_shape import draw
 
 draw("CIRCLE", 10)
