@@ -1,20 +1,31 @@
 #!/usr/bin/python
 
-import sys 
-a=float(sys.argv[1]) 
-b=float(sys.argv[2]) 
-c=float(sys.argv[3]) 
+def check(a,b,c):
+    assert (a>0) & (b>0) & (c>0), "entered negative dimension"
+    s = a+b
+    d = a-b
+    assert (s > c) & (d < c), "violated triangle innequality"
 
-while a<=0 or b<=0 or c<=0: 
-  print("enter only positive number ") 
 
-if a>= b+c or b>=a+c or c>=a+b: 
-  print ("wrong triangle ") 
-else : 
- p= a+b+c 
- d=p/2 
- from math import sqrt 
- s=sqrt(d*(d-a)*(d-b)*(d-c)) 
- print (p,s) 
+def perimeter(a,b,c):
+    check(a,b,c)
+    return a+b+c
+
+def area (a,b,c):
+    check(a,b,c)
+    s= ((a+b+c)/2)
+    res = (s*(s-a)*(s-b)*(s-c))**0.5
+    return res
+
+import sys
+#input command that does not import sys
+
+if __name__ == "__main__":
+   a=float(sys.argv[1]) 
+   b=float(sys.argv[2]) 
+   c=float(sys.argv[3])
+   print("area{}, perimeter{}".format(area (a,b,c), perimeter (a,b,c)))
+
+
 
 
