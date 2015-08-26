@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+<<<<<<< HEAD
+=======
+#area of a rectangle
+>>>>>>> 39fbc03850c97e5fc0a027c1f8272510677bd083
 import math
 
 
@@ -20,5 +24,8 @@ if __name__=="__main__":
 	b=float (sys.argv[2])
 	print("area{}, perimeter{}".format(area(a,b), perimeter(a,b)))
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 39fbc03850c97e5fc0a027c1f8272510677bd083
 
