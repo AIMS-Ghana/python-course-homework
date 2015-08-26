@@ -9,8 +9,9 @@ def perimeter(a):
 
 def area(a):
   check(a)
-  return (a*a)*3.14
+  return (a*a)*3.14/2
+
  
 if  __name__ =="__main__":
   a = float(sys.argv[1])
-  print("area {},\nperimeter {}".format(area(a), perimeter(a)))
+  print("area {},\nperimeter {}".format(area(a), perimeter(a))
