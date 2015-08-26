@@ -18,11 +18,11 @@ import sys
 if __name__ == "__main__":
 
 #calculating for one input / side
- if len(sys.argv)==2:
+   if len(sys.argv)==2:
      x=float(sys.argv[1])	
      #y=float(sys.argv[1])
      print(" area {}, perimeter{}".format(area(x,x), perimeter(x,x)))
- else:
+   else:
       x=float(sys.argv[1])
       y=float(sys.argv[2])
       print (" area {}, perimeter {}".format(area(x,y), perimeter(x,y)))
