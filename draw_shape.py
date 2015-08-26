@@ -2,7 +2,7 @@
 
 import shapes
 import turtle
-scale = 100
+scale = 10
 
 def draw(type,area):
     if type == "TRIANGLE":
