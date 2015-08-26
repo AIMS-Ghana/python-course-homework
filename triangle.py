@@ -26,5 +26,3 @@ if __name__ == "__main__":
 	z=float(sys.argv[3])
 	#print values
 	print ("area is {}, perimeter is {}".format(area(x,y,z), perimeter(x,y,z)))
-
-

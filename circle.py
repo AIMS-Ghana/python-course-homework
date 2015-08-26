@@ -11,6 +11,4 @@ import math
 
 if __name__ == "__main__":
     r=float (sys.argv[1])
-    print ("area is {}, perimeter is {}".format(area(r), perimeter(r)))  
-    
-
+    print ("area is {}, perimeter is {}".format(area(r), perimeter(r)))
