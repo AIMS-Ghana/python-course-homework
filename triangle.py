@@ -1,20 +1,21 @@
-#!/use/bin/env python
-import sys
-greeting='area={0},perimeter={1}
+#!/use/bin/env python3
+def check(a,b,c)
+assert a>0& b>0 &c>0
 
-num1 = sys.argv[1]
-num2 = sys.argv[2]
-num3 = sys.argv[3]
-#Add two numbers
-sum=(float(num1) + float(num2) + float(num3))
-s = (float(num1) + float(num2) + float(num3))/2
+a = sys.argv[1]
+b = sys.argv[2]
+c = sys.argv[3]
+#Add two number
+
+sum=(float(a) + float(b) + float(c))
+s = (float(a) + float(b) + float(c)/2
 
 #calulate the area
-product = (s*(s-float(num1))*(s-float(num2))*(s-float(num3)))**0.5
+product = (s*(s-float(a))*(-float(b))*(s-float(c)))**0.5
 
 #Displaythe
-print('area {2}').format(num1, num2, product))
-print('permeter {2}').format(num1, num2, sum))
+print('area {2}').format(a, b, product))
+print('permeter {2}').format(a, b, sum))
 
 
 
