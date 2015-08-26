@@ -1,6 +1,6 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python
 from draw_shape import draw
 
-draw("CIRCLE", 1000)
-draw("SQUARE", 1000)
-draw("TRIANGLE", 1000) # equilateral triangle
+draw("CIRCLE", 10)
+draw("SQUARE", 10)
+draw("TRIANGLE", 10) # equilateral triangle
