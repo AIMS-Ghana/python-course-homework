@@ -1,26 +1,21 @@
 #!/usr/bin/python3
-import sys
 import math
-l=float(sys.argv[1])
-b=float(sys.argv[2])
-h=float(sys.argv[3])
-
-area =(b*h)/2
-perimeter =l+b+h
-          
-print "area" + str(area)
-print "perimeter" + str(perimeter)
-if len (sys.argv)==3:           
-                  print "area" + str(area)
-                  print "perimeter" + str(perimeter)
-if sys.argv[1]<=0 or sys.argv[2]<=0 or sys.argv[3]<=0:
-                print "check and revise parameters"
-elif len (sys.argv)!=3:
-             print "check and revise parameters"
-else:
-     print "revise parameters"
-
-
-   
-   
-
+def area(a,b,c):
+	check (a,b,c)
+	m= (a+b+c)/2
+	area=sqrt(m*(m-a)*(m-b)*(m-c))
+	return area
+def perimeter(a,b,c):
+    	check (a,b,c)
+	return (a+b+c)
+def check (a,b,c):
+	assert (a>0) & (b>0) & (c>0), "input positive numbers"
+        s=a+b
+        d=a-b
+	assert (s>c) & (d<c), "input valid arguments"
+import sys
+if __name__ == "__main__":
+        a=float(sys.argv[1])
+  	b=float(sys.argv[2])
+	c=float(sys.argv[3])
+print ("area {}, perimeter {} ".format(area(a,b,c), perimeter(a,b,c)) )
