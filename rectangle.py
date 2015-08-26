@@ -1,16 +1,29 @@
 #!/usr/bin/env python
 
+#check for negative numbers
+def check(x,y):
+	assert x>0 and y>0, "please enter a non negative number"
+
+def area(x,y):
+    check(x,y)
+    area_value=x*y
+    return area_value
+
+def perimeter(x,y):
+    check (x,y)
+    perimeter_value=2*(x+y)
+    return perimeter_value
+
 import sys
-import math
+if __name__ == "__main__":
 
-a=float(sys.argv[1])
-b=float(sys.argv[2])
-if (a<0 and b<0):
- print "Please enter a non negative number"
-else:
-
-area=a*b
-perimeter=2*(a+b)
-
-print "area", area
-print "perimeter", perimeter
+#calculating for one input / side
+   if len(sys.argv)==2:
+     x=float(sys.argv[1])	
+     #y=float(sys.argv[1])
+     print(" area {}, perimeter{}".format(area(x,x), perimeter(x,x)))
+   else:
+      x=float(sys.argv[1])
+      y=float(sys.argv[2])
+      print (" area {}, perimeter {}".format(area(x,y), perimeter(x,y)))
+   
