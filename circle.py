@@ -1,13 +1,17 @@
 #!/usr/bin/python
-import sys
-pi = 3.14
-if len (sys.argv) != 2:
-	print "Error!"
-if len (sys.argv) == 2:
-	if float (sys.argv [1]) < 0:
-		print "Error!"
-	else:
-		area = (float (sys.argv [1]) ** 2) * pi
-		perimeter = float (sys.argv [1]) * 2 * pi
-		print "area " + str (area) + "\nperimeter " + str (perimeter) 
+def check (a):
+	assert a > 0 and b > 0 and c > 0, "negative dimension"
 
+def perimeter (a):
+	check (a)
+	return 2 * 3.14 * a
+
+def area (a):
+	check (a)
+	return 3.14 * a * a
+
+import sys
+
+if __name__ == "__main__":
+	a = float (sys.argv [1])
+	print "area {}, perimeter {}".format (area (a), perimeter (a))

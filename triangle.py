@@ -1,13 +1,25 @@
 #!/usr/bin/python
-import sys
+def check (a, b, c):
+	assert a > 0 and b > 0 and c > 0, "negative dimension"
+	s = a + b
+	d = a - b
+	assert s > c and d < c, "not a triangle"
+
+def perimeter (a, b, c):
+	check (a, b, c)
+	return a + b + c
+
 import math
-if len (sys.argv) != 4:
-	print "Error!"
-elif len (sys.argv) == 4:
-	if float (sys.argv [1]) < 0 or float (sys.argv [2]) < 0 or float (sys.argv [3] < 0):
-		print "Error!"	
-	else :
-		p = (float (sys.argv [1]) + float (sys.argv [2]) + float (sys.argv [3])) / 2	
-		area = math.sqrt (p * (p - float (sys.argv [1])) * (p - float (sys.argv [2])) * (p - float (sys.argv [3])))
-		perimeter = float (sys.argv [1]) + float (sys.argv [2]) + float (sys.argv [3])	
-		print "area " + str (area) + "\nperimeter " + str (perimeter)
+
+def area (a, b, c):
+	check (a, b, c)
+	res = (a + b + c) / 2
+	return math.sqrt (res * (res - a) * (res - b) * (res - c))
+
+import sys
+
+if __name__ == "__main__":
+	a = float (sys.argv [1])
+	b = float (sys.argv [2])
+	c = float (sys.argv [3])
+	print "area {}, perimeter {}".format (area (a, b, c), perimeter (a, b, c))
