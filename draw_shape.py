@@ -25,9 +25,11 @@ figs = {
     'TRIANGLE':triangle
 }
 
-def draw(shape, area):
+def draw(shape, area, fill="black"):
     dim = compute(shape, area)
+    turtle.begin_fill(fill)
     figs[shape](dim)
+    turtle.end_fill(fill)
     turtle.exitonclick()
 
 import sys
