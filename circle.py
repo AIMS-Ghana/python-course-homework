@@ -1,19 +1,25 @@
 #!/usr/bin/python
 
+import math
+
+def check(radius):
+    assert (radius > 0),"entered negative radius"
+
+def area(radius):
+    check(radius)
+    res = (radius**) * math.Pi
+    return res
+
+def perimeter(radius):
+    check(radius)
+    t = 2 * math.Pi * radius
+    return t
+
 import sys
-PI = 3.14159
 
-def area_of_circle(r):
-    area = PI * r **2
-    return area
+if __name__=="__main__":
 
-def perimeter_of_circle(r):
-    perimeter = 2* PI * r
-    return perimeter
+    radius = float(sys.argv[1])
 
-r= float(sys.argv[1])
-area= area_of_circle(r)
-print ' Area ', area
+print(" area {} \n perimeter {}".format(area(radius),perimeter(radius)))
 
-perimeter=perimeter_of_circle(r)
-print'perimeter', perimeter
