@@ -1,10 +1,31 @@
-#!/usr/bin/python
+#! /usr/bin/python
 import sys
-import math
-x=float(sys.argv[1])
-y=float(sys.argv[2])
-# add two numbers
-product=x*y
-sum=2*(x+y)
-# display the sum
-print(result.format(product,sum))
+
+def check (a,b):
+    assert (a>0) & (b>0) 
+
+    s=a+b
+    d=a-b
+    assert (s>b) & (d<b), "violated rectangle inequality"
+
+def perimeter(a,b):
+    check(a,b)
+    return a+b
+    
+
+def area(a,b):
+    check(a,b)
+   
+    u=2*(l+b)
+    s= (l+b)
+    res= u 
+         
+    return res
+
+ 
+if__name__=="__main__":
+   a=float(sys.argv[1])
+   b=float(sys.argv[2])
+print("area {}, perimeter {}" .format(area(a,b) , perimeter(a,b)))
+
+
