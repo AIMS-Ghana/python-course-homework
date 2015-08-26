@@ -24,4 +24,5 @@ if __name__=="__main__":
  y=float(sys.argv[2])
  z=float(sys.argv[3])
 
- print"area " " {}, perimeter" " {}".format(area(x,y,z),perimeter(x,y,z))
+
+print"area " " {}, perimeter" " {}".format(area(x,y,z),perimeter(x,y,z))

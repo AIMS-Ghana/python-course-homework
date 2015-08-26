@@ -19,7 +19,4 @@ import math
 if __name__=="__main__":
 #getting the input from the user
  x=float(sys.argv[1])
-
  print"area " " {}, perimeter" " {}".format(area(x),perimeter(x))
-
-
