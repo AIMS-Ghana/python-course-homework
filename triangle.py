@@ -1,22 +1,26 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+
 import sys
-## if len(sys.argv)== 3
-##     print(sys.argv[1] * sys.argv[2]
-l = float(sys.argv[1])
-w = float(sys.argv[2])
-h = float(sys.argv[3])
 
-assert (l>0) & (w>0) ,"dimension is negative"
-if l > 0 :
-  print ("negative")
-elif w,0:
-  print ("error")
-else:
-  area = (l*h)/2
-  perimeter=l+h+w
-  print("area is equal", area)
-  print("perimeter is equal to", perimeter) 
- 
+def check(a,b,c):
+      s = a+b
+      d = a-b 
+      assert (a>0) & (b>0) & (c>0), "entered negative dimension"
+      assert (s>c) & (d<c), "violated triangle inequality"
+      
+def perimeter(a,b,c):
+       check(a,b,c)
+       return a+b+c
 
+def area(a,b,c):
+       check(a,b,c)
+       t=(a+b+c)/2
+       res = (t*(t-a)*(t-b)*(t-c))**0.5
+       return res
+      
 
-
+if __name__ ==  "__main__":
+  a = float(sys.argv[1])
+  b = float(sys.argv[2])
+  c = float(sys.argv[3])
+  print("area {0}, perimeter {1}".format(area(a,b,c), perimeter(a,b,c)))
