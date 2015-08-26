@@ -1,16 +1,25 @@
 #!/usr/bin/python
+  
+def check(a,b,c):
+    assert a > 0 and b > 0 and c > 0, "negative dimension"
+    s = a + b
+    d = a - b
+    assert s > c and d < c, "violated triangle inequality"
+
+def perimeter(a,b,c):
+    check(a,b,c)
+    perimeter=a+b+c
+    return perimeter
+
+import math
+def area (a,b,c):
+    check(a,b,c)
+    res=(a+b+c)/2
+    return math.sqrt(res*(res-a)*(res-b)*(res-c))
+
 import sys
-area=" "
-perimeter=" "
-greeting="area=[0]\n perimeter=[1]"
-b=float(sys.argv[1])
-h=float(sys.argv[2])
-w=float(sys.argv[3])
-area=1/2*b*h
-perimeter=b + h + w
-#area=(sys.argv[0])
-#perimeter=(sys.argv[1])
-print"area" + str(area)
-print"perimeter" + str(perimeter)
-
-
+if __name__ == "__main__":
+    a= float(sys.argv[1])
+    b= float(sys.argv[2])
+    c= float(sys.argv[3])
+    print("area {}, perimeter {}".format(area(a,b,c),perimeter(a,b,c)))
