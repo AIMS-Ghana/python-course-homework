@@ -22,8 +22,9 @@ if __name__ == "__main__":
 	else:
 		#check if  int or not
 		if sys.argv[1].replace('.','',1).isdigit() ==True:
-			print(area(sys.argv[1]))
-			print(perimeter(sys.argv[1]))
+			print(value_area.format(area(sys.argv[1])))
+			print(value_perimeter.format(perimeter(sys.argv[1])))
+			
 		else:
 			print "Wrong input!! enter a positive number!!"
 	

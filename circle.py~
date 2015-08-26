@@ -15,16 +15,17 @@ def perimeter(x):
 	perimeter_value = 2*math.pi*float(x)
 	return perimeter_value
 	
-	
-if len(sys.argv)!=2:
-	print "Wrong input!! provide just one value"
+if __name__ == "__main__":	
+	if len(sys.argv)!=2:
+		print "Wrong input!! provide just one value"
 
-else:
-	#check if  int or not
-	if sys.argv[1].replace('.','',1).isdigit() ==True:
-		print(area(sys.argv[1]))
-		print(perimeter(sys.argv[1]))
 	else:
-		print "Wrong input!! enter a positive number!!"
+		#check if  int or not
+		if sys.argv[1].replace('.','',1).isdigit() ==True:
+			print(area(sys.argv[1]))
+			print(perimeter(sys.argv[1]))
+			print(value_area.format(area(sys.argv[1])))
+		else:
+			print "Wrong input!! enter a positive number!!"
 	
 
