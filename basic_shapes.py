@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python
 import triangle
 import rectangle
 import circle

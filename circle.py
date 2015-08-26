@@ -1,9 +1,21 @@
 #!/usr/bin/python
-import sys
 import math
-a=sys.argv[1]
-area= math.pi *float(a)**2
-perimeter= math.pi *float(a)**2
+def perimeter(r):
+    check(r)
+    p=2*math.pi*(r)
+    return p
 
-print "area " + str(area)
-print "perimeter " + str(perimeter)
+def area(r):
+    check(r)
+    res=math.pi*r**2
+    return res
+def check(r,):
+    assert (r>0) , "negative dimension"
+   
+import sys
+
+if __name__=="__main__":
+    r=float (sys.argv[1])
+    
+   
+    print "area {},\nperimeter{} ".format(area(r),perimeter(r))
