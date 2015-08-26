@@ -10,7 +10,7 @@ import turtle
 
 
 def draw_triangle(triangle_side):
-    #window = turtle.Screen()
+    window = turtle.Screen()
   
     tom = turtle.Turtle()
     tom.forward(triangle_side) 
@@ -20,13 +20,13 @@ def draw_triangle(triangle_side):
     tom.color('red')
     tom.left(120)
     tom.forward(triangle_side)
-    #window.exitonclick() #to exit 
+    window.exitonclick() #to exit 
 
 
 #Drawing square with area equals 50000
 
 def draw_square(square_side):
-    #window = turtle.Screen()
+    window = turtle.Screen()
     turtle.left(90)
     turtle.forward(square_side)
     turtle.color('green')
@@ -40,7 +40,7 @@ def draw_square(square_side):
     turtle.forward(square_side)
     turtle.color('green')
     turtle.left(90)
-    #window.exitonclick() #to exit 
+    window.exitonclick() #to exit 
 
 
 #Drawing circle with area of 20
@@ -74,13 +74,13 @@ if __name__ == "__main__":
 	circle_radius = float(circle[1])
 	draw_circle(circle_radius)
 
-def draw(polygon_name,area):
+def draw(polygon_name,length):
 	if polygon_name =="TRIANGLE":
-		draw_triangle(area)
+		draw_triangle(length)
 	if polygon_name =="SQUARE":
-		draw_square(area)
+		draw_square(length)
 	if polygon_name =="CIRCLE":
-		draw_circle(area)
+		draw_circle(length)
 	else:
 		pass
 
