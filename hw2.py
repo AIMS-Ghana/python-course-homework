@@ -1,4 +1,4 @@
-def hw2(str):
-	print "hello, str!"
-
-hw2(str)
+#!/usr/bin/env python
+import sys
+x=sys.argv[1]
+print "hello,", x,"!"
