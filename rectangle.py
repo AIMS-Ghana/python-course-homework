@@ -38,11 +38,3 @@ if __name__ == "__main__":
 
 	else:
 		print "Wrong input!! provide two values"
-	
-
-
-
-
-
-
-
