@@ -1,16 +1,28 @@
 #!/usr/bin/python
 
-import sys
-import math
 
+def check(x,y):
+ assert x>0 and y>0 ,"Entered a negative dimension"
+
+def area(x,y):
+ check(x,y)
+ return x*y
+def perimeter(x,y):
+ check(x,y)
+ return 2*(x+y)
+
+import sys
+
+if __name__=="__main__":
 #getting the input from the user
 
-x=float(sys.argv[1])
-y=float(sys.argv[2])
+ if len(sys.argv)==2:
+  x=float(sys.argv[1])
+  y=float(sys.argv[1])
 
-#calculating the area of the rectangle
-s=x*y
-p=2*x+2*y
-print"area ",s
-print "perimeter ",p
+  print"area " " {}, perimeter" " {}".format(area(x,y),perimeter(x,y))
 
+ else:
+  x=float(sys.argv[1])
+  y=float(sys.argv[2])
+  print"area " " {}, perimeter" " {}".format(area(x,y),perimeter(x,y))
