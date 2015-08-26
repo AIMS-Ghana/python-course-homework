@@ -1,9 +1,19 @@
 #!/usr/bin/python3
-from Math import pi
+import math  
+
+def check(radius):
+    assert(radius > 0),"entered a negative radius"
+
+def area(radius):
+    check(radius)
+    res = (radius**2)*math.pi
+    return res
+ 
+def perimeter(radius):
+    check(radius)
+    return 2*math.pi*radius
+    
 import sys
-R= float(sys.argv[1])
-if R(<=0) :
- print("error")
-else :
- print("area", pi*R**2)
- print("perimeter", 2*pi*R)
+if __name__ == "__main__":
+    radius= float(sys.argv[1])
+    print("area{},\n perimeter{} ".format(area(radius), perimeter(radius)))
