@@ -1,18 +1,24 @@
 #!/usr/bin/python
 import sys
 from math import*
-r=sys.argv[1]
-s=sys.argv[2]
-t=sys.argv[3]
-s=int(s)
-r=int(r)
-t=int(t)
-if s<0 or r<0 or t<0:
-	print("##error##\t You have type an negative number, so retry")
-	sys.exit()
-else:
-	p=r+s+t
-	d=p/2.0
-	a=sqrt(d*abs((d-r)*(d-s)*(d-t)))
-print "area ",a
-print "perimeter",p
+def area(r,s,t):
+	d=(r+s+t)/2.0
+	return sqrt(d*(d-r)*(d-s)*(d-t))
+def perimeter(r,s,t):
+	return r+s+t
+if __name__=='__main__':
+	r=sys.argv[1]
+	s=sys.argv[2]
+	t=sys.argv[3]
+	s=float(s)
+	r=float(r)
+	t=float(t)
+	c=r+s
+	b=r-s
+	assert (c>t) & (b<t), "triangle inegality false"
+	assert (s>0) and (r>0) and (t>0),"entered negative dimension"
+	p=perimeter(r,s,t)
+	a=area(r,s,t)
+	print "area ",a
+	print "perimeter",p
+
