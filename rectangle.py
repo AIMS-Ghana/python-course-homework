@@ -1,10 +1,23 @@
-#!/usr/local/bin/python
-from math import pi
+#!/usr/bin/python3
+
+def check(L,l):
+	assert (L>0) & (l>0),"entered negative dimension"
+
+def area (L,l):
+	check(L,l)
+	A = L*l
+	return A
+
+def perimeter (L,l):
+	check(L,l)
+	P = (L+l)*2
+	return P
+
 import sys
-R=float(sys.argv[1])
-if(R<=0):
-print("error")
-else:
-print("the area is=",2*pi*R)
-print("The perimeter is:",2*pi*R)
+if __name__ == "__main__":
+	L = float(sys.argv[1])
+	l = float(sys.argv[2])
+  
+	print ("The area is {},\n The perimeter is {}".format(area(L,l), perimeter(L,l)))
+
 
