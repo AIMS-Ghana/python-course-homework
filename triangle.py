@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     else:   
         if sys.argv[1].replace('.','',1).isdigit()==True:
-            print "area" area(sys.argv[1],sys.argv[2],sys.argv[3])
-            print "perimeter" perimeter(sys.argv[1],sys.argv[2], sys.argv[3])
+            print "area",  area(sys.argv[1],sys.argv[2],sys.argv[3])
+            print "perimeter",  perimeter(sys.argv[1],sys.argv[2], sys.argv[3])
         else :
 		print "have atleast three values"
