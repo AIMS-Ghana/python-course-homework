@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 import sys
 
 no = len(sys.argv) - 1

@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 import sys
 
-print('hello, '+str(sys.argv[1])+'!')
+print('hello, {0}!'.format(str(sys.argv[1])))
 
 
