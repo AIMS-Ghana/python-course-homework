@@ -1,23 +1,27 @@
 #!/usr/bin/env python
-import sys
 import math
-input_area="{0}"
-input_perimeter="{0}"
-def area(x,y):
-	sum_value=float((x+y+z)/2)
-	area_value=float(sum_value)*(sum_value-x)*(sum_value-y)*(sum_value-z)
-	return area_value
-def perimeter(x,y):
-	perimeter_value=2*(float(x)+float(y))
-	return perimeter_value
 
 
-if __name__ == "__main__":
 
-	if len(sys.argv) !=3:
-		print "wrong inputs"
-	else:	
-		if sys.argv[1].replace('.','',1).isdigit()==True:
-			print area(sys.argv[1],sys.argv[2])
-			print perimeter(sys.argv[1],sys.argv[2])
-		else "have atleast two values"
+def check(a,b,c):
+	assert a>0 and b>0 and c>0, "enter positive numbers"
+	s=a+b
+	d=a-b
+	assert (s>c) and (c>d), "violated the triangle equilateral rule"
+def perimeter(a,b,c):
+	check(a,b,c)
+	value=a+b+c
+	return value
+def area(a,b,c):
+	#heros formula
+	check(a,b,c)
+	value=(a+b+c)/2
+	result= math.sqrt(value*(value-a)*(value-b)*(value-c))
+	return result
+
+import sys
+if __name__=="__main__":
+	a=float (sys.argv[1])	
+	b=float (sys.argv[2])
+	c=float (sys.argv[3])
+	print("area{}, perimeter{}".format(area(a,b,c), perimeter(a,b,c)))
