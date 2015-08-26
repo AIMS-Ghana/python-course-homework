@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#area of a triangle
+#area of a rectangle
 import math
 
 
@@ -21,11 +21,4 @@ if __name__=="__main__":
 	b=float (sys.argv[2])
 	print("area{}, perimeter{}".format(area(a,b), perimeter(a,b)))
 
-
-
-        if sys.argv[1].replace('.','',1).isdigit()==True:
-            print "area",  area(sys.argv[1],sys.argv[2])
-            print "perimeter",  perimeter(sys.argv[1],sys.argv[2])
-        else :
-		print "have atleast three values"
 
