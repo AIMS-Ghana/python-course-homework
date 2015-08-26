@@ -25,12 +25,14 @@ figs = {
     'TRIANGLE':triangle
 }
 
-def draw(shape, area, fill="black"):
+def draw(shape, area, fill="black", cont=False):
     dim = compute(shape, area)
-    turtle.begin_fill(fill)
+    turtle.color(fill)
+    turtle.begin_fill()
     figs[shape](dim)
-    turtle.end_fill(fill)
-    turtle.exitonclick()
+    turtle.end_fill()
+    if not cont:
+        turtle.exitonclick()
 
 import sys
 
