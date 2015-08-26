@@ -1,14 +1,24 @@
 #!/usr/bin/python
-import sys
-area=" "
-perimeter=" "
-greeting="area=[0]\n perimeter=[1]"
-d=float(sys.argv[1])
-pi=3.14
-area = pi * d/4
-perimeter=pi*d
-#area=(sys.argv[0])
-#perimeter =(sys.argv[1])
-print "area" + str (area)
-print "perimeter" + str(perimeter)
 
+import math
+def check (d):
+    assert d > 0, "negative dimension"
+
+def perimeter(d):
+	pi=3.142	
+	check(d)
+	perimeter= pi * d
+        return perimeter
+
+
+def area (d):
+	pi=3.142
+	check(d)
+        area= (pi*d)/4
+	return area
+
+import sys
+
+if __name__=="__main__":
+	d= float(sys.argv[1])
+print("area {},perimeter{}".format(area(d),perimeter(d)))
