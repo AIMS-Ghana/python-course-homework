@@ -1,6 +1,8 @@
+#!/usr/bin/python
+
 import sys
-a
-   print "hello "+ sys.agrav[1] +"!"
+
+print ("hello, "+sys.argv[1]+"!")
 
 
 
