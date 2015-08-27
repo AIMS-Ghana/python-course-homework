@@ -1,24 +1,30 @@
 #!/usr/local/bin/python3
 
-import bisection
+import sys
+import bisection 
+def f(x):
+	return x**3 + x -1
+	
+def bisection(a,b,tol):
+	c = (a+b)/2.0
+	while (b-a)/2.0 > tol:
+		if f(c) == 0:
+			return c
+		elif f(a)*f(c) < 0:
+			b = c
+		else :
+			a = c
+		c = (a+b)/2.0
+		
+	return c
+	
+def main(argv):
+	if (len(sys.argv) != 4):
+		sys.exit('Usage: bisection.py <a> <b> <tol>')
+	
+	print 'The root is: ',
+	print bisection(int(sys.argv[1]),int(sys.argv[2]),float(sys.argv[3]))
 
-def bisectf(x):
-    return (x-1)*(x+10)**2
+if __name__ == "__main__":
+	main(sys.argv[1:])
 
-rangex = (0, 20)
-
-out = "{} root of (x-1)(x+10)^2 on ({},{}): {}"
-
-print(out.format(
-    "bisection",
-    rangex[0], rangex[1],
-    bisection.root(bisectf, rangex)
-))
-
-from scipy.optimize import brentq
-
-print(out.format(
-    "scipy",
-    rangex[0], rangex[1],
-    brentq(bisectf, rangex[0], rangex[1])
-))
