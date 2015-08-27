@@ -3,8 +3,8 @@
 import bisection
 
 def bisectf(x):
-    ...
+    return (x-1)*(x+10)**2
 
-rangex = [...]
+rangex = (0, 20)
 
 print(bisection.root(bisectf, rangex))
