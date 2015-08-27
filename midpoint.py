@@ -46,7 +46,6 @@ if __name__ == "__main__":
      return x - x**2
 #   xrange = [0,1]
     xrange = np.linspace(0,1,100)
- #   print(xrange)
- #   xrange = [0,0.2,0.4,0.6,0.8,1]
+ 
     print(integrate(func,xrange))
     
