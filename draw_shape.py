@@ -39,6 +39,7 @@ def draw_circle(rad):
 	turtle.end_fill()
 	window.exitonclick() 
 if __name__=="__main__":
+<<<<<<< HEAD
 	draw_triangle(100)
 	draw_square(100)
 	draw_circle(20)
