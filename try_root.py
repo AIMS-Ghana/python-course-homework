@@ -3,7 +3,7 @@
 import bisection
 
 def bisectf(x):
-    ...
+  
 
 rangex = [...]
 
