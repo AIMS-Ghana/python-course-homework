@@ -1,10 +1,14 @@
 #!/usr/bin/python
 import sys
-greeting="Area={O} and perimeter={1}"
 x=float(sys.argv[1])
 y=float(sys.argv[2])
-area=x*y
-perimeter=2*(x+y)
-
-print "area ", area
-print "perimeter", perimeter
+#calculating the area of rectangle
+def area (x,y):
+	check(x,y)
+	return x*y
+# calculating the perimeter of the rectangle
+def perimeter(x,y):
+	check(x,y)
+	return 2*(x+y)
+print "area{},perimeter{}".format(area(x,y),perimeter(x,y))
+ 
