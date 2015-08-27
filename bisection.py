@@ -2,13 +2,18 @@
 
 import math
 
-def root (a, b):
-#b is a list
-#a is an interger
-	integration = 0
-
-
-	return "midpoint method, area under e^x on (0, 10), 100 points: {}".format (integration)	
+def root (f, l):
+#l is a list (a, b)
+#f is a function
+	solution = 0
+	while (l [1] - l [0]) > 0.1:
+		m = float (l [0] + l [1]) / 2
+		image = f (m)
+		if (f (l [0]) * image > 0):
+			a = m
+		if (image * f(l [1]) > 0):
+			b = m
+	return "[{}, {}]".format (a, b)	
 
 
 

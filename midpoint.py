@@ -2,15 +2,16 @@
 
 import math
 
-def integrate (a, b):
-#b is a list
-#a is an interger
+def integrate (f, l):
+#l is a list (a, b)
+#f is a function
 	integration = 0
+	longueur = l [1] - l[0]
+	m = longueur / 100
+	for i in range (longueur * 10):
+		integration += m * f((i / 100) + m)
 
-	for i in b:
-		integration = integration + a * math.exp((i / 10) + (float (a) + (float (a) / 2))
-
-	return "midpoint method, area under e^x on (0, 10), 100 points: {}".format (integration)	
+	return "{}".format (integration)	
 
 
 
