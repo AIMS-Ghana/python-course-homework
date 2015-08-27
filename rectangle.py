@@ -1,11 +1,21 @@
 #!/usr/bin/python
+
+def check(a,b):
+    assert (a>b)
+
+def perimeter(a,b):
+    check(a,b)
+    return a+b
+
+def area(a,b):
+    check(a,b)
+    return a*b
+
 import sys
-result = "area = {0}, perimeter = {1}"
-x =float (sys.argv[1])
-y =float (sys.argv[2])
-#add two numbers
-product = x * y 
-sum  = 2*(x+y)
-# display sum
-print(result. format(product,sum))
+
+if __name__ == "__main__":
+   a=float (sys.argv[1])
+   b=float (sys.argv[2])
+print(" area {} \n perimeter {}".format(area(a,b), perimeter(a,b)))
+
 

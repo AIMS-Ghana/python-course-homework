@@ -1,15 +1,28 @@
 #!/usr/bin/python
+
+def check(a,b,c):
+    assert (a>0) & (b>0) & (c>0), "entered negetive dimension"
+    s=a+b
+    d=a-b
+    assert (s>c) & (d<c), "violated triangle inequality"
+
+def perimeter(a,b,c):
+    check(a,b,c)
+    return a+b+c
+
+
+def area(a,b,c):
+    check(a,b,c)
+    m=(perimeter(a,b,c))/2
+    res = (m*(m-a)*(m-b)*(m-c))**0.5# heron's formula 
+    return res
+
 import sys
-import math
-result = "area = {0}, perimeter = {1}"
-a=float (sys.argv[1])
-b=float (sys.argv[2])
-c=float (sys.argv[3])
-#add three numbers
-m=(a+b+c)/2
-sum = a+b+c
-product = (m*(m-a)*(m-b)*(m-c))**0.5
-# display sum
-print(result. format(product,sum))
+
+if __name__ == "__main__":
+   a=float (sys.argv[1])
+   b=float (sys.argv[2])
+   c=float (sys.argv[3])
+print(" area {} \n perimeter {}".format(area(a,b,c), perimeter(a,b,c)))
 
 
