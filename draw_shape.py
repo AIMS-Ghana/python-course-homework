@@ -16,5 +16,5 @@ side=math.sqrt(float(polygon_area))
 print '\nsquare,area'polygon_area.,side....\n
 elife polygon_name.upper()=='circle
 	radius=math.sqrt(float(polygon_area)/math.pi)
-print"\ncircle.area.area.polygon_area
-print'\n...error indicating unkown shapes..
+print"
+.
