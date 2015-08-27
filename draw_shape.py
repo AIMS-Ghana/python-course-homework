@@ -1,4 +1,4 @@
-#!/use/bin/env python3
+#!/use/bin/env python
 from tkinter import *
 from random import *
 
