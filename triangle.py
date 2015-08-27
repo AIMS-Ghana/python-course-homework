@@ -16,9 +16,3 @@ product = (s*(s-float(a))*(-float(b))*(s-float(c)))**0.5
 #Displaythe
 print('area {2}').format(a, b, product))
 print('permeter {2}').format(a, b, sum))
-
-
-
-
-
-
