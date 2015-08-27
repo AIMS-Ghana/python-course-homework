@@ -2,30 +2,39 @@
 
 import sys
 from turtle import *
-import shape
+from shapes import *
 if __name__=="__main__":
 	a=sys.argv[1]
 	b=sys.argv[2]
 	if a=="square":
-		forward(side3(b))
+		color('red', 'yellow')
+		begin_fill()
+		forward(square_side(b))
 		left(90)
-		forward(side3(b))
+		forward(square_side(b))
 		left(90)
-		forward(side3(b))
+		forward(square_side(b))
 		left(90)
-		forward(side3(b))
+		forward(square_side(b))
+		end_fill()
 		done()
-	elif
-		 a=="Equilateral triangle"
-			forward(side2(b))
-			left(120)
-			forward(side2(b))
-			left(120)
-			forward(side2(b))
-	elif
-		a=="Circle"
-		circle(side1(b))
-	else
+	elif a=="Equilateral triangle":
+		color('red', 'yellow')
+		begin_fill()
+		forward(triangle_side(b))
+		left(120)
+		forward(triangle_side(b))
+		left(120)
+		forward(triangle_side(b))
+		end_fill()
+		done()
+	elif a=="Circle":
+		color('red', 'yellow')
+		begin_fill()
+		circle(circle_side(b))
+		end_fill()
+		done()
+	else:
 		print("error, wrong shape")	
 	
 
