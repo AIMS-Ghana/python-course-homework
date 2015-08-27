@@ -2,5 +2,5 @@
 from math import pi
 
 
-circle = lambda radius : pi*(radius)**2
-triangle lambda 
+circle = lambda area : (area/pi)**0.5
+triangle lambda area :
