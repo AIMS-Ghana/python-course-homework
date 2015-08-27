@@ -1,30 +1,30 @@
 #!/usr/bin/python3
-from math import sqrt
+
 import sys
-from turtle import *
+import turtle
 import shapes
 
-def draw(name, side):
+def draw(name,area, fill ="black", cont=false):
 	if name== "TRIANGLE":
-		length= shapes.value
+		#side_length= shapes.value
 		#draw triangle
-		canvas = Screen()
-		#canvas.setup(400,200)
-		turtle = Turtle()
+		turtle.setup(400,200)
+		turtle =Turtle()
 		turtle.forward(side)             
 		turtle.left(120)
 		turtle.forward(side)    
 		turtle.left(120)
 		turtle.forward(side)    
-
-		canvas.exitonclick()	
+		if not cont:
+		
+			turtle.exitonclick()	
 
 	if name =="SQUARE":
-	        side=shapes.value		
+	        #side=shapes.value		
 		#draw square
-		canvas = Screen()
-		#canvas.setup(400,200)
-		turtle= Turtle()
+		
+		turtle.setup(400,200)
+		turtle=Turtle()
 		turtle.forward(side)         
 		turtle.left(90)
 		turtle.forward(side)
@@ -33,18 +33,18 @@ def draw(name, side):
 		turtle.left(90)
 		turtle.forward(side)
               	
-		canvas.exitonclick()	
+		turtle.exitonclick()	
 	
 	if name =="CIRCLE":
-		side=shapes.value		
+		#radius=shapes.value		
 		#draw cicrcle
-		canvas = Screen()
-		#canvas.setup(400,200)
-		turtle = Turtle()
-		turtle.forward(side)         
 		
-              	
-		canvas.exitonclick()	
+		turtle.setup(400,200)
+		turtle = Turtle()
+		turtle.forward(radius)         
+		
+             	
+		turtle.exitonclick()	
 	
 if __name__ == "__main__":
 	draw("TRIANGLE",100)

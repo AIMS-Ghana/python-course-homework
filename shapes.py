@@ -1,24 +1,39 @@
-#!/usr/bin/python3
-import maths
+#!/usr/bin/python
+
 import sys
-if __name__ == "main":
-	def side():
-		if len (sys.argv) < 3:
-          		print "variables incomplete"
-			elif len (sys.argrv) ==3:	
-	 		str (sys.argv[1]) == "TRIANGLE" 
-         		side = math.sqrt (4*(sys.argv[2])/math.sqrt(3))
-			print ("equilateral TRIANGLE, area {} , side.. {}".format (side) ) 
-			str(sys.argv[1]) == "CIRCLE"
-			side = float (math.sqrt(sys.argv[2]/math.pi))
-			print ("CIRCLE, area {} , radius {}".format (side))
-			str(sys.argv [1]) == "SQUARE"
-			side = float (math.sqrt(sys.argv[2]))
-			print ("SQUARE, area {} , side {}".format (side))
-			return side
+import math
+
+def square_side(area):
+	return math.sqrt(float (area))
+
+def circle_radius(area):
+	return math.sqrt(float(area)/math.pi)
+
+def triangle_side(area):
+	return (2*(float( area))**0.5)/3**0.25
 
 
+def polygon_check(name, area):
     
-          
-			else:
-			print "check variables"
+    if name=="TRIANGLE":
+        side= triangle_side(area)
+        print"EQUILATERAL,", 'area',area, 'side:',side
+
+    elif name=="SQUARE":
+        side = square_side(area)
+        print'SQUARE,', 'area',area, 'side:',side
+    
+
+    elif name== "CIRCLE":
+        radius=circle_radius(area)
+        print 'CIRCLE,', 'area',area, 'radius:',radius
+
+    else:
+        print '... error indicating unknown shape... '
+
+if __name__=="__main__":
+    if len(sys.argv)==1:
+        print('... error indicating no input...')
+    else:
+       polygon_check(sys.argv[1], sys.argv[2])
+
