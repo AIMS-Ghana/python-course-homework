@@ -12,5 +12,9 @@ def integrate(f, nbins):
         sum_t = sum_t + width*height
 
     return sum_t
-
+#
+'''
+if __name__ == "__main__":
+	integrate()
+'''
 
