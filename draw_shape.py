@@ -1,34 +1,22 @@
 #!/usr/bin/python
 
+import sys
 import turtle
 
-#draw a rectangle
-george = turtle.Turtle()
+def circle_radius(area):
+    res = turtle(circle, radius)
+    return res
 
-george.forward(40)
-george.right(90)
+def triangle_side(area):
+    turtle.forward(50)
+    turtle.right(120)
 
-george.forward(40)
-george.right(90)
+    turtle.forward(50)
+    turtle.right(120)
 
-george.forward(40)
-george.right(90)
-
-george.forward(40)
-george.right(40)
-				 
-#draw a triangle
-george.forward(50)
-george.right(120)
-
-george.forward(50)
-george.right(120)
-
-george.forward(50)
-george.right(120)
-
-#draw a circle
-george.forward(360)
+    turtle.forward(50)
+    turtle.right(120)
+    return res
 
 
 
