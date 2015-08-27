@@ -1,33 +1,33 @@
 #!/usr/bin/python
 # A program that prints the area and the perimeter of a triangle.
+import math
 import sys
-a = sys.argv[1]
-b = sys.argv[2]
-c = sys.argv[3]
 
-area = 0.5*float(a)*float(b)
-perimeter = (float(a) + float(b) + float(c))
+def check(a,b,c):
+    assert (a > 0) & (b>0) & (c>0), "Entered negative dimension"
 
-if sys.argv[1:-1] <= 0:
-    print 'Error in the number of inputs'
-elif len(sys.argv) == 1:
-    print 'Error in the number of inputs'
-elif len(sys.argv) == 2:
-    print 'Error in the number of inputs'
-elif len(sys.argv) == 3:
-    print 'Error in the number of inputs'
-elif len(sys.argv) == str:
-    print 'Error in type'
-elif len(sys.argv) == 4:
-    print "area " + str(area)
-    print "perimeter " + str(perimeter)
-elif len(sys.argv) > 4:
-    print 'Error in the size of input'
-else:
-    pass
+
+def area(a,b,c):
+        check(a,b,c)
+        s = 0.5*(a+b+c)
+        res = math.sqrt(s*(s-a)*(s-b)*(s-c))
+        return res
+
+def perimeter(a,b,c):
+        check(a,b,c)
+        return a+b+c
 
 
 
+if __name__ == "__main__":
+    if len(sys.argv) == 4:
+        a = float(sys.argv[1])
+        b = float(sys.argv[2])
+        c = float(sys.argv[3])
 
-
-
+        ar = area(a,b,c)
+        pr = perimeter(a,b,c)
+        print "area " + str(ar)
+        print "perimeter " + str(pr)
+    else:
+        print 'Error in the number of inputs'
