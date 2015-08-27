@@ -4,6 +4,7 @@ import shapes
 import turtle
 scale = 10
 
+
 def draw(type,area):
     if type == "TRIANGLE":
        draw_triangle(shapes.triangle(area))
@@ -17,6 +18,7 @@ def draw(type,area):
        draw_rectangle(a,b)
     else:
        draw_circle(shapes.circle(area))
+
 
 def draw_triangle(s):
     turtle.reset()
