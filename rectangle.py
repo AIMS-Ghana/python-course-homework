@@ -1,23 +1,22 @@
-def check (L,l) :
-          assert (L>0) & (l>0)  ,"entered negative dimension"
-       
-def perimeter(L,l):
-	  check (L,l)
-          p=(L+l)*2
-	  return p
-def area (L,l):
-	   check (L,l)
-	   area=(L*l) 
-	   res= area
-	   return res
+#!/usr/local/bin/python3
+
+def checkdim(a, b):
+    assert (a >= 0) & (b >= 0), "Passed negative dimensions"
+    pass
+
+def area(a, b):
+    checkdim(a, b)
+    return a*b
+
+def perimeter(a, b):
+    checkdim(a, b)
+    return 2*(a+b)
 
 import sys
+
 if __name__ == "__main__":
 
-	  L=float(sys.argv[1])
-	  l=float(sys.argv[2])
-
-print("area={}, perimeter={}".format(area(L,l),perimeter(L,l)))
-
-
-
+    a = float(sys.argv[1])
+    b = float(sys.argv[2]) if (len(sys.argv) == 3) else a
+    print("area {}".format(area(a,b)))
+    print("perimeter {}".format(perimeter(a,b)))
