@@ -84,4 +84,3 @@ def draw(polygon_name,area):
 
 
 
-
