@@ -5,39 +5,40 @@ import turtle
 import shapes
 import math
 def draw_triangle(side):
-	shape = turtle.Screen()
-	window=turtle.Turtle()
-	window.foward(side)
-	window.left(120)
-	turtle.foward(side)
-	turtle.left(120)
-	turtle.foward(side)
-	turtle.left(120)
-	shape.exitonclick()
-draw_triangle(side)
+    window = turtle.Screen()
+    turtle.begin_fill()
+    turtle.forward(side) 
+    turtle.left(120)
+    turtle.forward(side)
+    turtle.left(120)
+    turtle.forward(side)
+    turtle.end_fill()
+    window.exitonclick()
+
 def draw_square(width):
-	shape = turtle.Screen()
-	turtle.foward(width)
-	turtle.left(90)
-	turtle.foward(width)
-	turtle.left(90)
-	turtle.foward(width
-	turtle.left(90)
-	shape.exitonclick()
-draw_square(width)
-def draw_circle():	
-	begin_fill()
-while True:
-    forward("CIRCLE")
-    left(1)
-    if abs(pos()) < 1:
-        break
-end_fill()
-done()
-draw_circle(radius)
-def main():
-	draw_triangle(side)
-	draw_square(width)
-	draw_circle(radius)
+    win = turtle.Screen()
+    turtle.begin_fill()
+    turtle.left(90)
+    turtle.forward(width)
+    turtle.left(90)
+    turtle.forward(width)
+    turtle.left(90)
+    turtle.forward(width)
+    turtle.left(90)
+    turtle.forward(width)
+    turtle.left(90)
+    turtle.end_fill()
+    win.exitonclick() #to exit
+
+def draw_circle(rad):	
+	window = turtle.Screen()
+	turtle.begin_fill()
+	circle_drw = turtle.Turtle()
+	circle_drw.speed(20)
+        circle_drw.circle(rad)
+	turtle.end_fill()
+	window.exitonclick() 
 if __name__=="__main__":
-	main()
+	draw_triangle(100)
+	draw_square(100)
+	draw_circle(20)
