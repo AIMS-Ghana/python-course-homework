@@ -51,3 +51,5 @@ if __name__ == "__main__":
 	draw_triangle(shapes.triangle_side(9000))
 	draw_square(shapes.square_side(5000))
 	draw_circle(shapes.circle_radius(3000))
+
+  
