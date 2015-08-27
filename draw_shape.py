@@ -43,20 +43,12 @@ def draw_square(square_side):
     window.exitonclick() #to exit 
 
 
-#Drawing circle with area of 20
+#Drawing circle with area of 50000
 def draw_circle(circle_radius):
 	window = turtle.Screen()
 	circle_drw = turtle.Turtle()
-	circle_drw.speed(20)
-	#circle_drw.pos(10, 10)
-	
-	while True:
-		
-		circle_drw.forward(circle_radius)
-		turtle.color('blue')
-		circle_drw.left(-1.15)
-		if abs(circle_drw.pos())<1:
-			break
+	#circle_drw.speed(100)
+	circle_drw.circle(circle_radius)
 	window.exitonclick() #to exit 
 
 if __name__ == "__main__":
@@ -70,17 +62,20 @@ if __name__ == "__main__":
 	square_side = float(square[1])
 	draw_square(square_side)
 
-	circle = shapes.polygon_check('CIRCLE',20)
+	circle = shapes.polygon_check('CIRCLE',50000)
 	circle_radius = float(circle[1])
 	draw_circle(circle_radius)
 
-def draw(polygon_name,length):
+def draw(polygon_name,area):
 	if polygon_name =="TRIANGLE":
-		draw_triangle(length)
+		triangle = shapes.polygon_check('TRIANGLE',area)
+		draw_triangle(triangle[1])
 	if polygon_name =="SQUARE":
-		draw_square(length)
+		square = shapes.polygon_check('SQUARE',area)
+		draw_square(square[1])
 	if polygon_name =="CIRCLE":
-		draw_circle(length)
+		circle = shapes.polygon_check('CIRCLE',area)
+		draw_circle(circle[1])
 	else:
 		pass
 
