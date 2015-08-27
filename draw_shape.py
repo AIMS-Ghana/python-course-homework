@@ -1,40 +1,43 @@
 #! /usr/bin/python
+import turtle 
+import shapes
+def ngon(n,side):
+     turn =180-(n-2)*180.0/n
+     for i in range(n-1):
+         turtle.forward (side)
+         turtle.right (turn)
+     turtle.forward (side)
 
-def draw_triangle(triangle_side):
-window=turtle()
-Turtle.forward(triangle_side)
-Turtle.colour ('blue')
-Turtle.left (400)
-Turtle.forward(triangle_side)
-  polygon_side=math.sqrt(float(polygon_area*4))/float(3**1/4)
-# drawing square with area equals 2000
+def circle (radius):
+    turtle.circle(radius)
+def triangle (side):
+     ngon (3,side)
 
+def square (side):
+     ngon(4,side)
+figs={
+     'CIRCLE': circle,
+     'SQUARE': square,
+     'TRIANGLE': triangle
+}
+def draw(shape,area,fill="black", cont=False):
+     dim = shapes.figure_check(shape, area)
+     turtle.color
+     figs[shape](dim)
+     turtle.exitonclick()
 
-def draw_square(square_side):
- circle_radius=float(circle[1])
- draw_circle(circle_radius)
+import sys
 
-def draw(polygon_name,area):
+if __name__=="__main__":
 
-def draw(polygon_name,area):
+      side_triangle = shapes.figure_check('TRIANGLE', 70000)
+      draw('TRIANGLE', side_triangle)
+      side_square=shapes.figure_check('SQUARE',70000)
+      draw ('SQUARE',side_square)
+      radius_circle=shapes.fiqure_check('CIRCLE',70000)
+      draw('CIRCLE',radius_circle)
 
-if polygon_name=="TRIANGLE":
-
- draw_triangle(area)
- draw_triangle (length)
-
-if polygon_name=="SQUARE":
- draw_square(area)
- draw_square (length)
-if poygon_name=="circle":
- draw_circle(area)
- draw_circle(lenght)
-
-else:
-#! "erro"
  
-
-
 
 
 
