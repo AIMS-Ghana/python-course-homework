@@ -13,7 +13,7 @@ rangex = np.linspace(0, 10, 100, endpoint=True)
 out = "{} integration, e^x on ({},{}): {}\nelapsed: {}"
 
 start = time.clock()
-res = midpoint.integrate(bisectf, rangex)
+res = midpoint.integrate(intf, rangex)
 elapsed = time.clock() - start
 
 print(out.format(
@@ -24,7 +24,7 @@ print(out.format(
 ))
 
 start = time.clock()
-res = trapezoid.integrate(bisectf, rangex)
+res = trapezoid.integrate(intf, rangex)
 elapsed = time.clock() - start
 
 print(out.format(
