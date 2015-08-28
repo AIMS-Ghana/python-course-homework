@@ -3,13 +3,12 @@
 
 
 #bisection function
-def root(f, rangex,tol=1.0e-4):
+def root(f, rangex,tol=1.0e-5):
 
 	point_a = rangex[0]
 	point_b = rangex[1]
 
 	mid_point = float((point_a+point_b)/2)
-	#point_y = f(mid_point)
         max_err = (point_b-point_a)/2
 	while max_err > tol:
 		if f(mid_point) == 0:
