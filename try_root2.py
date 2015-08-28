@@ -2,6 +2,7 @@
 
 import bisection
 import secant
+import time
 
 def bisectf(x):
     return (x-1)*(x+10)**2
