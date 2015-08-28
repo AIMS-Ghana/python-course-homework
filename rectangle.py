@@ -1,10 +1,20 @@
 #!/usr/local/bin/python3
+
+def check(L,l):
+    assert (L>0) & (l>0),"entered negative dimension"
+
+def area(L,l):
+    check(L,l)
+    A=L*l
+    return A
+def perimeter(L,l)
+    check(L,l)
+    p=(L+l)*2
+    return p
+
 import sys
-greeting="larger,{0}!"
-print(greeting.format(sys.argv[1]))
-greenting="longuer,{1}!"
-print(greeting.format(sys.argv[2]))
-perimeter=sys.argv[1]+sys.argv[2]
-print(greeting.format(perimeter))
-area=sys.argv[1]*sys.argv[2]
-print(greeting.format(area))
+if __name__=="__main__":
+L=float(sys.argv[1])
+l=float(sys.argv[2])
+print("The area is {},  The perimeter is {}".format(area(L,l),perimeter(L,l)))
+
