@@ -1,7 +1,8 @@
-#!/usr/local/bin/python3
-
+#!/usr/bin/python
 import numpy as np
+
 import midpoint
+
 
 def intf(x):
     return np.exp(x)
@@ -12,7 +13,7 @@ out = "{} integration, e^x on ({},{}): {}"
 
 print(out.format(
     "midpoint",
-    rangex[0], rangex[-1],
+    rangex[-1], rangex[0],
     midpoint.integrate(intf, rangex)
 ))
 
@@ -20,6 +21,7 @@ from scipy.integrate import quad
 
 print(out.format(
     "scipy",
-    rangex[0], rangex[-1],
+      rangex[0], rangex[-1],
     quad(intf, rangex[0], rangex[-1])
 ))
+

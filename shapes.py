@@ -33,4 +33,4 @@ if __name__ == "__main__":
     check(sys.argv[1],sys.argv[2])
 
 
-def draw_shape.py
+#def draw_shape.py
