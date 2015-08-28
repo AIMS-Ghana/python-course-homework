@@ -1,13 +1,48 @@
-#!/usr/bin/python
-import math
-import sys
-#calculate the midpoint using the midpoint rule
+#!/usr/local/bin/python3
 
-def integrate(f, nbins):
-	m=0.0
-	for n in range(len(nbins)-1):
-		w=nbins[n+1]-nbins[n]
-		mid_point=float(nbins[n+1]+nbins[n]/2)
-		height=f(mpt)
-		d=m+w*height
-	return d
+import numpy as np
+import midpoint
+import trapezoid
+import time
+
+def intf(x):
+    return np.exp(x)
+
+rangex = np.linspace(0, 10, 100, endpoint=True)
+
+out = "{} integration, e^x on ({},{}): {}\nelapsed: {}"
+
+start = time.clock()
+res = midpoint.integrate(intf, rangex)
+elapsed = time.clock() - start
+
+print(out.format(
+    "midpoint",
+    rangex[0], rangex[-1],
+    res,
+    elapsed
+))
+
+start = time.clock()
+res = trapezoid.integrate(intf, rangex)
+elapsed = time.clock() - start
+
+print(out.format(
+    "midpoint",
+    rangex[0], rangex[-1],
+    res,
+    elapsed
+))
+
+from scipy.integrate import quad
+
+start = time.clock()
+res = quad(intf, rangex[0], rangex[-1])
+elapsed = time.clock() - start
+
+print(out.format(
+    "scipy",
+    rangex[0], rangex[-1],
+    res,
+    elapsed
+))
