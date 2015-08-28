@@ -3,6 +3,7 @@
 import numpy as np
 import midpoint
 import trapezoid
+import time
 
 def intf(x):
     return np.exp(x)
