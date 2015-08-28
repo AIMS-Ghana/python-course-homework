@@ -1,20 +1,14 @@
  #!/usr/bin/python
 
- def f(x):
-    return 0.5 + x*x
+ import sys  
 
-def midpoint(u, v, f, nbins=10):
+# finding midpoint
 
-    h = float(u-v)/nbins
-    assert h > 0
-    assert type(nbins) == int
-    
-    sum = 0.0
-    x = u + h/2
-     while (x < v):
-         sum += h* f(x)
-         x += h
+def integrate(f,b):
+   for n in range (n-1):
+      h=(b[n]-b[n-1])/n
+      width=(b[n]-b[n-1])
+      midpoint=(b[n]-b[n-1])/2
+      y=midpoint+width*height
 
-    return sum
-
-
+   return y
