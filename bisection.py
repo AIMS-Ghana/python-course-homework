@@ -1,13 +1,18 @@
 #!/usr/bin/python
 import math
 import sys
-#calculate the midpoint using the midpoint rule
 
-def integrate(f, nbins):
-	m=0.0
-	for n in range(len(nbins)-1):
-		w=nbins[n+1]-nbins[n]
-		mid_point=float(nbins[n+1]+nbins[n]/2)
-		height=f(mpt)
-		d=m+w*height
-	return d
+def root(bisectf, x):
+	#tol=1e-5
+	a==rangex
+	b==rangex-1
+	while (b-a)>0.001:
+	#for ab in range(a,b)
+	    c = (a+b)/2.0
+	    if f(c) == 0:
+	        return c
+	    elif f(a)*f(c) < 0:
+	            root(bisectf, x)
+	    else :
+	           return (bisectf, x)
+
