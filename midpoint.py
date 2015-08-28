@@ -1,16 +1,14 @@
 #!/usr/bin/python
-import math
 import sys
-from scipy.integrate import quad
 
-def f(x):
-	return math.exp(x)
-    
-def Intmid(f,a,b,nbins):
-	h=float(b-a)/nbins
-	sum=0.0
-	x=a+h/2	
-	while (x<b):
-		sum+=h*f(x)
-		x += h		
-	return (sum)
+def integrate (f, range):
+    total=0.0
+
+for x in range(len(rangex)-1):
+    s=(rangex[x+1]-range[x])/0.5
+    f(a)=float(rangex[x]
+    f(b)=float(range[x+1])
+    height=f(float(fa+fb))
+    total += s*height
+
+return total
