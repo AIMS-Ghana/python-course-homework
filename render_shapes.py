@@ -1,5 +1,5 @@
-#!/usr/local/bin/python3
-from draw_shape import draw
+#!/usr/bin/python
+from draw-shape import draw
 
 draw("CIRCLE", 1000)
 draw("SQUARE", 1000)
