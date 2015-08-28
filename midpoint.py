@@ -2,11 +2,14 @@
 import sys
 import math
 import midpoint
-def integrate(a,b):
-	sum= 0.0
-	for n in range(len(b)- 1):
-		midpoint= float(b[n+1]+[n]/2)
-		width= b[n+1]-b[n]
-		height= a(midpoint)
-		k= sum + height*width
-	return k
+def integrate(f,rangex):
+	ss= 0
+	for i in range(len(rangex)- 1):
+	    h= f((rangex[i+1]+ rangex[i])/2)
+	    w= rangex[i+1]-rangex[i]
+	    ss = ss + h*w
+	return ss
+        # get range widths
+        #get range midpoints
+if __name__ ==" main__":
+        print (integrate(lambda x:x, thing))
