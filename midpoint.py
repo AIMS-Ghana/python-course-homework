@@ -1,15 +1,11 @@
 #!/usr/bin/env python
 
-def intergrateFunc(a,b):
+def integrate(f,rangex):
+	summ=0.0
 	# calculate the integral from a to b of function f using the midpoint rule
-	for x in range (len(b-1)):
-		h=float(b-a)/n
+	for t in range (len(rangex)-1):
+		b=float(rangex[t+1]-rangex[t])
+		h=(rangex[t+1] + rangex[t]/2)
 		assert h > 0
-		assert type(n) == int
-		x += (a + h/2)*n
-	for n in range[a,b]:
-		return h*(x)
-
-def integrate(f,x):
-	
-	return f(x)
+		summ=summ+b*h
+		return summ
