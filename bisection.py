@@ -16,7 +16,7 @@ def root(f, *args):
 
     while n <= NMAX: 
         c = (a + b)/2 
-        if f(c) == 0 or (b - a)/2 < tol:
+        if f(c) == 0 or abs((b - a)/2) < tol:
             print(c)
             sys.exit(0)
 
@@ -35,9 +35,9 @@ if __name__ == "__main__":
 
    
     def func(x):
-     return -26 + 85*x - 91*x**2 +44*x**3 -8*x**4 + x**5
+     return x - x**2
        
     
-    x = root(func, [0,1])
+    x = root(func, [0.5,1.5])
    
 
