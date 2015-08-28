@@ -16,23 +16,25 @@ def triangle(area):
     return side
 
 def check():
-    a=sys.argv[1]
+    shape=sys.argv[1]
     area=sys.argv[2]
     
-    if a=="SQUARE":
+    if shape=="SQUARE":
         print 'area: ',area,'side:',square(area)
-    elif a=="CIRCLE":
+    elif shape=="CIRCLE":
         print 'area: ',area,'side:',circle(area)
-    elif a=="TRIANGLE":
+    elif shape=="TRIANGLE":
         print 'equilateral triangle, area: ',area,'side: ',triangle(area)
     else:
-	 print " error indicating no input"	
-   
+	 print " error indicating unknown shape"	
+
+def compute(shape, area):
+	return (shape, area)   
 #checking for errors in the input    	
 if __name__=="__main__":
 	
 	if len(sys.argv)==1:
 		print " error indicating no input"
-	else:
-	        check()		
-
+	else: 
+		check()
+		
