@@ -25,11 +25,11 @@ print(out.format(
 ))
 
 start = time.clock()
-res = secant.root(bisectf, rangex)
+res = secant.root(bisectf, (0,5))
 elapsed = time.clock() - start
 
 print(out.format(
-    "bisection",
+    "secant",
     rangex[0], rangex[1],
     res,
     elapsed
