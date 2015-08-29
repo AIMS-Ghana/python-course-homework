@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/urs/bin/python
 
 import sys
