@@ -36,22 +36,22 @@ def funcplot(f, *args):
 
       x1 = np.linspace(a1,b1,N-1)   # since np.diff puts values at N-1 midpoints             
       
+      name = f.__name__
+
+      plt.plot(x,f(x),label=name)
+      plt.plot(x1,np.diff(f(x))/np.diff(x),color='red',label = "d/dx("+name+")")
+      plt.plot(x,odeint(lambda y,x:f(x),fa,x),color='green', label = "int("+name+")")
+      
+      plt.xlabel('x',style='italic')
+      plt.ylabel("f(x), f'(x) and int f(x)",style = 'italic')
+      plt.legend(loc='best')
+     
+      plt.show()
      
 
-      fig1 = plt.figure()
-      ax1 = fig1.add_subplot(3,1,1)
-      ax2 = fig1.add_subplot(3,1,2)
-      ax3 = fig1.add_subplot(3,1,3)
-      
-    
-      
-      ax1.plot(x,f(x))
-      ax2.plot(x1,np.diff(f(x))/np.diff(x))
-      ax3.plot(x,odeint(lambda y,x:f(x),fa,x))
-
       
 
-      plt.show()
+      # unused output to pdf
       #plt.savefig("function_plots.pdf")
       
 
