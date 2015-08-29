@@ -1,10 +1,25 @@
-#!/usr/bin/python
-from math import exp
+#!/usr/bin/env python3
+
+import numpy as np
 import midpoint
 
 def intf(x):
-    return(exp(x))
-rangex = range(100)
-print"...midpoint method, area under e^x on (0,10), 100 points:",midpoint.integrate(intf, rangex)
+    return np.exp(x)
 
+rangex = np.linspace(0, 10, 100, endpoint=True)
 
+out = "{} integration, e^x on ({},{}): {}"
+
+print(out.format(
+    "midpoint",
+    rangex[0], rangex[-1],
+    midpoint.integrate(intf, rangex)
+))
+
+from scipy.integrate import quad
+
+print(out.format(
+    "scipy",
+    rangex[0], rangex[-1],
+    quad(intf, rangex[0], rangex[-1])
+))
