@@ -3,26 +3,31 @@
 import sys
 from math import *
 
-try:
-	global a
-	global b
-	global c
 
-	a = sys.argv[1]
-	b = sys.argv[2]
-	c = sys.argv[3]
+if __name__== "__main__":
+	try:
+		global a
+		global b
+		global c
 
-except IndexError:
-	print ("invalid argument entered")
-	quit()
-except NameError:
-	print ("invalid argument entered")
-	quit()
+		a = sys.argv[1]
+		b = sys.argv[2]
+		c = sys.argv[3]
+
+	except IndexError:
+		print ("invalid argument entered")
+		quit()
+	except NameError:
+		print ("invalid argument entered")
+		quit()
 
 def check_and_init(a,b,c):
-	if len(sys.argv) != 4:
-		print ("invalid number of sides entered. The number of sides should be 3")
-		quit()
+	if __name__ == "__main__":
+		if len(sys.argv) != 4:
+			print ("invalid number of sides entered. The number of sides should be 3")
+			quit()
+		else:
+			pass
 	else:
 		try:	
 			global a1
@@ -72,5 +77,6 @@ def area(a,b,c):
 	area = sqrt(A2)
 	return area
 
-print("area " , area(a,b,c))
-print("perimeter " , perimeter(a,b,c))
+if __name__ == "__main__":
+	print("area " , area(a,b,c))
+	print("perimeter " , perimeter(a,b,c))

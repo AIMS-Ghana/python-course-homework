@@ -3,15 +3,16 @@
 import sys
 from math import *
 
-try:
-	global l
-	global b
-	l = sys.argv[1]
-	b = sys.argv[2]
+if __name__ =="__main__":
+	try:
+		global l
+		global b
+		l = sys.argv[1]
+		b = sys.argv[2]
 
-except IndexError:
-	print ("invalid arguments entered")
-	quit()
+	except IndexError:
+		print ("invalid arguments entered")
+		quit()
 
 def check(l,b):
 	try:
@@ -21,9 +22,12 @@ def check(l,b):
 		l1 = float(l)
 		b1 = float(b)
 
-		if len(sys.argv) != 3:
-			print ("invalid argument entered")
-			quit()
+		if __name__ == "__main__":		
+			if len(sys.argv) != 3:
+				print ("invalid argument entered")
+				quit()
+			else:
+				pass
 
 		elif l1 <= 0 or b1 <= 0:
 			print ("invalid length enthered")
@@ -46,7 +50,7 @@ def perimeter(l,b):
 	check(l,b)
 	perimeter = (l1 + b1)*2
 	return perimeter
-
-print ("area " , area(l,b))
-print ("perimeter " , perimeter(l,b))
+if __name__ == "__main__":
+	print ("area " , area(l,b))
+	print ("perimeter " , perimeter(l,b))
 

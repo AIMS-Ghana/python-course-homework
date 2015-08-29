@@ -2,11 +2,13 @@
 
 import sys
 from math import *
-try:
-	global r	
-	r = sys.argv[1]
 
-except IndexError:
+if __name__ == "__main__":
+	try:
+		global r	
+		r = sys.argv[1]
+
+	except IndexError:
 		print ("invalid arguments entered")
 		quit()
 
@@ -14,11 +16,14 @@ def check(r):
 	try:
 		r1 = float(r)
 	
-		if len(sys.argv) != 2:
-			print ("invalid argument entered. just enter the radius")
-			quit()
+		if __name__ == "__main__":		
+			if len(sys.argv) != 2:
+				print ("invalid argument entered. just enter the radius")
+				quit()
+			else:
+				pass
 		elif float(r1) <= 0:
-			print ("radius can not be less than or eqaul to zero")
+			print ("radius can not be less than or equal to zero")
 			quit()
 		else:
 			pass
@@ -38,5 +43,6 @@ def perimeter(r):
 	perimeter = 2*pi*r1
 	return perimeter
 
-print ("area ",area(r))
-print ("perimeter ",perimeter(r))
+if __name__ == "__main__":
+	print ("area ",area(r))
+	print ("perimeter ",perimeter(r))
