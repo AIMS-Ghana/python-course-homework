@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+
 
 import numpy as np
 import midpoint
@@ -28,7 +29,7 @@ res = trapezoid.integrate(intf, rangex)
 elapsed = time.clock() - start
 
 print(out.format(
-    "midpoint",
+    "trapezoid",
     rangex[0], rangex[-1],
     res,
     elapsed

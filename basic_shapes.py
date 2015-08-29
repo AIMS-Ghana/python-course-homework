@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+>>>>>>> origin/master
 import triangle
 import rectangle
 import circle
