@@ -13,19 +13,18 @@ def plotter(fxn,i):
     figure(i+1),grid(True)
     title(" A graph of {0} with it's derivative and integral".format(funames[i]))
     xlabel("X")
-    ylabel(r'\f(x) , \f\prime(x) , \$\int{f(x)}$')
+    ylabel(r'$f(x) , f\prime(x) , \int{f(x)}dx$')
     xticks(arange(0,10,1))
 
     X = arange(0,10,0.01)
 
     def k(I,X):
 	return fxn(X)
-
-    Dfxn = derivative(fxn,X,dx=1,n=1)
     Ifxn = odeint(k,0,X)
+    Dfxn = derivative(fxn,X,dx=1,n=1)
 
-    plot(X,fxn(X), 'r', lw = 2, ms = 3, label = "f(x)")
-    plot(X,Dfxn, 'b', lw = 2, ms = 3, label = "f'(x)")
-    plot(X,Ifxn, 'g', lw = 2, ms = 3, label = r'$\int{f(x)}$')
+    plot(X,fxn(X), 'r', lw = 2, ms = 3, label = r'$f(x)$')
+    plot(X,Dfxn, 'b', lw = 2, ms = 3, label = r'$f\prime(x)$')
+    plot(X,Ifxn, 'g', lw = 2, ms = 3, label = r'$\int{f(x)}dx$')
     legend()
     show()
