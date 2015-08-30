@@ -17,7 +17,7 @@ def polygon_check(name, area):
     
     if name=='triangle':
         side= triangle_side(area)
-        print'Equilateral',name, 'area',area, 'side:',side
+        print 'Equilateral',name,'area',area, 'side:',side
 
     elif name=='square':
         side = square_side(area)
