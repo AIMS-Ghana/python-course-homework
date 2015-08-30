@@ -16,7 +16,7 @@ def plotter(f):
 	y,dydx,i = func(f,x),deriv(f,x),odeint(h,init,x)  # define the y values on graph
 	plt.plot(x,y,'r', label='f(x)') # plot x against y
 	plt.plot(x,dydx,'g', label= 'dydx')
-	plt.plot(x,i,'b', label = 'r$\intf(x)dx$')
+	plt.plot(x,i,'b', label = 'integral')
 	plt.xlabel('x-axis') # label x-axis
 	plt.ylabel('y-axis') # label y-axis
 	plt.ylim(-5,5)
