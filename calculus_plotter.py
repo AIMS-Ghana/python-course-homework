@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from pylab import *
 from scipy import misc
-import scipy.integrate as integrate 
+import scipy.integrate as integrate pyl
 import matplotlib.pyplot as plt
 import numpy as np
 
