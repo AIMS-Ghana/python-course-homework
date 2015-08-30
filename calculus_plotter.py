@@ -1,36 +1,24 @@
 #!/usr/bin/python
 
-import math
-from pylab import *
-from scipy.misc import derivative
-import fun_plots as fp
-
-
-
-from scipy.integrate import quad
+import matplotlib.pylab as plt
 import numpy as np
-
-def fxn():
-    X= 1 - np.exp(-x)
-    Dfxn = derivative(fxn,X,dx=1,n=1)
-    return X
-
-
+from scipy.misc import derivative
+from scipy.integrate import odeint
 
 def plotter(fxn):
-    figure()
-    title("A graph of a function with it's derivative and integral")
-    xlabel("X")
-    ylabel("Y")
+     def h(I,x):
+        return fxn(x)
 
-
-
-
-    xticks(arange(0,10,1))   
-    #Ifxn= integrate.quad(fxn,X)
-    plot(X,fxn(X), 'r', lw = 2, ms = 3, label = "f(x)")
-    plot(X,Dfxn, 'b', lw = 2, ms = 3, label = "f'(x)")
-    plot(X,Ifxn, 'g', lw = 2, ms = 3, label = "f'(x)")
-    legend()
-    
-
+     plt.figure()
+     X = np.arange(0,10,0.01)
+     #rangex=np.linspace(-5,5,10)
+     plt.xlabel("X")
+     plt.ylabel("Y")
+     Dfxn = derivative(fxn,X,dx=1,n=1)
+     Ifxn=odeint(h, 0, X)
+     plt.plot(X,fxn(X),'r',label='fxn',lw =2)
+     plt.plot(X,Dfxn,'g',label='derivative',lw =2)
+     plt.plot(X,Ifxn,'bo',label='integral',lw =2)
+     
+     plt.legend()
+     plt.show()
