@@ -1,55 +1,42 @@
-#!/usr/bin/python
-
-import math
-
-from math import pi
-
-radius=(areaC*pi*radius)**0.5
-sidea=(2/3)*((3)**(3/4))*((areaA)**0.5)
-sideb=(areaB)**0.5
-
-
-import sys
- 
-if __name__ =="__triangle__":
-      areaA=float(sys.argv[1])
-
-elif __name__ =="__rectangle__":
-        areaB=float(sys.argv[1])
-
-elif __name__ =="__triangle__":
-       areaC=float(sys.argv[1])
-
-else:
-      print"error! "
-
-def draw()
-
+#!/usr/local/bin/python3
 import turtle
 
-wn=turtle.turtle()
-triangle=turtle.turtle()
-square=turtle.turtle()
-circle=turtle.turtle()
+from shapes import compute
 
-triangle.forward(sidea)
-triangle.left(120)
-triangle.forward(sidea)
-triangle.left(120)
-triangle.forward(sidea)
-triangle.left(120)
+def circle(radius):
+    turtle.circle(radius)
 
-square.forward(sideb)
-square.left(90)
-square.forward(sideb)
-square.left(90)
-square.forward(sideb)
-square.left(90)
-square.forward(sideb)
-square.left(90)
+def ngon(n, side):
+    turn = 180 - (n-2)*180.0/n
+    for i in range(n-1):
+        turtle.forward(side)
+        turtle.right(turn)
+    turtle.forward(side)
 
-turtle.circle(radius)
-turtle.position(0.00,0.00)
-turtle.heading(0)
+def triangle(side):
+    ngon(3,side)
 
-wn.exitonclick()
+def square(side):
+    ngon(4,side)
+
+figs = {
+    'CIRCLE':circle,
+    'SQUARE':square,
+    'TRIANGLE':triangle
+}
+
+def draw(shape, area, fill="black", cont=False):
+    dim = compute(shape, area)
+    turtle.color(fill)
+    turtle.begin_fill()
+    figs[shape](dim)
+    turtle.end_fill()
+    if not cont:
+        turtle.exitonclick()
+
+import sys
+
+if __name__ == "__main__":
+    shape = sys.argv[1]
+    area = float(sys.argv[2])
+    draw(shape, area)
