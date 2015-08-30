@@ -1,20 +1,27 @@
 #!/usr/bin/python
-
-from scipy.misc import derivative as deriv
+import sys
+import pylab
 import numpy as np
-import scipy.integrate as integ
-import matplotlib.pyplot as plt
+import fun_plots as fp
+from scipy.misc import derivative
+from scipy.integrate import odeint
 
-f = lambda x : 1 / (1 + x**2)
+x = np.arange(0,10,0.01) # 100 linearly spaced numbers
 
-x = np.arange(-10, 10, 0.01)
+def plotter(f):
+	pylab.plot(x,f(x), 'b', label = "f(x)")
+        pylab.figure()
+	def g(I,x):
+		return f(x)
 
-d = deriv(f,x)
+	p = odeint(g,0,x)
+	df = derivative(f,x,dx=1,n=1)
+	pylab.plot(x,f(x), 'g')
+	pylab.plot(x,df,'r', label = "f'(x)")
+	pylab.plot(x,p,'c', label = "f'(x)")
+	pylab.legend()
+	pylab.show() # show the plot
 
-i = [integ.quad(f, -np.inf, tau)[0] for tau in x]
 
-plt.plot(x,f(x),'r-')
-plt.plot(x,d,'b-')
-plt.plot(x,i,'g-')
-plt.ylim(-1.5,1.5)
-plt.show()
+plotter(np.cos)
+

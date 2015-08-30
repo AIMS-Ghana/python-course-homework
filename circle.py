@@ -7,7 +7,7 @@ def check(radius):
 
 def area(radius):
     check(radius)
-    res = (radius**) * math.Pi
+    res = (radius**2) * math.Pi
     return res
 
 def perimeter(radius):
