@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3
 
 import bisection
+import Secant
 
 def bisectf(x):
     return (x-1)*(x+10)**2
@@ -13,6 +14,12 @@ print(out.format(
     "bisection",
     rangex[0], rangex[1],
     bisection.root(bisectf, rangex)
+))
+
+print(out.format(
+    "Secant",
+    rangex[0], rangex[1],
+    Secant.root(bisectf, rangex)
 ))
 
 from scipy.optimize import brentq

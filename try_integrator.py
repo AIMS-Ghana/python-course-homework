@@ -2,6 +2,7 @@
 
 import numpy as np
 import midpoint
+import Trapezoidal
 
 def intf(x):
     return np.exp(x)
@@ -14,6 +15,12 @@ print(out.format(
     "midpoint",
     rangex[0], rangex[-1],
     midpoint.integrate(intf, rangex)
+))
+
+print(out.format(
+    "Trapezoidal",
+    rangex[0], rangex[-1],
+    Trapezoidal.integrate(intf, rangex)
 ))
 
 from scipy.integrate import quad
