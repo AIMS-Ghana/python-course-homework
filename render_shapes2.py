@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/usr/bin/python
+=======
+#!/usr/bin/env python3
+>>>>>>> origin/master
 from draw_shape import draw
 
 draw("CIRCLE", 10) # draw a black circle, then continue

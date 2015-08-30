@@ -59,8 +59,8 @@ def draw(name, area, fill='black', cont=True):
 
 
 if __name__ == "__main__":
-	draw_triangle(shapes.triangle_side(90000))
-	draw_square(shapes.square_side(5000000))
+	draw_triangle(shapes.triangle_side(90000000))
+	draw_square(shapes.square_side(500000000000))
 	draw_circle(shapes.circle_radius(3000000))
 
 
