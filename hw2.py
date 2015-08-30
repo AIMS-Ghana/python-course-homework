@@ -1,3 +1,3 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 import sys
-print "hello," + sys.argv[1] + "!"
+print("hello, " + sys.argv[1] + "!")
