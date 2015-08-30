@@ -31,7 +31,7 @@ def functions_plot(f,nbins):
 		return f(x)
 	fx = f(nbins)
 	diff_f = gradient(fx)#finds the derivative
-	integrate_f = integrate.odeint(Int,0.01,nbins)
+	integrate_f = integrate.odeint(Int,0.0,nbins)
 	values = [fx,diff_f,integrate_f]
 	return values
 
