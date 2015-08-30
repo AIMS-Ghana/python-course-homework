@@ -1,31 +1,25 @@
-#!/usr/bin/python
+#!/usr/blocal/bin/python3
+import turtle
+from shapes import compute
+def circle (radius):
+turtle
 
-import math
 
-def  equilateralTRIANGLE (A):
-	from math import sqrt
-	x = sqrt((4*A)/sqrt(3))
-	return x
-	assert (A <=0 ), "verify your number"
 
-	
-def SQUARE (A):
-	from math import sqrt
-	C = sqrt(A)
-	return C 
-	assert ( A<=0 ), "verify your number"
+figs = {
+	'CIRCLE':.
+	'SQUARE':square
+	'TRIANGL': triangle
 
-def CIRCLE (A):
-	from math import sqrt
-	from math import pi
-	R = sqrt(A/pi)
-	return R
-	assert (A<=0), "verify your number"
 
-import sys
+def draw(shape, area):
+	dim = computer(shape, area):
+	figs[shape](dim)
+	turtle.exitonclick()
 
-if __name__ == "__main__":
-	A= float(sys.argv[1])
-	print ("equilateralTRIANGLE {},\n side {}".format(equilateralTRIANGLE(A), side(x))
-	print ("SQUARE{},\n side {}".format(SQUARE(A), side(C)))
-	print ( " CIRCLE {},\n radium {}".format (CIRCLE(A), radium(r)))
+import sys  
+
+if __name__ == "__main__"
+	shape = sys.argv[1]
+	area = float(sys.argv[2])
+	draw(shape, area)
