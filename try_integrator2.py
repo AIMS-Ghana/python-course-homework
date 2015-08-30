@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import numpy as np
 import midpoint
@@ -46,3 +46,4 @@ print(out.format(
     res,
     elapsed
 ))
+

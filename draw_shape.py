@@ -42,6 +42,7 @@ def draw_triangle(side, fill='green', cont=True):
     turtle.forward(side)
     turtle.left(120)
     turtle.forward(side)
+    turtle.left(120)
     turtle.end_fill()
 
     turtle.exitonclick()
