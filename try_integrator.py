@@ -1,13 +1,10 @@
-#!/usr/bin/env pytho3
 
+#!/usr/bin/env python3
 
 import numpy as np
 import midpoint
 
 def intf(x):
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     return np.exp(x)
 
 rangex = np.linspace(0, 10, 100, endpoint=True)
@@ -27,36 +24,7 @@ print(out.format(
     rangex[0], rangex[-1],
     quad(intf, rangex[0], rangex[-1])
 ))
-=======
-	n = float (10) / x
-	return n
+
+    Status API Training Shop Blog About Pricing 
 
 
-if __name__ == "__main__":
-	rangex = range (100)
-	print(midpoint.integrate(intf(100), rangex))
-
-# x = 100
-# rangex = range (100)
->>>>>>> Stashed changes
-=======
-	n = float (10) / x
-	return n
-
-
-=======
-	n = float (10) / x
-	return n
-
-
->>>>>>> Stashed changes
-if __name__ == "__main__":
-	rangex = range (100)
-	print(midpoint.integrate(intf(100), rangex))
-
-# x = 100
-# rangex = range (100)
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
