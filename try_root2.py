@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 import bisection
 import secant
@@ -46,3 +47,4 @@ print(out.format(
     res,
     elapsed
 ))
+
