@@ -1,5 +1,5 @@
 #!/usr/bin/python
-def root (function,lower_bound,upper_bound,error_tolerance=1.0e-4):
+def root (function,lower_bound,upper_bound,error_tolerance=1.0e-10):
     fu=function(upper_bound)
     if fu==0.0 :  return upper_bound
     fl=function(lower_bound)
@@ -26,6 +26,6 @@ def root (function,lower_bound,upper_bound,error_tolerance=1.0e-4):
 def func(x):  
     return x**3-3*x+1     
    
-    x=bisection(func,1.0,2.0)
+    x=bisection(func,1.0,2.0,error_tolerance=1.0e-10)
     print x
 
