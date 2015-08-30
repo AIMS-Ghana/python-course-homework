@@ -13,3 +13,4 @@ def integrate(f, nbins):
         s=midp+width*height
     return s
 
+
