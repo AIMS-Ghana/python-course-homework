@@ -11,7 +11,7 @@ rangex = np.linspace(0, 10, 100, endpoint=True)
 out = "{} integration, e^x on ({},{}): {}"
 
 print(out.format(
-<<<<<<< HEAD
+
     "trapeziod",
 
     rangex[0], rangex[-1],
