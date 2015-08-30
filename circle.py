@@ -1,21 +1,21 @@
 #!/usr/bin/python
+
+def checkdim(r):
+        assert r >= 0, "Passed negative radius"
+       	pass
+ 
+from math import pi
+ 
+def area(r):
+	checkdim(r)
+	return pi*(r**2)
+ 
+def perimeter(r):
+	checkdim(r)
+        return 2*pi*r
+ 
 import sys
-PI = 3.14159
-
-def area_of_Circle(radius):
-    area = PI * radius **2
-    return area 
-
-def perimeter_of_Circle(radius):
-    perimeter = 2 * PI * radius
-    return perimeter
-
-radius = float(sys.argv[1])
-
-area = area_of_Circle(radius)
-print 'Area', area 
-
-perimeter =perimeter_of_Circle(radius)
-print 'perimeter', perimeter
-
+if __name__ == "__main__":
+	r = float(sys.argv[1])
+	print("area {} \nperimeter {}".format(area(r),perimeter(r)))
 

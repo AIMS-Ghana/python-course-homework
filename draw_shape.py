@@ -5,20 +5,18 @@ import turtle
 def circle(radius):
     turtle.circle(radius)
 
-def ngon(n,side)
+def ngon(n,side):
     turn=180-(n-2)*180.0/n
-    for i in range(n-1)
+    for i in range(n-1):
         turtle.forward(side)
         turtle.right(turn)
-        turtle.forward(side)
+    turtle.forward(side)
 
-def triangle(side)
+def triangle(side):
     ngon(3, side)
 
-def square(side)
+def square(side):
     ngon(4, side)    
-
-
         
 figs = {
     'CIRCLE':circle,

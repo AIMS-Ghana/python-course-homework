@@ -1,12 +1,20 @@
 #!/usr/bin/python
 
-import math
-import sys
-def integrate(a,b):
-	m=0.0
-	for n in range(len(b)-1):
-		w=b[n+1]-b[n]
-		midpoint=float(b[n+1]+b[n]/2)
-		h=a(midpoint)
-		t=m + w*h
-	return t
+def integrate(f, rangex):
+     ss = 0
+     for i in range(len(rangex)-1):
+         w = rangex[i+1] - rangex[i]
+        h = f((rangex[i+1] - rangex[i])/2)
+        h = f((rangex[i+1] + rangex[i])/2)
+         ss = ss + w*h
+     return ss
+     # get range widths
+     # get range midpoints
+ 
+ if __name__ == "__main__":
+    print(integrate(lambda x:x, range(5)))
+    print(integrate(lambda x:x, thing))
+
+
+
+

@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
 def chec(a,b,c):
-    assert (a>0) & (b>0) & (c>0),"entered negative dimension"
+    assert ((a>0) & (b>0) & (c>0)), "entered negative dimension"
     s=a+b
     d=a-b
-    assert(s>c) and (d<c),"violated triangle inequality"
+    assert ((s>c) and (d<c)), "violated triangle inequality"
 
 def perimeter(a,b,c):
     chec(a,b,c)
@@ -21,4 +21,4 @@ if __name__=="__main__":
     a=float(sys.argv[1])
     b=float(sys.argv[2])
     c=float(sys.argv[3])
-print(" area {} \n perimeter {}".format(area(a,b,c), perimeter(a,b,c)))
+print("area {} \nperimeter {}".format(area(a,b,c), perimeter(a,b,c)))
