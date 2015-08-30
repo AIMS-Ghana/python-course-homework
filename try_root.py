@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import bisection
 
@@ -22,3 +22,4 @@ print(out.format(
     rangex[0], rangex[1],
     brentq(bisectf, rangex[0], rangex[1])
 ))
+
