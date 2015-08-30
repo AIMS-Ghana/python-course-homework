@@ -1,26 +1,31 @@
-import sys
+def root(f, endpoints, tol=1e-5, depth=100):
+    a, b = endpoints
+    fa = f(a)
+    fb = f(b)
+    assert fa*fb < 0, "endpoints have same sign"
+    m = (a+b)/2
+    fm = f(m)
+    if (abs(fm) < tol) or (depth == 0):
+        return m
+    elif fa*fm < 0: # root in a,m
+        return root(f,[a,m],tol,depth-1)
+    else: # root in m, b
+        return root(f,[m,b],tol,depth-1)
 
-def f(x):
-	return x**3 + x -1
-	
-def bisection(a,b,tol):
-	c = (a+b)/2.0
-	while (b-a)/2.0 > tol:
-		if f(c) == 0:
-			return c
-		elif f(a)*f(c) < 0:
-			b = c
-		else :
-			a = c
-		c = (a+b)/2.0
-		
-	return c
-	
-def fnc(argv):
-	if (len(sys.argv) != 4):
-		sys.exit
-
-	print bisection(int(sys.argv[1]),int(sys.argv[2]),float(sys.argv[3]))
-
-if __name__ == "__main__":
-	fnc(sys.argv[1])
+def root2(f, endpoints, tol=1e-5, depth=100):
+    a, b = endpoints
+    fa = f(a)
+    fb = f(b)
+    assert fa*fb < 0, "endpoints have same sign"
+    m = (a+b)/2
+    fm = f(m)
+    while (abs(fm) > tol) or (depth != 0):
+        if fa*fm < 0:
+            b = m
+        else:
+            a = m
+            fa = fm
+        m = (a+b)/2
+        fm = f(m)
+        depth = depth - 1
+    return m

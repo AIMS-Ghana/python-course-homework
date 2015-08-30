@@ -1,7 +1,11 @@
+import numpy as np
+import midpoint
 
-  def  rangex = np.linspace(0, 10, 100, endpoint=True)
- 
-print(midpoint.integrate(intf, rangex))
+def intf(x):
+    return np.exp(x)
+
+rangex = np.linspace(0, 10, 100, endpoint=True)
+
 out = "{} integration, e^x on ({},{}): {}"
 
 print(out.format(
@@ -15,4 +19,5 @@ from scipy.integrate import quad
 print(out.format(
     "scipy",
     rangex[0], rangex[-1],
-   quad(intf, rangex[0], rangex[-1])))
+    quad(intf, rangex[0], rangex[-1])
+))
