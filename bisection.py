@@ -5,7 +5,7 @@ import sys
 def f(x):
 	return x**3 + x -1     
 
-def bisection(a,b):
+def root(a,b):
 	c = (a+b)/2.0
 	if f(c) == 0:
 		return c

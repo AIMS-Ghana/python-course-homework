@@ -3,14 +3,16 @@ import numpy as np
 import math
 
 
-def integrate (f, h):
-	total = 0.0
-	h = 0.1
-	for k in range (0, 10):
-		total = total + f((0 - 0.5*h + (k * h)))
-		return h * total
+def integrate (f, rangeX):
+	ssum = 0
+	
+	for t in range(len(rangex)-1):
+		k = rangex[t + 1] - rangex[t]
+		h = f((rangex[t + 1] + rangex[t])/2)
+		ssum = ssum + k*h
+	return ssum
 
 import sys 
 if __name__ == "__main__": 
 
-
+print 
