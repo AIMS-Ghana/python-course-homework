@@ -1,48 +1,25 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python
 
 import numpy as np
-import midpoint
-import trapezoid
-import time
+import trapeziod
 
 def intf(x):
     return np.exp(x)
 
 rangex = np.linspace(0, 10, 100, endpoint=True)
 
-out = "{} integration, e^x on ({},{}): {}\nelapsed: {}"
-
-start = time.clock()
-res = midpoint.integrate(intf, rangex)
-elapsed = time.clock() - start
+out = "{} integration, e^x on ({},{}): {}"
 
 print(out.format(
-    "midpoint",
+    "trapeziod",
     rangex[0], rangex[-1],
-    res,
-    elapsed
-))
-
-start = time.clock()
-res = trapezoid.integrate(intf, rangex)
-elapsed = time.clock() - start
-
-print(out.format(
-    "midpoint",
-    rangex[0], rangex[-1],
-    res,
-    elapsed
+    trapeziod.integrate(intf, rangex)
 ))
 
 from scipy.integrate import quad
 
-start = time.clock()
-res = quad(intf, rangex[0], rangex[-1])
-elapsed = time.clock() - start
-
 print(out.format(
     "scipy",
     rangex[0], rangex[-1],
-    res,
-    elapsed
+    quad(intf, rangex[0], rangex[-1])
 ))

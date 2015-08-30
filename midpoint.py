@@ -12,20 +12,4 @@ def integrate(f, nbins):
         height=f(midp)
         s=midp+width*height
     return s
-'''
-def Trapezoidal(a, b, f, nbins=10):
-    
-#Intergrate using trapexoidal rule
-    #Trapezoidal(0, 1, f, 4)
-    0.84375
-    
-    h= float(b-a)/nbins
-    assert h > 0
-    assert type(nbins) == int
-    
-    sum = (h/2) * (f(a) + f(b))
-    for n in range(1, nbins):    # [1, 2, ... nbins-1]
-        sum += h * f(a + n*h)
-    
-    return sum
-'''
+
