@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/env pytho3
 
 import numpy as np
 import midpoint
 
 def intf(x):
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     return np.exp(x)
 
@@ -25,6 +25,18 @@ print(out.format(
     rangex[0], rangex[-1],
     quad(intf, rangex[0], rangex[-1])
 ))
+=======
+	n = float (10) / x
+	return n
+
+
+if __name__ == "__main__":
+	rangex = range (100)
+	print(midpoint.integrate(intf(100), rangex))
+
+# x = 100
+# rangex = range (100)
+>>>>>>> Stashed changes
 =======
 	n = float (10) / x
 	return n
