@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import calculus_plotter
-import fun_plots
+from fun_plots import*
 from visual import*
 from visual.graph import*
-v=arange(-5,5,0.1)
-calculus_plotter.plot_graph(fun_plots.exp_growth,v)
-calculus_plotter.plot_graph(fun_plots.exp_saturation,v)
+v=arange(-10,10,0.01)
+for x in funclist:
+	calculus_plotter.plot_graph(x,v)
