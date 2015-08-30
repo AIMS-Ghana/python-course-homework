@@ -1,37 +1,31 @@
 #!/usr/bin/env python
 
-import sys
-import numpy as np
-import scipy.integrate as integrate
-import numpy as gradient
-import matplotlib.pyplot as pyplot
+#function that plots a function, it's derivative and integral
+from pylab import *
+from scipy.misc import derivative
+from scipy.integrate import odeint
+import fun_plots
 
+plotlist= [r'$f(x) = x$' , r'$f(x) = 1-e^{-x}$',r'$f(x) = e^{5x}$',r'$f(x) = \sin(t) + \cos(t)$',r'$f(x) = \sin^{2}(t)$']
 
+def fplot(fxn,i):
+    figure(i+1),grid(True)
+    title("A graph for {0} it's derivative and integral".format(plotlist[i]))
+    xlabel("X axis")
+    ylabel("Y axis")
+    xticks(arange(0,10,1))
 
-def f_calculus(f, rangex): #dy/dt=func(y,t0)
-	def func(f, I):
-	    return f(x)
-	f=f(x)
-	der_f=gradient (fx)
-	int_f=integrate.odeint(f, 0.0, rangex)
-	f_plot=[f,der_f, int_f]
-	return f_plot 
-	
-	'''
-	f_plot:
-	{
-	f=f(x)
-	der_f=gradient f(x)
-	int_f=integrate.odeint(f, 0.0, rangex)	
-}'''
-	
-def plot_f(func,x):
-	x=(0.0, 5, 0.1)
-	y=f_calculus(func, x)
-	f=pyplot.plot(x, y[0], color="green")
-	der_f=pyplot.plot(x, y[1], color="blue") 
-	int_f=pyplot.plot(x, y[2], color="black")
-	#plt.legend()	
-	plt.show()
+    X = arange(0,10,0.01)
+
+    def func(I,X):
+	return fxn(X)
+    Ifxn = odeint(func,0,X)
+    Dfxn = derivative(fxn,X,dx=1,n=1)
+
+    plot(X,fxn(X), 'b', lw = 2, label = r'$f(x)$')
+    plot(X,Dfxn, 'm', lw = 2, label = r'$f\prime(x)$')
+    plot(X,Ifxn, 'g', lw = 2, label = r'$\int{f(x)}dx$')
+    legend()
+    show()
 	
 
