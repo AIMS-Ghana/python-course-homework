@@ -1,34 +1,22 @@
 #!/usr/bin/python
 
-from scipy import *
-from numpy import *
-def f(x):
-    return e**x
+def integrate(f, rangex):
+    ss = 0
+    for n in range(len(rangex)-1):
+        w = rangex[n+1] - rangex[n]
+        h = f((rangex[n+1] + rangex[n])/2)
+        ss = ss + w*h
+    return ss
 
-def integLeft(a, b, f, bins=10):
-    h = float((b-a)/bins)
-    assert h > 0
-    assert type(bins) == int
+#get range widths
+#get range midpoint
+#for all of the pairs in xs
+#find midpoint
+#get width of pair
+#calculate f(mid)
+#add f(mid)*w to sum
 
-    sum = 0.0
-    for n in range(bins):
-        sum = sum + h * f(a + n*h)
-    return sum
-
-def integMid(a, b, f, bsin=10):
-    h = float((b-a)/bins)
-    assert h > 0
-    assert type(bins) == int
-
-    sum = 0.0
-    x = a + h/2
-    while (x < b):
-        sum = h * f(x)
-        x = h
-
-    return sum
-
+        
 if __name__ =="__main__":
-
-    print(integLeft(a, b, f, bins=10))
+    print(integrate(lambda X:x, thing))
 
