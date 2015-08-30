@@ -1,23 +1,22 @@
 #!/usr/bin/python
-
-
 import sys
+import math
 
-def f(x):
+'''def f(x):
 	return x**3 + x -1
-	
-def bisection(a,b,tol):
-	c = (a+b)/2.0
-	while (b-a)/2.0 > tol:
-		if f(c) == 0:
-			return c
-		elif f(a)*f(c) < 0:
+'''	
+def root(f, V, tol=0.0000001, max_n=100):
+	a = V [0]
+	b = V [1]
+	#if f(c) == 0.0:
+		#return c
+	while abs (b-a) > tol:
+		c = float (a+b) / 2
+		if f(a)*f(c) < 0:
 			b = c
-		else :
+		if f(b)*f(c) < 0:
 			a = c
-		c = (a+b)/2.0
-		
-	return c
+	return a
 	
 def main(argv):
 	if (len(sys.argv) != 4):
@@ -28,3 +27,10 @@ def main(argv):
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
+
+
+
+
+
+
+

@@ -8,7 +8,7 @@ from shapes import compute
 def circle(radius):
     turtle.circle(radius)
 
-def ngon(n,side)
+def ngon(n,side):
     turn=180-(n-2)*180.0/n
     for i in range(n-1)
     turtle.forward(side)
