@@ -5,6 +5,11 @@ import midpoint
 import fun_plots
 import calculus_plotter
 
+
+def plot_function(x):
+	calculus_plotter._plot(x)
+
+
 def plot_easy_fun():
     calculus_plotter._plot(fun_plots.easy)
 
@@ -22,8 +27,6 @@ def plot_sine_sq():
 
 
 if __name__ == "__main__":
-	plot_easy_fun()
-	plot_exp_saturation()
-	plot_exp_growth()
-        plot_sine_and_cos()
-        plot_sine_sq()
+	for func in fun_plots.funclist:
+		plot_function(func)	
+	
