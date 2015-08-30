@@ -1,22 +1,19 @@
 #!/usr/bin/python
+def integrate(f, rangex):
+    ss = 0
+    for i in range(len(q-1):
+        w = rangex[i+1] - rangex[i]
+        h = f((q[i+1] + q[i])/2)
+        ss = ss + w*h
+    return ss
+    # get range widths
+    # get range midpoints
 
-def integMid(a, b, f, nbins=10):
-    '''Return the integral from a to b of function f using the midpoint rule
+if __name__ == "__main__":
+    print(integrate(lambda x:x, q:i))                  # first midpoint
+    						# while(condition)loop: means repeat the condition over & over until it is satisfied
+       						# for loop: use it when you have a no. of elements that u r going to use over and over
+       						# e.g for i in range(5)
+						#put here any python code like, while()
 
-    >>> integMid(0, 1, f, 4)
-    0.828125
-    '''
-    h = float(b-a)/nbins
-    assert h > 0
-    assert type(nbins) == int
     
-    sum = 0.0
-    x = a + h/2                  # first midpoint
-    while (x < b):
-        sum += h * f(x)
-        x += h
-
-    return sum
-
-
-
