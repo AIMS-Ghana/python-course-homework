@@ -42,7 +42,6 @@ def draw_triangle(side, fill='green', cont=True):
     turtle.forward(side)
     turtle.left(120)
     turtle.forward(side)
-    turtle.left(120)
     turtle.end_fill()
 
     turtle.exitonclick()
@@ -60,8 +59,8 @@ def draw(name, area, fill='black', cont=True):
 
 
 if __name__ == "__main__":
-	draw_triangle(shapes.triangle_side(90000000))
-	draw_square(shapes.square_side(500000000000))
-	draw_circle(shapes.circle_radius(3000000))
+	draw_triangle(shapes.triangle_side(9000))
+	draw_square(shapes.square_side(5000))
+	draw_circle(shapes.circle_radius(3000))
 
 
