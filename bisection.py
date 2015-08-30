@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+#Bisection method 
+
 def root(f, endpt, tol=0.001, N_max=100):
     a, b = endpt
     fa = f(a)
