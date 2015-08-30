@@ -1,8 +1,7 @@
- #!/usr/bin/python
+#!/usr/bin/python
+import sys  
 
- import sys  
-
-# finding midpoint
+#finding midpoint
 
 def integrate(f,b):
    for n in range (n-1):
