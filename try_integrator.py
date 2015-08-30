@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 import numpy as np
 import midpoint
@@ -13,7 +13,7 @@ out = "{} integration, e^x on ({},{}): {}"
 print(out.format(
     "midpoint",
     rangex[0], rangex[-1],
-    midpoint.integrate(intf, rangex)
+    midpoint.integrate(intf,rangex)
 ))
 
 from scipy.integrate import quad
