@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 
-#!/usr/local/bin/python
 
 import bisection
 
@@ -22,4 +22,8 @@ print(out.format(
     "scipy",
     rangex[0], rangex[1],
     brentq(bisectf, rangex[0], rangex[1])
+<<<<<<< HEAD
 ))
+=======
+))
+>>>>>>> origin/master

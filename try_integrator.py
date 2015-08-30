@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 import numpy as np
 import midpoint
 
@@ -20,4 +23,8 @@ print(out.format(
     "scipy",
     rangex[0], rangex[-1],
     quad(intf, rangex[0], rangex[-1])
+<<<<<<< HEAD
 ))
+=======
+))
+>>>>>>> origin/master
