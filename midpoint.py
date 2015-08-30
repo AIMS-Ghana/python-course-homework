@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import math
-import midpoint
 import time
 
 def integrate (a, b):
@@ -15,7 +14,3 @@ def integrate (a, b):
     f=n + w*h
    
     return f
-    
-
-
-
