@@ -22,6 +22,7 @@ def plotter(fxn):
     ylabel("Y")
 
 
+
     xticks(arange(0,10,1))   
     #Ifxn= integrate.quad(fxn,X)
     plot(X,fxn(X), 'r', lw = 2, ms = 3, label = "f(x)")
@@ -29,3 +30,11 @@ def plotter(fxn):
     plot(X,Ifxn, 'g', lw = 2, ms = 3, label = "f'(x)")
     legend()
     
+
+    xticks(arange(0,10,1))
+    Dfxn = derivative(fxn,X,dx=1,n=1)
+    plot(X,fxn(X), 'r', lw = 2, ms = 3, label = "f(x)")
+    plot(X,Dfxn, 'b', lw = 2, ms = 3, label = "f'(x)")
+    legend()
+    
+
