@@ -4,7 +4,7 @@ import sys
 def root(f,rangex):
 	return x**3 + x -1
 	
-def bisection(a,b,tol):
+def bisect(a,b,tol):
 	c = (a+b)/2.0
 	while (b-a)/2.0 > tol:
 		if f(c) == 0:
@@ -26,3 +26,4 @@ def main(argv):
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
+
