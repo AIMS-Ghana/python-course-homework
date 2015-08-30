@@ -30,11 +30,11 @@ import sys
 
 if __name__=="__main__":
 
-      side_triangle = shapes.figure_check('TRIANGLE', 70000)
+      side_triangle = shapes.figure_check('TRIANGLE', 500000)
       draw('TRIANGLE', side_triangle)
-      side_square=shapes.figure_check('SQUARE',70000)
+      side_square=shapes.figure_check('SQUARE',500000)
       draw ('SQUARE',side_square)
-      radius_circle=shapes.fiqure_check('CIRCLE',70000)
+      radius_circle=shapes.fiqure_check('CIRCLE',500000)
       draw('CIRCLE',radius_circle)
 
  
