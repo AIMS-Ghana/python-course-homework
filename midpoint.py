@@ -8,6 +8,6 @@ def integrate(f, nbins):
 	for n in range(len(nbins)-1):
 		w=nbins[n+1]-nbins[n]
 		mid_point=float(nbins[n+1]+nbins[n]/2)
-		height=f(mpt)
+		height=f(mid_point)
 		d=m+w*height
 	return d

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 import numpy as np
 import midpoint
@@ -17,7 +17,7 @@ res = midpoint.integrate(intf, rangex)
 elapsed = time.clock() - start
 
 print(out.format(
-    "midpoint",
+    "secant",
     rangex[0], rangex[-1],
     res,
     elapsed
