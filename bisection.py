@@ -1,36 +1,30 @@
 #!/usr/bin/python
 
-def bisection(function,lower_bound,upper_bound,error_tolerance=1.0e-4):
-    fu=function(upper_bound)
-    if fu==0.0 :  return upper_bound
-    fl=function(lower_bound)
-    if fl==0.0 :  return lower_bound
-    if fu*fl > 0.0:  
-        return None
-    else:
-        mid=(lower_bound+upper_bound)/2
-        error=(upper_bound-lower_bound)/2
-        while(error>error_tolerance): 
-            fu=function(upper_bound)
-            fl=function(lower_bound)
+import sys
 
-            
-            if mid==0.0 : return mid
+def f(x):
+	return x**3 + x -1
+	
+def root(a,b,tol=.0001):
+	c = (a+b)/2.0
+	while (b-a)/2.0 > tol:
+		if f(c) == 0:
+			return c
+		elif f(a)*f(c) < 0:
+			b = c
+		else :
+			a = c
+		c = (a+b)/2.0
+		
+	return c
+	
+def main(argv):
+	if (len(sys.argv) != 4):
+		sys.exit('Usage: bisection.py <a> <b> <tol>')
+	else:
+		print("The root is:")
+		print  root( int(sys.argv[1]) , int(sys.argv[2]) )
 
-            
-            elif fu*mid < 0.0 : lower_bound=mid
-
-            
-            elif fl*mid < 0.0 : upper_bound=mid
-            
-            mid=(lower_bound+upper_bound)/2
-            error=(upper_bound-lower_bound)/2
-        return mid
-
-def func(y):           
-    return y**3-3*y+1
-
-y=bisection(func,1.0,2.0) 
-
-print y
+if __name__ == "__main__":
+	main(sys.argv[1:])
         
