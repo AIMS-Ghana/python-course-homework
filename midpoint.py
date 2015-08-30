@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import math
+
 import time
 
 def integrate (a, b):
@@ -8,9 +9,7 @@ def integrate (a, b):
 
         w=b[i+1]-b[i]
         midpoint=float(b[i+1]+b[i]/2)
-
-
-    h=a(midpoint)
-    f=n + w*h
+        h=a(midpoint)
+        f=n + w*h
    
     return f
