@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/local/bin/python3
 
 import bisection
 import secant
@@ -25,11 +25,11 @@ print(out.format(
 ))
 
 start = time.clock()
-res = secant.root(bisectf, (0,5))
+res = secant.root(bisectf, rangex)
 elapsed = time.clock() - start
 
 print(out.format(
-    "secant",
+    "bisection",
     rangex[0], rangex[1],
     res,
     elapsed

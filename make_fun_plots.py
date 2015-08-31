@@ -1,15 +1,8 @@
 #!/usr/bin/python
 
-
-import midpoint
-import fun_plots
 import calculus_plotter
+import fun_plots
 
 
-def plot_function(x):
-	calculus_plotter._plot(x)
-
-
-if __name__ == "__main__":
-	for func in fun_plots.funclist:
-		plot_function(func)	
+for i in range(0,5):
+    calculus_plotter.plotter(fun_plots.funclist[i],i)

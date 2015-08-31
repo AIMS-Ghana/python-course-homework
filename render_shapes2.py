@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/local/bin/python3
 from draw_shape import draw
 
 draw("CIRCLE", 10, cont=True) # draw a black circle, then continue

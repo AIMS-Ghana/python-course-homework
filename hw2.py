@@ -1,5 +1,5 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python
 
 import sys
-
-print("Hello, "+sys.argv[1]+"!")
+x = sys.argv[1]
+print "Hello, ", x ,"!"

@@ -1,20 +1,56 @@
-#!/usr/local/bin/python3
-
-def check(L,l):
-    assert (L>0) & (l>0),"entered negative dimension"
-
-def area(L,l):
-    check(L,l)
-    A=L*l
-    return A
-def perimeter(L,l)
-    check(L,l)
-    p=(L+l)*2
-    return p
+#!/usr/bin/python3
 
 import sys
-if __name__=="__main__":
-L=float(sys.argv[1])
-l=float(sys.argv[2])
-print("The area is {},  The perimeter is {}".format(area(L,l),perimeter(L,l)))
+from math import *
+
+if __name__ =="__main__":
+	try:
+		global l
+		global b
+		l = sys.argv[1]
+		b = sys.argv[2]
+
+	except IndexError:
+		print ("invalid arguments entered")
+		quit()
+
+def check(l,b):
+	try:
+		global l1
+		global b1
+
+		l1 = float(l)
+		b1 = float(b)
+
+		if __name__ == "__main__":		
+			if len(sys.argv) != 3:
+				print ("invalid argument entered")
+				quit()
+			else:
+				pass
+
+		elif l1 <= 0 or b1 <= 0:
+			print ("invalid length enthered")
+			quit()
+		
+		else:
+			return l1
+			return b1
+
+	except ValueError:
+		print ("the length and breadth can not be a strings")
+		quit()
+
+def area(l,b):
+	check(l,b)
+	area = l1*b1
+	return area
+
+def perimeter(l,b):
+	check(l,b)
+	perimeter = (l1 + b1)*2
+	return perimeter
+if __name__ == "__main__":
+	print ("area " , area(l,b))
+	print ("perimeter " , perimeter(l,b))
 
