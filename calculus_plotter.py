@@ -6,7 +6,8 @@ from pylab import *
 from scipy.integrate import odeint
 
 def plotter(f):
-	figure(),grid(True)					# to set up figure
+	figure()
+	grid(True)					# to set up figure
 	X = np.arange(0,10,0.01)				# to define the domain of the graph
 	plot(X,f(X), 'r', label = "f(x)")			# to plot the graph
 	

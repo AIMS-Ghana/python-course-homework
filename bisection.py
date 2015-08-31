@@ -17,7 +17,7 @@ def root(f, V, tol=0.0000001, max_n=100):
 		if f(b)*f(c) < 0:
 			a = c
 	return a
-'''	
+	
 def main(argv):
 	if (len(sys.argv) != 4):
 		sys.exit('Usage: bisection.py <a> <b> <tol>')
@@ -28,7 +28,7 @@ def main(argv):
 if __name__ == "__main__":
 	main(sys.argv[1:])
 
-'''
+
 
 
 
