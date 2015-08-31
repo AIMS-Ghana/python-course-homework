@@ -20,7 +20,7 @@ def dervs(f,rangex):
 	return results
 
 def plotter(func):
-        x = np.linspace(0,20,1000,True)
+        x = np.linspace(0,20,100,True)
         y = dervs(func,x)
 	plt.plot(x, y[0])#the function
 	plt.plot(x, y[1])#the derivative
