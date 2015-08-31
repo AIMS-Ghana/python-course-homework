@@ -1,18 +1,14 @@
 #!/usr/bin/python
-import numpy as np
 import math
 
-
-def integrate (f, rangeX):
-	ssum = 0
+def integrate(func, rangex):
+    ssum = 0.0
+    for x in range(len(rangex)-1):
+        a = rangex[x+1]-rangex[x]
+        b = func(float((rangex[x+1]+rangex[x])/2))
+        ssum += a*b
 	
-	for t in range(len(rangex)-1):
-		k = rangex[t + 1] - rangex[t]
-		h = f((rangex[t + 1] + rangex[t])/2)
-		ssum = ssum + k*h
-	return ssum
+    return ssum
 
-import sys 
-if __name__ == "__main__": 
 
-print 
+	
