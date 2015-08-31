@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import math
 def check (a, b, c):
-    assert a > 0 and b > 0 and c > 0, "negative dimension"
+    assert (a > 0) and (b > 0) and (c > 0), "negative dimension"
     s = a + b
     d = a - b
     assert s > c and d < c, "not a triangle"
@@ -9,8 +9,6 @@ def check (a, b, c):
 def perimeter (a, b, c):
     check (a, b, c)
     return a + b + c
-
-
 
 def area (a, b, c):
     check (a, b, c)

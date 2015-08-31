@@ -3,7 +3,7 @@ import math
 
 def perimeter(a): 
     check(a) 
-    p=math.pi*(a)**2 
+    p = math.pi*(a)**2 
     return p 
 
 def area(a): 
