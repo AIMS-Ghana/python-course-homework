@@ -5,14 +5,12 @@ def root(bisectf, rangex):
 	for x in range(len(rangex)-1):
 		c = (rangex[x]+rangex[x+1])/2.0
 		b =	bisectf(c)
-		while (rangex[x]-rangex[x+1])/2.0 > tol:
-			if f(c) == 0:
+		while (rangex[x+1]-rangex[x])> tol:
+			if bisectf(c) == 0:
 				return c
-			elif bisectf(rangex[x])*b < 0:
-				rangex[x+1] = c
-			else :
+			elif b < 0:
 				rangex[x] = c
-		
+			else:
+				rangex[x+1] = c
+			
 		return c
-	
-
