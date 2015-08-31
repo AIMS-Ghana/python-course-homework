@@ -1,5 +1,7 @@
 #!/usr/bin/python
-def root (function,lower_bound,upper_bound,error_tolerance=1.0e-10):
+def root (function,rangex,error_tolerance=1.0e-10):
+    upper_bound=rangex[1]
+    lower_bound=rangex[0]
     fu=function(upper_bound)
     if fu==0.0 :  return upper_bound
     fl=function(lower_bound)
@@ -23,9 +25,11 @@ def root (function,lower_bound,upper_bound,error_tolerance=1.0e-10):
             error=(upper_bound-lower_bound)/2
         return mid
 
-def func(x):  
+def func(x): 
+    x=root(func,1.0,2.0,error_tolerance=1.0e-10) 
+    print x
     return x**3-3*x+1     
    
-    x=bisection(func,1.0,2.0,error_tolerance=1.0e-10)
-    print x
+   
+   
 
