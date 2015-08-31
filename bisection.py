@@ -4,6 +4,7 @@ def f(x):
 	return x**3 + x -1
 	
 def bisection(a,b,tol):
+		
 	c = (a+b)/2.0
 	while (b-a)/2.0 > tol:
 		if f(c) == 0:
@@ -18,7 +19,7 @@ def bisection(a,b,tol):
 	
 def main(argv):
 	if (len(sys.argv) != 4):
-		sys.exit('Usage: bisection.py <a> <b> <tol>')
+		sys.exit('Usage: bisection.py <a>, <b>, <tol>')
 	
 	print 'The root is: ',
 	print bisection(int(sys.argv[1]),int(sys.argv[2]),float(sys.argv[3]))

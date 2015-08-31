@@ -11,5 +11,5 @@ def integrate(f,rangex):
 	return ss
         # get range widths
         #get range midpoints
-if __name__ ==" main__":
-        print (integrate(lambda x:x, thing))
+if __name__ =="__main__":
+        print(integrate(lambda x:x, [0,2,3,4]))
