@@ -13,4 +13,4 @@ def area(a):
  
 if  __name__ =="__main__":
   a = float(sys.argv[1])
-  print("area {},\nperimeter {}".format(area(a), perimeter(a)))
+  print("area {},\nperimeter {}".format(area(a), perimeter(a))
