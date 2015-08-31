@@ -1,32 +1,27 @@
 
-#!/usr/bin/env python3
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import *
+import fun_plots
 
-from numpy import gradient
-from scipy.integrate import odeint
+t1 = np.arange(0.0, 10.0, 0.01)
 
-# I(x) = integral(f)
-# dIdx = f(x) = ...some user defined f
-# odeint wants f(I,x) to solve for I
 
-def calc_all(f, rangex, ifxmin = 0):
-    fx = f(rangex)
-    return {
-        'f'  : fx,
-        'df' : gradient(fx),
-        'If' : odeint(lambda y, x:f(x), 0, rangex)
-    }
+def derivative(f,x, h=0.0001):
+    deriv = (f(x+h)- f(x-h))/(2*h) 
+    return deriv
 
-import matplotlib.pyplot as pyplot
 
-def plot_all(f, rangex, ifxmin = 0):
-    lines = calc_all(f, rangex, ifxmin)
-    fx, = pyplot.plot(rangex, lines['f'], '-')
-    df, = pyplot.plot(rangex, lines['df'], ":")
-    If, = pyplot.plot(rangex, lines['If'], "--")
-    pyplot.legend([fx, df, If],['function','derivative','integral'])
-    pyplot.show()
-
-if __name__ == "__main__":
-    from numpy import linspace
-    x = linspace(-5,5,10,endpoint=True)
-    plot_all(lambda x:x, x)
+#print (y)
+def plotting(f):
+		plt.figure(1)
+		
+		def Int(I,x):
+			return f(x)
+		y=odeint(Int,.01,t1)
+		plt.plot(t1,derivative(f,t1), 'y',label='derivative')
+		plt.plot(t1, f(t1), 'b',label='Original')
+		plt.plot(t1,y,  'r',label='Integral')
+		plt.title("Function, its derivative and integral ")
+		plt.legend()
+		plt.show()
