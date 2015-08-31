@@ -16,6 +16,21 @@ def fplot(fxn,i):
     xticks(arange(0,10,1))
 
     X = arange(0,10,0.01)
+<<<<<<< HEAD
+=======
+
+    def func(I,X):
+	return fxn(X)
+    Ifxn = odeint(func,0,X)
+    Dfxn = derivative(fxn,X,dx=1,n=1)
+
+    plot(X,fxn(X), 'b', lw = 2, label = r'$f(x)$')
+    plot(X,Dfxn, 'm', lw = 2, label = r'$f\prime(x)$')
+    plot(X,Ifxn, 'g', lw = 2, label = r'$\int{f(x)}dx$')
+    legend()
+    show()
+	
+>>>>>>> f6d76f921c8f6124e5cf376f664e476c2ef99343
 
     def func(I,X):
 	return fxn(X)
