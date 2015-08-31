@@ -21,14 +21,5 @@ import sys
 if __name__ == "__main__":
 	r=float(sys.argv[1])
 	 
-print ("area {0}\nperimeter {1}".format(area(r),perimeter(r)))
-
-if  len(sys.argv) <2:
-	value="ERROR! INPUT VALUE!"
-	print (value)
-else:
-	if len(sys.argv) >2:  
-		value="wrong input! one value required!"
-		print (value)
-	 
+ 
 
