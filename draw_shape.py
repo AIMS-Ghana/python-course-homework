@@ -1,35 +1,48 @@
-#!/usr/bin/python
-import turtle
-from shape
-
-def ngon(n, side):
-    turn = 180 - (n - 2)* 180.0/2
-for i in range (n - 1)
-    turtle.forward (side)
-    turtle.right (turn)
-    turtle.forward (side)
-
-def circle (radius):
-     turtle.circle(radius)
-    
-def triangle(side):
-    ngon (3, side)
-
-def square(side):
-    ngon(4,side)
-
-figs = {'CIRCLES': circle, 'SQUARE':square, 'TRIANGLE':triangle}
-
-def draw(shape,area,fill ="black",cont=false):
-    dim =shape.figure_check(shape,area)
-    turtle.color
-    figs[shape](dim)
-    turtle.exitonclick()
+#!/usr/bin/python3
 
 import sys
+import shapes
+import turtle
+
+def draw_square(area):
+    side=shapes.square_side(area)
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.exitonclick()
+   
+def draw_triangle(area):
+    side=shapes.triangle_side(area)
+    turtle.forward(side)
+    turtle.left(120)
+    turtle.forward(side)
+    turtle.left(120)
+    turtle.forward(side)
+    turtle.exitonclick()
+
+def draw_circle(area):
+    radius=shapes.circle_radius(area)   
+    turtle.circle(radius)
+    turtle.exitonclick()
+
+def draw(name,area):
+    if name=="CIRCLE":
+            draw_circle(area)
+    elif name=="SQUARE":
+            draw_square(area)
+    else:
+            draw_triangle(area)
+
+       
+
+
 if __name__ == "__main__":
-   side_triangle = shapes.figure_check('TRIANGLE' ,70000)
-   draw('TRIANGLE' ,side_triangle)
-   side_square=shapes.figure_check('SQUARE' ,70000)
-   radius_circle=shapes.figure_check('CIRCLE ,70000)
-   draw('CIRCLE' ,radius_circle)
+
+   
+    area=sys.argv[2]
+    name=sys.argv[1]
+    draw(name,area)

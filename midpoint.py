@@ -1,12 +1,11 @@
-#!/usr/bin/python
-
+#!/usr/bin/python3
 import math
-
-def intergrate (x,y)
-
-#x is a list
-#y is an interger 
-    if k for in y
-    intergration = 0
-intergration = intergration x + f(((k/10) + (float(x) + (float (x)/2))
-    return "midpoint method, area under exp on (0,10),100 points:{}"format intergration
+import sys
+def integrate(a,b):
+	m=0.0
+	for n in range(len(b)-1):
+		w=b[n+1]-b[n]
+		midpoint=float(b[n+1]+b[n]/2)
+		h=a(midpoint)
+		d=m + w*h
+	return d
