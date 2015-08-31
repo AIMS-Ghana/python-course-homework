@@ -21,4 +21,8 @@ funclist = [
     easy, exp_saturation,
     exp_growth, sine_and_cos,
     sine_sq
+<<<<<<< Updated upstream
 ]
+=======
+    print ("hello world")
+>>>>>>> Stashed changes
