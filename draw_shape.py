@@ -10,8 +10,8 @@ def draw_triangle(area):
 	canvas=turtle.Screen() # Create a playground for turtles
 	#canvas.setup(400,200)
 	turtle.begin_fill()
-	turtle.colour('purple')
-	turtle.forward.(area)        
+	turtle.color('blue')
+	turtle.forward(area)        
 	turtle.left(120)
 	turtle.forward(area)
 	turtle.left(120)
@@ -24,7 +24,7 @@ def draw_square(area):
 	canvas=turtle.Screen() # create a playground for turtles
 	#canvas.setup(400,200)
 	turtle.begin_fill()
-	turtle.colour('green')
+	turtle.color('green')
 	turtle.forward(area)         
 	turtle.left(90)
 	turtle.forward(area)
@@ -35,12 +35,12 @@ def draw_square(area):
 	turtle.end_fill()     	
 	canvas.exitonclick()	
 	
-def draw_circle(radius): #draw circle
+def draw_circle(area): #draw circle
 	canvas = turtle.Screen() # create a playground for turtles
 	#canvas.setup(400,200)
 	turtle.begin_fill()
-	turtle.colour('yellow')
-	turtle.forward(radius) 
+	turtle.color('red')
+	turtle.forward(area) 
 	turtle.end_fill()        
         canvas.exitonclick()
 
@@ -51,17 +51,14 @@ if __name__ == "__main__":
 	draw_square(60)
 	draw_circle(50)
 	
-def draw(name,side,colour)
+def draw(name,area):
 	if name == ('TRIANGLE'):
-		draw_triangle(area,colour('purple'))
+		draw_triangle(area)
 	if name == ('SQUARE'):
-		draw_square(area,colour('green'))
+		draw_square(area)
 	if name == ('CIRCLE'):
-		draw_circle(radius,colour('yellow'))
-else:
-	pass
+		draw_circle(area)
+	else:
+		pass
 	
-	draw_function("TRIANGLE",100)
-	draw_function("SQUARE",100)
-	draw_function("CIRCLE")
-	
+
