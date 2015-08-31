@@ -1,10 +1,12 @@
 #!/usr/bin/python
 
+import matplotlib.pyplot as plt
+
 import calculus_plotter, fun_plots
 
-from numpy import linspace
+from numpy import *
 
-x= linspace(-10,10,100,endpoint=True)
-
-for f in fun_plots.funclist:
-    calculus_plotter.plot_all(f,x)
+for i in arange(0,5):
+  calculus_plotter.plot_all(fun_plots.funclist[i],
+  arange(0,10,0.01))
+    

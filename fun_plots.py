@@ -21,14 +21,4 @@ funclist = [
     exp_growth, sine_and_cos,
     sine_sq
 ]
-plt.figure(easy)
-plt.plot(x, x, 'v--')
-plt.figure(exp_saturation)
-plt.plot(x, 1 - np.exp(-x), 'y--')
-plt.figure(exp_growth)
-plt.plot(x, np.exp(5*x), 'o--')
-plt.figure(sine_and_cos)
-plt.plot(t, np.sin(t) + np.cos(t), 'i--')
-plt.figure(sine_sq)
-plt.plot(t, np.sin(t)**2, 'c--')
-plt.show()
+

@@ -1,19 +1,30 @@
 #!/usr/bin/python
-from scipy.misc import derivative as deriv
-import numpy as np
-import scipy.integrate as integ
+
+from numpy import *
+
+from scipy.integrate import odeint
+def calc_all(f, rangex, ifxmin=0):
+     fx=f(rangex)
+     return {
+         'f' : fx,
+         'df' : gradient(fx),
+          
+         'If' : odeint(lambda y, x:f(x),0,rangex)
+    }
 import matplotlib.pyplot as plt
 
-f = lambda x : 1 / (1 + x**2)
+def plot_all(f, rangex, ifmin=0):
+    lines=calc_all(f, rangex, ifxmin)
+    fx, =plt.plot(rangex, lines['f'],'--')
+    df, =plt.plot(rangex, lines['df'],".")
+    If, =plt.plot(rangex, lines['If'],"-") 
+    plt.legend([fx, df, If],
+['function', 'derivative', 'integral'])
+    plt.show()
 
-x = np.arange(-10, 10, 0.01)
+if __name__ == " __main__":
+   from numpy import linspace
+   x=arange(0,10,0.01)
+   plot_all(lambda x:x,x)
 
-d = deriv(f,x)
 
-i = [integ.quad(f,-np.inf,tau)[0]for tau in x]
-
-plt.plot(x,f(x),'r-')
-plt.plot(x,d,'b-')
-plt.plot(x,i,'g-')
-plt.ylim(-1.5,1.5)
-plt.show()
