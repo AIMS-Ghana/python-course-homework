@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
-from scipy import odient
+from scipy.integrate import odeint
 import numpy as np
-import matplotlib.ply as pyplot
+import matplotlib.pylab as plt
 from scipy.misc import derivative
 
 
@@ -12,12 +12,12 @@ def plotter(f):
 
 
     plt.figure()
-    x = np.arange(0,10,0.01)
+    X = np.arange(0,10,0.01)
     plt.xlabel("x-axis")
     plt.ylabel("y-axis")
-    Df = derivative(f,x,dx=1,n=1)
-    If =odeint(g, 0, x)
-    plt.plot(X,f(x),'y',label='fxn',lw =2)
+    Df = derivative(f,X,dx=1,n=1)
+    If = odeint(g, 0, X)
+    plt.plot(X,f(X),'y',label='fxn',lw =2)
     plt.plot(X,Df,'b',label='derivative',lw =2)
     plt.plot(X,If,'bo',label='integral',lw =2)
      
