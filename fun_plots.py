@@ -1,8 +1,9 @@
-
+#!/usr/bin/env python
 import numpy as np
-
-def easy(x):
-    return x
+y=1
+def easy(y):
+   x=3*y**2-5*y
+   return x
 
 def exp_saturation(x):
     return 1 - np.exp(-x)

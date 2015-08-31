@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import calculus_plotter
 
 import fun_plots

@@ -2,19 +2,16 @@
 
 
 
-	
-epsilon = 0.00000000000000001
-
+epsilon = 0.00000000000001
 def root(f,rangex):
-        l=rangex[0]
+	l=rangex[0]
 	r=rangex[1]
 	while abs(l-r)> epsilon :
-       		x=(l+r)/2.0
+		x = (l+r)/2.0
 		if f(x)== 0 :
-			print(x)
+			return x
 		elif f(l)*f(x)<0 :
    			r=x
 		else :
    			l=x
-		print x
-	        break
+	return x
