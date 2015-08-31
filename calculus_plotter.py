@@ -26,4 +26,4 @@ def fplot(fxn,i):
     plot(X,Dfxn, 'm', lw = 2, label = r'$f\prime(x)$')
     plot(X,Ifxn, 'g', lw = 2, label = r'$\int{f(x)}dx$')
     legend()
-    show()
+    show()./turnin.sh
