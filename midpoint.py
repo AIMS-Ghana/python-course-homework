@@ -1,14 +1,17 @@
 #!/usr/bin/python
 from math import *
 import sys
-def integrate(a,b):
-	l=0.0
-	for n in range(len(b)-1):
-		width=b[n+1]-b[n]
-		midpoint= float(b[n+1]+b[n]/2)
-		height= a(midpoint)
-		r=l+(width*height)
-	return r
+def integrate(f,rangex):
+	h=float(rangex[1]-rangex[0])
+	assert h>0
+
+	sum=0.0
+	midpoint=rangex[0]+h/2
+	while (midpoint<rangex[1]):
+		sum+= h*f(midpoint)
+		midpoint+=h
+	return sum
+	
  	
 		
 	

@@ -1,50 +1,50 @@
 #!/usr/bin/python3
-from math import sqrt
+
 import sys
-from turtle import *
 import shapes
+import turtle
 
-def draw(name, area):
-	if name== "TRIANGLE":
-		#length= shapes.value
-		#draw triangle
-		canvas = Screen()
-		#canvas.setup(400,200)
-		uche = Turtle()
-		uche.forward(area)         # make sarah draw a square
-		uche.left(120)
-		uche.forward(area)
-		uche.left(120)
-		uche.forward(area)
-
-		canvas.exitonclick()	
-
-	if name =="SQUARE":
-		#draw square
-		canvas = Screen()
-		#canvas.setup(400,200)
-		uche = Turtle()
-		uche.forward(area)         
-		uche.left(90)
-		uche.forward(area)
-		uche.left(90)
-		uche.forward(area)
-		uche.left(90)
-		uche.forward(area)
-              	
-		canvas.exitonclick()	
+def draw_square(area):
+    side=shapes.square_side(area)
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.exitonclick()
 	
-	if name =="CIRCLE":
-		#draw cicrcle
-		canvas = Screen()
-		#canvas.setup(400,200)
-		uche = Turtle()
-		uche.forward(area)         
+def draw_triangle(area):
+    side=shapes.triangle_side(area)
+    turtle.forward(side)
+    turtle.left(120)
+    turtle.forward(side)
+    turtle.left(120)
+    turtle.forward(side)
+    turtle.exitonclick()
+
+def draw_circle(area):
+    radius=shapes.circle_radius(area)	
+    turtle.circle(radius)
+    turtle.exitonclick()
+
+def draw(name,area):
+    if name=="CIRCLE":
+            draw_circle(area)
+    elif name=="SQUARE":
+            draw_square(area)
+    else:
+            draw_triangle(area)
+
 		
-              	
-		canvas.exitonclick()	
-	
+
+
 if __name__ == "__main__":
-	draw("TRIANGLE",100)
-	draw("SQUARE",100)
+
 	
+    area=sys.argv[2]
+    name=sys.argv[1]
+    draw(name,area)
+    
+   
