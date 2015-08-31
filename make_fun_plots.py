@@ -2,17 +2,10 @@
 import matplotlib.pyplot as plt
 import calculus_plotter, fun_plots 
 
-from numpy import linspace
+from numpy import *
 
-x=linspace(-10,10,100,endpoint=True)
-funclist = [
-    easy, exp_saturation,
-    exp_growth, sine_and_cos,
-    sine_sq
-]
-plt.plot(funclist,x)
-plt.show()
-
+for i in arange(0,5):
+    calculus_plotter.plot_all(fun_plots.funclist[i], arange(0,10,0.01))
 
 
 

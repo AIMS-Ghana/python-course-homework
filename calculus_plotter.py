@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from numpy import gradient
+from numpy import *
 from scipy.integrate import odeint
 
 
@@ -24,7 +24,7 @@ def plot_all(f, rangex, ifxmin = 0):
 
 if __name__ == "__main__":
     from numpy import linspace
-    x = linspace(-5,5,10,endpoint=True)
+    x = arange(0,10,0.01)
     plot_all(lambda x:x, x)
 
 
