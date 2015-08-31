@@ -1,33 +1,32 @@
 #!/usr/bin/python
+
 import sys
-import shapes
 import turtle
+from shapes import side
+
 def draw (name, area):
 	turtle.ht ()
 	if name == "SQUARE":
-		side = shapes.side (3, area)		
-		turtle.forward (side)
+		side1 = side (3, area)		
+		turtle.forward (side1)
 		turtle.left (90)
-		turtle.forward (side)
+		turtle.forward (side1)
 		turtle.left (90)
-		turtle.forward (side)
+		turtle.forward (side1)
 		turtle.left (90)
-		turtle.forward (side)
+		turtle.forward (side1)
 		turtle.home ()
 	if name == "TRIANGLE":
-		side = shapes.side (1, area)
-		turtle.forward (side)
+		side1 = side (1, area)
+		turtle.forward (side1)
 		turtle.left (120)
-		turtle.forward (side)
+		turtle.forward (side1)
 		turtle.left (120)
-		turtle.forward (side)
+		turtle.forward (side1)
 		turtle.home ()
 	if name == "CIRCLE":
-		side = shapes.side (2, area)
-		turtle.circle (side)
+		side1 = side (2, area)
+		turtle.circle (side1)
 		turtle.home ()
 	turtle.exitonclick()		
-if __name__ == "__main__":
-	name = str (sys.argv [1])
-	area = float (sys.argv [2])
-	draw (name, area)
+
