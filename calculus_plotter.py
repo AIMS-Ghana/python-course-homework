@@ -26,13 +26,20 @@ def easy(x):
 '''
 
 
+
+
 def functions_plot(f,nbins):
+        #no need for this Int replaced with the lambda ......
+        '''
 	def Int(I,x):
 		return f(x)
+	'''
+        #or odeint(lambda I,x:f(x))
+	
 	fx = f(nbins)
 	diff_f = gradient(fx)#finds the derivative
-	integrate_f = integrate.odeint(Int,0.0,nbins)
-	values = [fx,diff_f,integrate_f]
+	integrate_f = integrate.odeint(lambda I,x:f(x),0.0,nbins)#finds the integral
+	values = [fx,diff_f,integrate_f] #returns the values in the values array
 	return values
 
 
@@ -43,9 +50,10 @@ def _plot(func):
 	x = np.arange(-6, 15, 0.05);
 	y = functions_plot(func,x)
     	fx, = pyplot.plot(x, y[0], '-')
- 	diff_f  = pyplot.plot(x, y[1], '-')
-	integral_f = pyplot.plot(x, y[2], '-')
-	pyplot.legend([fx,diff_f],['function','derivative'])
+ 	diff_f,  = pyplot.plot(x, y[1], '-')
+	integral_f, = pyplot.plot(x, y[2], '-')
+	pyplot.legend([fx,diff_f, integral_f],['function','derivative','Integral'])
+        
     	pyplot.show()
 	
 	

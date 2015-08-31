@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-
-import midpoint
 import fun_plots
 import calculus_plotter
 
