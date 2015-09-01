@@ -1,14 +1,16 @@
 #!/usr/bin/env python
-
-import csv #to read loansData.csv file
+#to read loansData.csv file
+import csv 
 import sys
+#summing funds requested for education
+
 csvfile = open('loansData.csv', 'r')
 reader = csv.reader(csvfile)
 headers=reader.next()
 sum_ed=0
 for row in reader:
-	if "educational" in row: #summing funds requested for education
-		sum_ed=sum_ed + float(row[0])        
+	if row[5]=="educational":
+		sum_ed=sum_ed + float(row[1])        
 	else:
 		pass
 print sum_ed
