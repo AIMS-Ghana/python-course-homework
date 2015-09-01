@@ -8,7 +8,7 @@ sum = 0
 
 for i in range(len(df)):
   if df.iloc[i,5] == 'educational':
-     sum = sum + df.iloc[i,2]
+     sum = sum + df.iloc[i,1]
         
 
 print(sum)
