@@ -17,7 +17,7 @@ for i in range(len(donutsData)):
  
    for n in range(len(donutsData[i]['batters']['batter'])):
         print '\n For',donutsData[i]['name'],donutsData[i]['batters']['batter'][n]['type'],'Donut We have:'
-        print '________________________________________'
+        print '====================================='
         for k in range(len(donutsData[i]['topping'])):
 
                 print k+1,'|',donutsData[i]['name'], donutsData[i]['batters']['batter'][n]['type'],donutsData[i]['topping'][k]['type']
