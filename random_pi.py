@@ -20,7 +20,7 @@ def circle_area(seed, n):
 
 	count = 0.0
 	for j in random_points:
-		if (j[0])**2 + (j[-1])**2 <= 1:
+		if np.sqrt((j[0])**2 + (j[-1])**2) <= 1:
 			count = count + 1
 		else:
 			pass
@@ -41,7 +41,7 @@ def sphere_volume(seed, n):
 
 	count = 0.0
 	for j in random_points:
-		if (j[0])**2 + (j[1])**2 + (j[-1])**2 <= 1:
+		if np.sqrt((j[0])**2 + (j[1])**2 + (j[-1])**2) <= 1:
 			count = count + 1
 		else:
 			pass
