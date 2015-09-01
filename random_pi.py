@@ -9,6 +9,10 @@
 
 import random
 #Usage random.uniform(0,1)
+#
+
+
+
 import numpy
 
 
@@ -32,14 +36,14 @@ def sphere_volume(cbsample):
             tally += 1
     return (3/4 * tally/total * 8)
 
-def square(seed, size):
+def square(size):
     board = numpy.zeros([size,2])
     for i in range(size):
         board[i][0] = random.uniform(0,1)
         board[i][1] = random.uniform(0,1)
     return board
 
-def ball(seed, size):
+def ball(size):
     board = numpy.zeros([size,3])
     for i in range(size):
         board[i][0] = random.uniform(0,1)
@@ -53,6 +57,7 @@ if __name__ == "__main__":
     from math import pi
     seed = float(sys.argv[1])
     size = int(sys.argv[2])
-    print("circle-area pi: {0}".format(circle_area(square(seed,size))))
-    print("sphere-volume pi: {0}".format(sphere_volume(ball(seed,size))))
+    random.seed(seed)
+    print("circle-area pi: {0}".format(circle_area(square(size))))
+    print("sphere-volume pi: {0}".format(sphere_volume(ball(size))))
     print("correct value of pi: {0}".format(pi))
