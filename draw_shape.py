@@ -1,47 +1,50 @@
 #!/usr/bin/python3
+
 import sys
-import turtle
 import shapes
-grant=turtle.Turtle()
-def draw(name, area):
-	if name== "TRIANGLE":
-		#length= shapes.value
-		#draw triangle
-		#canvas.setup(400,200)
-		grant = Turtle()
-		grant.forward(side)  # make grant draw a square
-		grant.left(120)
-		grant.forward(side)
-		grant.left(120)
-		grant.forward(side)
+import turtle
 
-		#grant.exitonclick()	
+def draw_square(area):
+    side=shapes.square_side(area)
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.exitonclick()
+	
+def draw_triangle(area):
+    side=shapes.triangle_side(area)
+    turtle.forward(side)
+    turtle.left(120)
+    turtle.forward(side)
+    turtle.left(120)
+    turtle.forward(side)
+    turtle.exitonclick()
 
-	if name =="SQUARE":
-		#draw square
-		#canvas.setup(400,200)
-		grant = Turtle()
-		grant.forward(side)         
-		grant.left(90)
-		grant.forward(side)
-		grant.left(90)
-		grant.forward(side)
-		grant.left(90)
-		grant.forward(side)
-              	
-		#grant.exitonclick()	
+def draw_circle(area):
+    radius=shapes.circle_radius(area)	
+    turtle.circle(radius)
+    turtle.exitonclick()
+
+def draw(name,area):
+    if name=="CIRCLE":
+            draw_circle(area)
+    elif name=="SQUARE":
+            draw_square(area)
+    else:
+            draw_triangle(area)
+
+		
+
+
+if __name__ == "__main__":
+
 	
-	if name =="CIRCLE":
-		#draw cicrcle
-		#canvas = Screen()
-		#canvas.setup(400,200)
-		grant = Turtle()
-		grant.forward(side)         
-turtle.done		
-              	
-		#grant.exitonclick()	
-	
-#if __name__ == "__main__":
-#	draw("TRIANGLE",100)
-#	draw("SQUARE",100)
-	
+    area=sys.argv[2]
+    name=sys.argv[1]
+    draw(name,area)
+    
+   
