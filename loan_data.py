@@ -13,7 +13,7 @@ for line in loansData:
     columns = line.split(',')
     if len(columns) >= 1:
         if 'educational' in columns[5]:
-                 sum_ += float(columns[0].replace('"', '').strip()) #sum amount requested for educational
+                 sum_ += float(columns[1]) #sum amount requested for educational
 print 'Total Amount requested for education is: ', sum_
 loansData.close() #close loansData file
 
