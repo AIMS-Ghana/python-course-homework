@@ -9,47 +9,30 @@
 
 import random
 #Usage random.uniform(0,1)
-#
 
-
-
-import numpy
-
-
-
-#Here we receive a sample of coordinates on a square and determine the weight of points in a quarter-circle region
-def circle_area(sqsample):
-    total = len(sqsample)
+#Here is implemented a method based on the area of a quater of a circle in a square
+def circle_area(seed, size):
+    random.seed(seed)
     tally = 0
-    for i in range(total):
-        if (sqsample[i][0])**2  < 1 - (sqsample[i][1])**2:
+    for i in range(size):
+        x = random.uniform(0,1)
+        y = random.uniform(0,1)
+        if x**2 < 1 - y**2:
             tally += 1
-    return 4 * tally/total
+    return 4 * tally/size
 
-
-#Here we receive a sample of coordinates in a cube and determine the weight of points in a ball
-def sphere_volume(cbsample):
-    total = len(cbsample)
+#Here is implemented a method based on the volume of an eigth of a ball in a cube
+def sphere_volume(seed, size):
+    random.seed(seed)
     tally = 0
-    for i in range(total):
-        if (cbsample[i][0] )**2 < 1 - (cbsample[i][1] )**2 - (cbsample[i][2] )**2:
+    for i in range(size):
+        x = random.uniform(0,1)
+        y = random.uniform(0,1)
+        z = random.uniform(0,1)
+        if x**2 < 1 - y**2 - z**2:
             tally += 1
-    return (3/4 * tally/total * 8)
+    return 3/4 * tally/size * 8
 
-def square(size):
-    board = numpy.zeros([size,2])
-    for i in range(size):
-        board[i][0] = random.uniform(0,1)
-        board[i][1] = random.uniform(0,1)
-    return board
-
-def ball(size):
-    board = numpy.zeros([size,3])
-    for i in range(size):
-        board[i][0] = random.uniform(0,1)
-        board[i][1] = random.uniform(0,1)
-        board[i][2] = random.uniform(0,1)
-    return board
 
 
 if __name__ == "__main__":
@@ -57,7 +40,7 @@ if __name__ == "__main__":
     from math import pi
     seed = float(sys.argv[1])
     size = int(sys.argv[2])
-    random.seed(seed)
-    print("circle-area pi: {0}".format(circle_area(square(size))))
-    print("sphere-volume pi: {0}".format(sphere_volume(ball(size))))
+
+    print("circle-area pi: {0}".format(circle_area(seed,size)))
+    print("sphere-volume pi: {0}".format(sphere_volume(seed,size)))
     print("correct value of pi: {0}".format(pi))
