@@ -2,20 +2,21 @@
 
 '''
 To load data from the loansData.csv and calculate the total amount of requested funds for education
-
+Note: Assume first column in loansData.csv to be ID :)
 '''
-#open loansData.csv
-loansData = open("loansData.csv", "r")
 
-#reading file content
+import csv
+
 sum_ =0.0
-for line in loansData:
-    columns = line.split(',')
-    if len(columns) >= 1:
-        if 'educational' in columns[5]:
-                 sum_ += float(columns[1]) #sum amount requested for educational
-print 'Total Amount requested for education is: ', sum_
-loansData.close() #close loansData file
+with open("loansData.csv",'r') as csvfile:#open loansData.csv
+	loansData = csv.reader(csvfile)
+	
+	for line in loansData:
+	    if 'educational' in line[5]:
+		  sum_ += float(line[1]) #sum amount requested for educational
+
+print '\nTotal Amount requested for education is: ', sum_
+
 
 
 
