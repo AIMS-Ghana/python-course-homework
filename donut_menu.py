@@ -11,13 +11,15 @@ with  open("donuts.json") as donutsData:
 	donutsData = json.load(donutsData)
 
 #reading file content
+print 'Available batters and toppings combinations:\n'
 for i in range(len(donutsData)):
   # Looping through batter and toppings for each donut
+ 
    for n in range(len(donutsData[i]['batters']['batter'])):
-	print '\n#',n+1,' Available Toppings for ', donutsData[i]['batters']['batter'][n]['type'],donutsData[i]['name'],'Donut\n' 
-
+        print '\n For',donutsData[i]['name'],donutsData[i]['batters']['batter'][n]['type'],'Donut We have:'
         for k in range(len(donutsData[i]['topping'])):
-   		print k+1,': ',donutsData[i]['topping'][k]['type']
+
+                print k+1,donutsData[i]['name'], donutsData[i]['batters']['batter'][n]['type'],donutsData[i]['topping'][k]['type']
 
 
 
