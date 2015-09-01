@@ -1,11 +1,10 @@
 #!/usr/bin/python
-import sys
 import csv
 
 total = csv.reader(open("loansData.csv","rb"))
 amount = 0.0
 for row in total: 
-      if 'educational' in row[5]:
-                amount += float(row[0])
+      if 'educational' in row[5]:#find education in the row
+                amount += float(row[1])
 print amount
 
