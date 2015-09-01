@@ -1,13 +1,51 @@
 #!/usr/bin/python
-
-import numpy as np
-import matplotlib.pyplot as plt
-import fun_plots
+import sys
+import csv
 
 
-t = np.arange(0.0, 5.0, 0.01)
-s = fun_plots.sine_and_cos(t)
-line, = plt.plot(t,s,lw=2)
 
-plt.ylim(-2,2)
-plt.show()
+with open("loansDATA.csv") as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+       print(row[1], row[2])
+
+'''
+cr = csv.reader(open("loansDATA.csv", "rb"))  # name of object reader is cr
+#for row in cr:  # get rows (in the form of a list of columns)
+  #  print row
+for row in reader:         #prints items in this row with the index as [2],[-2]
+ print row[2], row[-2]
+
+
+import csv
+import sys
+
+f = open(sys.argv[1], 'rt')
+try:
+    reader = csv.reader(f)
+    for row in reader:
+        print row
+finally:
+    f.close()
+
+
+
+with open("loansData.csv") as f:
+    loan = f.next()
+    total = 0
+    for row in csv.reader(f):
+        total += int(row[0])
+    print total
+
+
+
+def sumRows(loansDATA, header=False):
+ d = {}
+with open("loansDATA.csv") as csvfile:
+        headerline = csvfile.next()
+        total = 0
+        for row in csv.reader(csvfile):
+            total += int(row[1])
+print(total)
+     #  return()
+'''

@@ -2,9 +2,8 @@
 
 import sys
 import math
-import shapes
 import turtle
-
+import draw_shape
 
 
 def check(name,area):
