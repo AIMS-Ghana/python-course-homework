@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-#blah blah blah
+#Basic program to get started with working in any programming language. 
 
 print('hello world!')
