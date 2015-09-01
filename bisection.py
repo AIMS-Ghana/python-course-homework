@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
-def bisection(function,lower_bound,upper_bound,error_tolerance=1.0e-4):
+def bisection(function,rangex,error_tolerance=1.0e-4):
+    rangex=upper_bound[1]
+    rangex=lower_bound[0]
     fu=function(upper_bound)
     if fu==0.0 :  return upper_bound
     fl=function(lower_bound)
