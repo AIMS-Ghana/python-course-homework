@@ -1,17 +1,26 @@
 #!/usr/bin/python
 
-from scipy.misc import derivative as deriv
+from scipy.integrate import odeint
+from scipy.misc import derivative
 import numpy as np
-import matplotlib.pyplot as plt
+from pylab import *
 
-x = np.arange(-10, 10., 0.1)
-f = np.sin(x)/x
 
-d = deriv(f,x)
+def rhodalin(f):
+	figure()
+	x = arange(0,10,0.01)
 
-plt.plot(x,f(x), marker='*', linestyle='-', color='y', label='f(x)')
-plt.plot(x,d, marker='o', linestyle='.', color='r', label='d(f(x))')
-plt.xlabel('x Values')
-plt.ylabel('function/Derivative')
-plt.title('Plots of a function and its Derivative')
-plt.show()
+	def l(I,x):
+		return f(x)
+	If = odeint(l,0,x)
+
+	d = derivative(f,x,dx=1,n=1)
+	plot(x,f(x), linestyle= '-', color='y', label= 'function')
+	plot(x,d, linestyle= '--', color= 'r', label= 'd/dy(x)')
+	plot(x,If, color= 'b', label= 'Integral')
+	legend()
+
+	show()
+
+
+
