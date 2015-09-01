@@ -22,5 +22,4 @@ def plotter(f):
 	
 	pylab.legend()
 	pylab.show() # show the plot
-
 #plotter(numpy.cos)
