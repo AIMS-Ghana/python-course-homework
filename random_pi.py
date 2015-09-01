@@ -9,7 +9,7 @@ def random_pi_circ(seed,N):
  from math import sqrt  
  
  
- N = int(sys.argv[2])
+ Nint = int(N)
  
  
  
@@ -18,12 +18,12 @@ def random_pi_circ(seed,N):
 
  ran.seed(seed) 
  
- for i in range(0,N):  
+ for i in range(0,Nint):  
     x=ran.random()  
     y=ran.random()  
     if sqrt(x*x+y*y)<=1:  
         inside+=1  
- pi=4.0*inside/N
+ pi=4.0*inside/Nint
  
  return pi 
 
@@ -35,7 +35,7 @@ def random_pi_sphere(seed,N):
  from math import sqrt  
  
 
- N = int(sys.argv[2])
+ Nint = int(N)
  
  
 
@@ -43,13 +43,13 @@ def random_pi_sphere(seed,N):
 
  ran.seed(seed) 
  
- for i in range(0,N):  
+ for i in range(0,Nint):  
     x=ran.random()  
     y=ran.random()
     z=ran.random()  
     if sqrt(x*x+y*y+z*z)<=1:  
         inside+=1  
- pi=6.0*inside/N
+ pi=6.0*inside/Nint
  
  return pi 
 
