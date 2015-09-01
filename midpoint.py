@@ -1,15 +1,18 @@
-#!/use/bin/env python
+#!/usr/bin/env python
 
-def import(m, l, n, nbins=10):
-    h = float(l-m)/nbins
-    assert h > 0
-    assert type(nbins) == int
+def integrate(f, rangex):
+	ss=0
+
+	for i in rang(len(rangex)-1)
+	w=rangex[i+1]-rangex[i]
+    	h=((rangex[i+1])+f(rangex[i]))/2
+	ss=ss+h*w
+	return ss	 
     
-    sum = 0.0
-    x = m + h/2                  # first midpoint
-    while (x < l):
-        sum += h * f(x)
-        x += h
+def f(x)
+	return math exp(x)
 
-    return sum
-
+if_name_==" main_ "
+        x=rang(s)
+        
+	print (integrate(f(x).rang(s))

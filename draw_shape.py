@@ -1,7 +1,6 @@
-#!/use/bin/env python
+#!/usr/bin/env python
 from tkinter import *
 from random import *
-
 class Application(Canvas):
 
     X_OFFSET = 40

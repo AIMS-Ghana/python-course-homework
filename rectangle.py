@@ -1,19 +1,12 @@
 #!/usr/bin/python
 import sys
 
-print("hello," +sys.argv[1]+"!")
-#!/usr/bin/env python3
-
-
-
-
-
 
 def check(a,b):
 	assert (a>0) & (b>0)  ,"inserted negative integers"
 	
 
-def area(a:float,b:float):
+def area(a,b):
 	check(a,b)
 	res=a*b
 	return res
