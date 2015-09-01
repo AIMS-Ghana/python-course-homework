@@ -5,11 +5,13 @@ import numpy as np
 import scipy as sp
 
 import calculus_plotter as cp
-import fun_plots as fp
+import fun_plots2 as fp2
 
 
 
-for name in fp.funclist:
+
+
+for name in fp2.funclist:
 
 
  cp.funcplot(name,[0,4,100])
