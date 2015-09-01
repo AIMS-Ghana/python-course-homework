@@ -23,7 +23,11 @@ funclist = [
     sine_sq
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ]
+=======
+    print ("hello world")
+>>>>>>> Stashed changes
 =======
     print ("hello world")
 >>>>>>> Stashed changes
