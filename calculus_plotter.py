@@ -3,6 +3,7 @@ from pylab import *
 from scipy import misc
 import scipy.integrate as integrate 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -30,6 +31,8 @@ def plotter(fonction):
 	text(-2.0, -8.0,   r"Inte", horizontalalignment='center', 	     fontsize=18,color='green')
 	show()
 =======
+=======
+>>>>>>> Stashed changes
 from pylab import *
 import matplotlib.pyplot as plt
 import numpy as np
@@ -73,4 +76,7 @@ text(-1.0, -8.0,
 
 show()
 print np.cos
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
