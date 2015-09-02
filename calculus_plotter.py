@@ -2,22 +2,16 @@
 from numpy import gradient
 from scipy.integrate import odeint
 
-<<<<<<< Updated upstream
-=======
 def sine_and_cos(t):
     return np.sin(t) + np.cos(t)
 
->>>>>>> Stashed changes
 def calc_all(h, rangex, ifxmin = 0):
     hx = h(rangex)
     return {
         'h'  : hx,
         'dh' : gradient(hx),
-<<<<<<< Updated upstream
         'Ih' : odeint(lambda y, x:h(x), 0, rangex)
-=======
         'Ih' : odeint(hx, dh, 0, rangex)
->>>>>>> Stashed changes
     }
 
 import matplotlib.pyplot as pyplot
@@ -33,8 +27,5 @@ def plot_all(h, rangex, ifxmin = 0):
 if __name__ == "__main__":
     from numpy import linspace
     x = linspace(-10,15,25,endpoint=True)
-<<<<<<< Updated upstream
     plot_all(lambda x:x, x)
-=======
     plot_all(Ih, x)
->>>>>>> Stashed changes
