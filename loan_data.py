@@ -6,7 +6,7 @@ total = 0
 for row in my_data:
    if row[5] == "educational":
       total +=float(row[1])
-   print (total)
+print (total)
 
 """myfile = csv.reader(open ("loansData.csv"))
 c.next()
