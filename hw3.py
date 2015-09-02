@@ -11,5 +11,6 @@ if len(sys.argv)==1:
 elif len(sys   
 
 
-## if ten(sys.argv)==2: print("hello world")
+if ten(sys.argv)==2: 
+print("hello world")
 

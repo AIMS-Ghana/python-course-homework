@@ -1,23 +1,24 @@
 #!/usr/bin/python
-import math
+
+from scipy.misc import derivative
+from scipy.integrate import odeint
+import matplotlib.pylab as plt
 import numpy as np
-import matplotlib.pyplot as plt
+import fun_plots
 
-t1 = np.arange(0, 90, 5)
-y1 = np.sin(t1) + np.cos(t1)
+def fun_plots(c):
+    def m(I,x):
+        return c(x)
+    plt.figure()
+    x = np.arange(0.0, 20.0, 0.01)
+    plt.xlabel('x-axis')
+    plt.ylabel('y-axis')
 
-t2 = np.arange(0, 90, 5)
-y2 = np.cos(t2) - np.sin(t2)
+    Dfun = derivative(c,x)
+    Ifun = odeint(m, 0, x)
+    plt.plot(x,c(x), 'g', label= 'f(x)' )
+    plt.plot(x,Dfun, 'r', label='Derivative')
+    plt.plot(x,Ifun, 'b', label='Integral')
 
-t3 = np.arange(0, 90, 5)
-y3 = np.sin(t3) - np.cos(t3)
-
-#plots and axis titles and limits
-plt.xlabel('t')
-plt.ylabel('Y')
-plt.title('A GRAPH OF Y AGAINST t')
-plt.plot(t1, y1, 'r')
-plt.plot(t2, y2, 'g')
-plt.plot(t3, y3, 'y')
-plt.show()
-
+    plt.legend()
+    plt.show()
