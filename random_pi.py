@@ -40,7 +40,18 @@ for i in range(n):
 print "The sphere-volume method pi:" , pi_spheremethod
 
 
+'''
+pi_value_sphere = (6)*(float(num_of_pts_in_sphere)/float(num_of_pts))
+	pi_values = [pi_value_circle,pi_value_sphere]	
+	return pi_values
 
+if __name__ == "__main__":
+	if len(sys.argv) ==3:
+              
+              random.seed(int(sys.argv[1]))
+              h,k = gen(int(sys.argv[1]),int(sys.argv[2]))
+	      print 'circle-area pi:',h,'\nsphere-volume pi:',k
+'''
 
 
  
