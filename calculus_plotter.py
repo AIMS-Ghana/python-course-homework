@@ -25,5 +25,8 @@ def plotter(f):
 <<<<<<< Updated upstream
 =======
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 #plotter(numpy.cos)

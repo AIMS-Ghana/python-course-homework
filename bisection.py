@@ -6,7 +6,11 @@ def f(x):
 	return x**3 + x -1
 	
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 def root(a:float,b:float,tol=.0001):
+=======
+def Root(a:float,b:float,tol=.0001):
+>>>>>>> Stashed changes
 =======
 def Root(a:float,b:float,tol=.0001):
 >>>>>>> Stashed changes
@@ -27,7 +31,11 @@ def main(argv):
 	else:
 		print("The root is:")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		print ('{}'.format(root( int(sys.argv[1]) , int(sys.argv[2]))))
+=======
+		print ('{}'.format(Root( int(sys.argv[1]) , int(sys.argv[2]))))
+>>>>>>> Stashed changes
 =======
 		print ('{}'.format(Root( int(sys.argv[1]) , int(sys.argv[2]))))
 >>>>>>> Stashed changes
