@@ -1,52 +1,42 @@
 #!/usr/bin/python3
+import turtle
+
+from shapes import calc_shape
+
+def circle(radius):
+    turtle.circle(radius)
+
+def n_sides(n, side):
+    turn = 180 - (n-2)*180.0/n
+    for i in range(n-1):
+        turtle.forward(side)
+        turtle.right(turn)
+    turtle.forward(side)
+
+def triangle(side):
+    n_sides(3,side)
+
+def square(side):
+    n_sides(4,side)
+
+figs = {
+    'CIRCLE':circle,
+    'SQUARE':square,
+    'TRIANGLE':triangle
+}
+
+def draw(shape, area, fill="blue", cont=False):
+    dim = calc_shape(shape, area)
+    turtle.color(fill)
+    turtle.begin_fill()
+    figs[shape](dim)
+    turtle.end_fill()
+    if not cont:
+        turtle.exitonclick()
 
 import sys
-import turtle
-import shapes
 
-def draw(name,area, fill ="black", cont=false):
-	if name== "TRIANGLE":
-		#side_length= shapes.value
-		#draw triangle
-		turtle.setup(400,200)
-		turtle =Turtle()
-		turtle.forward(side)             
-		turtle.left(120)
-		turtle.forward(side)    
-		turtle.left(120)
-		turtle.forward(side)    
-		if not cont:
-		
-			turtle.exitonclick()	
-
-	if name =="SQUARE":
-	        #side=shapes.value		
-		#draw square
-		
-		turtle.setup(400,200)
-		turtle=Turtle()
-		turtle.forward(side)         
-		turtle.left(90)
-		turtle.forward(side)
-		turtle.left(90)
-		turtle.forward(side)
-		turtle.left(90)
-		turtle.forward(side)
-              	
-		turtle.exitonclick()	
-	
-	if name =="CIRCLE":
-		#radius=shapes.value		
-		#draw cicrcle
-		
-		turtle.setup(400,200)
-		turtle = Turtle()
-		turtle.forward(radius)         
-		
-             	
-		turtle.exitonclick()	
-	
 if __name__ == "__main__":
-	draw("TRIANGLE",100)
-	draw("SQUARE",100)
-	draw("CIRCLE" ,100)
+    shape = sys.argv[1]
+    area = float(sys.argv[2])
+    draw(shape, area)

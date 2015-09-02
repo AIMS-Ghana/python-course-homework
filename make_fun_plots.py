@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+import fun_plots2 as sp
+import fun_plots as fp
+import calculus_plotter as cp
+
+for i in range(0,5):
+	cp.plotter(fp.funclist[i])
+
+for i in range(0,5):
+	cp.plotter(sp.func_list2[i])

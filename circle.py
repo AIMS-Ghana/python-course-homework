@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 from math import pi
+import sys
 def area(r):
 	check (r)
-	
 	area=pi*(r**2)
 	return area
 def perimeter(r):
@@ -13,7 +13,7 @@ def check (r):
 	assert (r>0) , "input positive numbers"
        
 	
-import sys
+
 if __name__ == "__main__":
         r=float(sys.argv[1])
   	

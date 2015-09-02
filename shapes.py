@@ -1,39 +1,45 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+
+from math import pi
+
+def circle(a:float) -> float:
+    return (a/pi)**0.5
+
+def square(a:float) -> float:
+    return a**0.5
+
+def triangle(a:float) -> float:
+    return 2*(a/(3**0.5))**0.5
+
+shaper = {
+  'CIRCLE': circle,
+  'TRIANGLE': triangle,
+  'SQUARE': square
+}
+
+mod = {
+    'TRIANGLE':'equilateral '
+}
+
+name_shape = {
+    'CIRCLE':'radius'
+}
+
+def calc_shape(shape:str, a:float) -> float:
+    assert shape in shaper, "Shape "+shape+" revise your shape"
+    return shaper[shape](a)
 
 import sys
-import math
 
-def square_side(area):
-	return math.sqrt(float (area))
-
-def circle_radius(area):
-	return math.sqrt(float(area)/math.pi)
-
-def triangle_side(area):
-	return (2*(float( area))**0.5)/3**0.25
-
-
-def polygon_check(name, area):
-    
-    if name=="TRIANGLE":
-        side= triangle_side(area)
-        print"EQUILATERAL,", 'area',area, 'side:',side
-
-    elif name=="SQUARE":
-        side = square_side(area)
-        print'SQUARE,', 'area',area, 'side:',side
-    
-
-    elif name== "CIRCLE":
-        radius=circle_radius(area)
-        print 'CIRCLE,', 'area',area, 'radius:',radius
-
-    else:
-        print '... error indicating unknown shape... '
-
-if __name__=="__main__":
-    if len(sys.argv)==1:
-        print('... error indicating no input...')
-    else:
-       polygon_check(sys.argv[1], sys.argv[2])
-
+if __name__ == "__main__":
+    assert len(sys.argv) == 3, "input SHAPE, area as arguments"
+    shape = sys.argv[1]
+    area = float(sys.argv[2])
+    out = "{}{}, area {}, {}: {}"
+    print(out.format(
+      mod .get(shape,''),
+      shape,
+      area,
+      name_shape.get(shape,'side'),
+      calc_shape(shape, area)
+    ))
