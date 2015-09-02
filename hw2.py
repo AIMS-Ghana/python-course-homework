@@ -2,7 +2,7 @@
 
 import sys
 
-print("hello"+sys.argv[1]+"!")
+print("hello "+sys.argv[1]+"!")
 
 
 
