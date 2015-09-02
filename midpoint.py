@@ -1,20 +1,14 @@
 #!/usr/bin/python
  
-def f(x):
-    return 0.5 + x*x
+def integrate(f, rangex):
+    ss = 0
+    for i in range(len(rangex)-1):
+        w = rangex[i+1] - rangex[i]
+        h = f((rangex[i+1] + rangex[i])/2)
+        ss = ss + w*h
+    return ss
+    # get range widths
+    # get range midpoints
 
-def midpoint(a, b, f, nbins=10):
-
-    h = float(b-a)/nbins
-    assert h > 0
-    assert type(nbins) == int
-    
-    sum = 0.0
-    x = a + h/2
-    while (x < b):
-         sum += h* f(x)
-         x += h
-
-    return sum
-
-     
+if __name__ == "__main__":
+    print(integrate(lambda x:x, thing))
