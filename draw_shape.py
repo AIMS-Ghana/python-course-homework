@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+
 import turtle
 
 from shapes import compute
