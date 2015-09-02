@@ -9,9 +9,10 @@ def random_pi_circ(seed,N):
  from math import sqrt  
  
  
- Nint = int(N)   # otherwise range complains
+ Nint = int(float(N)/2.0)   # otherwise range complains division by 2 removes bias
  
- 
+ print(Nint)
+
  # now we go Monte-Carlo'ng
 
  inside=0   
@@ -21,9 +22,9 @@ def random_pi_circ(seed,N):
  for i in range(0,Nint):  
     x=ran.random()  
     y=ran.random()  
-    if x*x+y*y <=1:  
+    if x*x+y*y <1:  
         inside+=1  
-    pi=4.0*inside/Nint  # 4 from octants
+    pi=4.0*inside/float(Nint)  # 4 from octants
  
  return pi 
 
@@ -35,8 +36,10 @@ def random_pi_sphere(seed,N):
  from math import sqrt  
  
 
- Nint = int(N)  # otherwise range complains
+ Nint = int(float(N)/3.0)  # otherwise range complains, 3 takes care of bias
  
+ print(Nint)
+
  # now we go Monte-Carlo'ng
 
  inside=0  
@@ -47,9 +50,9 @@ def random_pi_sphere(seed,N):
     x=ran.random()  
     y=ran.random()
     z=ran.random()  
-    if x*x+y*y+z*z <=1:  
+    if x*x+y*y+z*z <1:  
         inside+=1  
-    pi=6.0*inside/Nint  # 6 is 8 (from 3d octants) x (3/4) from sphere to cube ratio....
+    pi=6.0*inside/float(Nint)  # 6 is 8 (from 3d octants) x (3/4) from sphere to cube ratio....
  
  return pi 
 
