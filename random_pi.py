@@ -1,54 +1,23 @@
 #!/usr/bin/python
 
-
-import random
 import sys
-import numpy as np
-
-n = int(sys.argv[2])
-seed = int(sys.argv[1])
-
-
-def circle_area(seed, n):
-	random_points = []
-	for i in np.arange(0, n+1):
-		x = random.random()
-		y = random.random()
-		a = (x,y)
-		random_points.append(a)
-
-	#print random_points
-	count = 0.0
-	for j in random_points:
-		if (j[0])**2 + (j[-1])**2 <= 1:
-			count = count + 1
-		else:
-			pass
-	print count
-	pi = (count/n)*4
-	print "circle area pi :", pi
-
-
-def sphere_volume(seed, n):
-	random_points = []
-	for i in np.arange(0, n+1):
-		x = random.random()
-		y = random.random()
-		z = random.random()
-		a = (x,y,z)
-		random_points.append(a)
-
-	#print random_points
-	count = 0.0
-	for j in random_points:
-		if (j[0])**2 + (j[1])**2 + (j[-1])**2 <= 1:
-			count = count + 1
-		else:
-			pass
-	print count
-	pi = (count/n)*6
-	print "sphere volume pi :", pi
-
-circle_area(seed, n)
-sphere_volume(seed, n)
+from random import *
+ 
+num = int(sys.argv[2])
+total = 0
+TOTAL = 0
+     for i in range (0, num):
+	    x = random ()
+	    y = random ()
+	      if x**2 + y**2 <= 1:
+	       total = total + 1
+	   
+   print "circle-area pi : {}".format(float(4*total)/num)
+    for i in range (0, num):
+	    X = random ()
+	    Y = random ()
+	    Z = random () 
+	      if X**2 + Y**2 + Z**2 <=1:
+	       TOTAL = TOTAL + 1
+    print "sphere-volume pi : {}".format(float(6*TOTAL)/num)
 
