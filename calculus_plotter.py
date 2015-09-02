@@ -17,16 +17,16 @@ def somefunction(f,xs):
     plt.show()
 
 def somef1(xs):
-    return xs
+    return xs2
 
-xs = np.arange(0.0, 5.0, 0.1)
+xs = np.arange(0.0, 5.0, 0.1)  #range over xs
 somefunction(somef1,xs)
 
 '''
-def somefunction(f, xs):
+def somefunction(f, xs):     # a functon that plots the integral,derivative with the function itself
     ys = f(xs) # real version from function
-    yprimes = deriv(f,xs) #np.exp(-xs) # somederivfunc(f, xs) real version from some derivative finder
-    Iys =  odeint(lambda I,x:f(x),0,xs) # xs + np.exp(-xs) # someintegralfunc(f, xs) real version from some integrator
+    yprimes = deriv(f,xs) #np.exp(-xs)    # somederivfunc(f, xs) real version from some derivative finder
+    Iys =  odeint(lambda I,x:f(x),0,xs)   # xs + np.exp(-xs) # someintegralfunc(f, xs) real version from some integrator
     plt.figure(2)
     plt.plot(xs,ys)
     plt.plot(xs,yprimes)  #differention
