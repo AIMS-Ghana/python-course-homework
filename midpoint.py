@@ -6,6 +6,6 @@ def integrate(a,b):
 	for n in range(len(b)-1):
 		w=b[n+1]-b[n]
 		midpoint=float(b[n+1]+b[n]/2)
-		h=a(midpoint)
+		h=(midpoint)
 		d=m + w*h
 	return d
