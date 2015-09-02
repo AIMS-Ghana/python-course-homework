@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-import turtle
+import turtle # Necessary module to draw
 from shapes import side
 
 def draw (name, area):

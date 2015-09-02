@@ -1,5 +1,7 @@
 #!/usr/bin/python
-import sys
-print "hello " + sys.argv[1] + "!"
+
+import sys #import the module sys
+
+print "hello " + sys.argv[1] + "!"#print hello someone
 
 

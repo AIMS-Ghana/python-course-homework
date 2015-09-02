@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 from fun_plots import *
 from calculus_plotter import *
 
