@@ -1,11 +1,11 @@
 #!/usr/bin/python
-# A program that prints the area and the perimeter of a triangle.
+# A program that prints the area and the perimeter of a rectangle.
 import sys
 a = float(sys.argv[1])
 b = float(sys.argv[2])
 
 area = a*b
-perimeter = 2*(a*b)
+perimeter = 2*(a + b)
 
 
 def check(a,b):

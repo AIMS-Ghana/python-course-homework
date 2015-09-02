@@ -13,7 +13,7 @@ def is_in_sph(x, y, z):
     return (x**2 + y**2 + z**2) < 1
 
 def est_pi(in_circ, tot):
-    return 4*in_circ/tot
+    return (4*in_circ)/tot
 
 def est_pi_sphere(insph, tot):
     return (6.0*in_sph)/tot
@@ -27,8 +27,8 @@ if __name__ =="__main__":
     vol_samples = get_samples(samples, 3)
     in_circ = sum(is_in_circ(circ_samples[:0], circ_samples[:1]))
     in_sph = sum(is_in_sph(vol_samples[:,0], vol_samples[:,1], vol_samples[:,2]))
-    print(est_pi(in_circ, samples//2))
-    print(est_pi_sphere(in_sph,samples//3))
+    print(est_pi(in_circ, samples/2))
+    print(est_pi_sphere(in_sph,samples/3))
 
 
 
