@@ -1,42 +1,40 @@
 #!usr/local/bin/python3
 import turtle
 import shape
-import maths
+import math
 import sys
 
 
 def draw_shape():
-    window= turtle.screen()
-    window.bdcalor("red")
+    turtle.bdcalor("red")
     turtle= turtle.turtle()
     turtle.shape("turtle")
     turtle.color("yellow")
     turtle.speed(2)
-window.exitonclick()
-draw_shape()
+    turtle.exitonclick()
 
-def circle(radius):
+def CIRCLE(radius):
     turtle.circle(radius)
 
-def ngon(n, side):
+def n_side(n, side):
     turtle.forwad(side)
     turtle.right(30)
     turtle.forward(side)
-window.exitonclick()
-draw_circle()
+    tuutle.exitonclick()
+draw_CIRCLE()
 
-def triangle(side):
-    ngon(3,side)
+def TRIANGLE(side):
+    n_side(3,side)
     turtle.right(120)
     turtle.forwad(side)
     turtle.right(120)
     turtle.forwad(side)
     turtle.right(120)
     turtle.forwad(side)
-window.exitonclick()
-draw_triangle()
+    turtle.exitonclick()
+draw_TRIANGLE()
 
-def square(side):
+def SQUARE(side):
     ngon(4,side)
     turtle.right(90)
     turtle.forwad(l)
@@ -46,12 +44,12 @@ def square(side):
     turtle.forwad(l)
     turtle.right(90)
     turtle.forwad(l)
-window.exitonclick()
-draw_square()
+    turtle.exitonclick()
+draw_SQUARE()
 figs = {
-    'circle':circle,
-    'square':square,
-    'triangle':triangle
+    'CIRCLE':circle,
+    'SQUARE':square,
+    'TRIANGLE':triangle
 }
 
 def draw(shape, area):

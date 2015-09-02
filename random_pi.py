@@ -1,16 +1,22 @@
-import numpy as np
-import matplotlib.pyplot as plt
+#!/usr/bin/python
+import sys
+from random import *
+ 
+N=int(sys.argv[2])
+Inside_value = 0
+Total_value = 0
+for i in range (0, N):
+    r = random ()
+    s = random ()
+    if r**2 + s**2 <= 1:
+        Inside_value = Inside_value + 1
+   
+print "circle-area pi = {}".format(float(4*Inside_value)/N)
+for i in range (0, N):
+    l = random ()
+    m = random ()
+    k = random () 
+    if l**2 + m**2 + k**2 <=1:
+        Total_value = Total_value + 1
+print "sphere-volume pi = {}".format(float(6*Total_value)/N)
 
-def f(t):
-    return np.exp(-t) * np.cos(2*np.pi*t)
-
-t1 = np.arange(0.0, 5.0, 0.1)
-t2 = np.arange(0.0, 5.0, 0.02)
-
-plt.figure(1)
-plt.subplot(211)
-plt.plot(t1, f(t1), 'bo', t2, f(t2), 'k')
-
-plt.subplot(212)
-plt.plot(t2, np.cos(2*np.pi*t2), 'r--')
-plt.show()
