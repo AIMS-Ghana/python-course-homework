@@ -1,25 +1,21 @@
-#!/usr/local/bin/python
+#!/usr/bin/python
 import sys 
+import math
 
 def check(R):
-	assert (R<=0) ,"negative dimension"
-
-from math import pi
+	assert (R>0) ,"negative dimension"
 
 def perimeter(R):
 	check(R)
-	P = 2*pi*R
-	return P
+	return 2*R*3.14
 
 def area(R):
 	check(R)
-	A = 2*pi*R**2
-	return A
+	return 2*3.14*R**2
 
-if __name__ =="__main__":
+if __name__ == "__main__":
 	R = float(sys.argv[1])
-	print ("perimeter is {}, /n area is {}".format(perimeter(R), area(R)))
-
+	print ("perimeter is {0}, area is {1}".format(perimeter(R) , area(R)))
 
 
 

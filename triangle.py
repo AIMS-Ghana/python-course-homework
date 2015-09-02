@@ -12,8 +12,8 @@ def perimeter (a, b, c):
 def area (a , b, c):
 	check(a, b, c)
 	D = (a + b + c) / 2
-	A = (D*(D-a)*(D-b)*(D-c))**0.5
-	return A
+	return (D*(D-a)*(D-b)*(D-c))**0.5
+
 
 import sys
 if __name__ == "__main__":
