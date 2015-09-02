@@ -2,32 +2,37 @@
 import sys
 import math
 
-'''def f(x):
-	return x**3 + x -1
-'''	
-def root(f, V, tol=0.0000001, max_n=100):
-	a = V [0]
-	b = V [1]
-	#if f(c) == 0.0:
-		#return c
-	while abs (b-a) > tol:
-		c = float (a+b) / 2
-		if f(a)*f(c) < 0:
-			b = c
-		if f(b)*f(c) < 0:
-			a = c
-	return a
-	
-def main(argv):
-	if (len(sys.argv) != 4):
-		sys.exit('Usage: bisection.py <a> <b> <tol>')
-	
-	print 'The root is: ',
-	print bisection(int(sys.argv[1]),int(sys.argv[2]),float(sys.argv[3]))
+def root(f, endpoints, tol=1e-5, depth=100):
+    a, b = endpoints
+    fa = f(a)
+    fb = f(b)
+    assert fa*fb < 0, "endpoints have same sign"
+    m = (a+b)/2
+    fm = f(m)
+    if (abs(fm) < tol) or (depth == 0):
+        return m
+    elif fa*fm < 0: # root in a,m
+        return root(f,[a,m],tol,depth-1)
+    else: # root in m, b
+        return root(f,[m,b],tol,depth-1)
 
-if __name__ == "__main__":
-	main(sys.argv[1:])
-
+def root2(f, endpoints, tol=1e-5, depth=100):
+    a, b = endpoints
+    fa = f(a)
+    fb = f(b)
+    assert fa*fb < 0, "endpoints have same sign"
+    m = (a+b)/2
+    fm = f(m)
+    while (abs(fm) > tol) or (depth != 0):
+        if fa*fm < 0:
+            b = m
+        else:
+            a = m
+            fa = fm
+        m = (a+b)/2
+        fm = f(m)
+        depth = depth - 1
+    return m
 
 
 
