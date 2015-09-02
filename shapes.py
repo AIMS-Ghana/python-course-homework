@@ -1,18 +1,14 @@
 #!/usr/bin/python
-
 from math import pi
 
-def circle(a:float) -> float:
+def circle(a):
     return (a/pi)**0.5
 
-def square(a:float) -> float:
+def square(a):
     return a**0.5
 
-# heron's rule: area = sqrt(p(p-a)(p-b)(p-c))
-# p = (a+b+c)/2
-# for eq.tri, a=b=c => p = 3a/2
-# area = sqrt(3*(a/2)^4) = sqrt(3)*(a^2)/4
-def triangle(a:float) -> float:
+
+def triangle(a):
     return 2*(a/(3**0.5))**0.5
 
 shaper = {
@@ -29,17 +25,17 @@ dim_name = {
     'CIRCLE':'radius'
 }
 
-def compute(shape:str, a:float) -> float:
+def compute(shape, a):
     assert shape in shaper, "Shape "+shape+" not parseable"
     return shaper[shape](a)
 
 import sys
 
 if __name__ == "__main__":
-    assert len(sys.argv) == 3, "need SHAPE, area as args"
+    assert len(sys.argv) == 3, "need SHAPE, area as argv"
     shape = sys.argv[1]
     area = float(sys.argv[2])
-    out = "{}{}, area {}, {}: {}"
+    out = "{}{}, area {}, {}: {} "
     print(out.format(
       output_mods.get(shape,''),
       shape,

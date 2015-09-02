@@ -1,4 +1,3 @@
-#!/usr/bin/python
 
 import triangle
 import rectangle

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+
 import turtle
 
 from shapes import compute
@@ -31,8 +31,6 @@ def draw(shape, area, fill="black", cont=False):
     turtle.begin_fill()
     figs[shape](dim)
     turtle.end_fill()
-    if not cont:
-        turtle.exitonclick()
 
 import sys
 
