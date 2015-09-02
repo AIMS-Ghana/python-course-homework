@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 import random
 import sys
-from numpy.random import seed
-import numpy as np
 '''
 1. pick point at random in square(x,y)
 2. set count to 0
