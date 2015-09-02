@@ -1,54 +1,29 @@
 #!/usr/bin/python
 
+from numpy.random import uniform, seed
 
-import random
-import sys
-import numpy as np
+def get_samples(how_many, dim):
+     return uniform(size=(how_many//dim, dim))
 
-n = int(sys.argv[2])
-seed = int(sys.argv[1])
+def is_in_circ(x, y):
+     return (x**2 + y**2)<1
 
+def is_in_sph(x, y, z):
+      return (x**2 + y**2 + z**2)<1
+def est_pi(in_circ, tot):
+     return (4.0*in_circ)/tot
+def est_pi_sphere(in_sph, tot):
+    return (6.0*in_sph)/tot
 
-def circle_area(seed, n):
-	random_points = []
-	random.seed(seed)
-	for i in np.arange(0, n+1):
-		x = random.random()
-		y = random.random()
-		a = (x,y)
-		random_points.append(a)
-
-	count = 0.0
-	for j in random_points:
-		if np.sqrt((j[0])**2 + (j[-1])**2) <= 1:
-			count = count + 1
-		else:
-			pass
-
-	pi = (count/n)*4
-	print "circle-area pi :", pi
-
-
-def sphere_volume(seed, n):
-	random_points = []
-	random.seed(seed)
-	for i in np.arange(0, n+1):		
-		x = random.random()
-		y = random.random()
-		z = random.random()
-		a = (x,y,z)
-		random_points.append(a)
-
-	count = 0.0
-	for j in random_points:
-		if np.sqrt((j[0])**2 + (j[1])**2 + (j[-1])**2) <= 1:
-			count = count + 1
-		else:
-			pass
-
-	pi = (count/n)*6
-	print "sphere-volume pi :", pi
-
-circle_area(seed, n)
-sphere_volume(seed, n)
+if __name__ == '__main__':
+     import sys
+     seed(int(sys.argv[1]))
+     samples = int(sys.argv[2])
+     circ_samples = get_samples(samples,2)
+     vol_samples = get_samples(samples, 3)
+     in_circ = sum(is_in_circ(circ_samples[:,0], circ_samples[:, 1]))
+     in_sph = sum(is_in_sph(vol_samples[:, 0], vol_samples[:, 1], vol_samples[:, 2]))
+     print(est_pi(in_circ,samples//2))
+     print(est_pi_sphere(in_sph, samples//3))
+  
 
