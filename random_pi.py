@@ -1,27 +1,42 @@
 #!/usr/bin/python
-
 import random
-import math
+from numpy.random import uniform, seed
+
+def get_samples(how_many, dim):
+    return uniform(size=(how_many/dim, dim))
+
+def is_in_circ(x, y):
+    return (x**2 + y**2) < 1
+
+def is_in_sph(x, y, z):
+    return (x**2 + y**2 +z**2) < 1
 
 
-count_inside = 0
-for count in range(0, 10000):
-    d = math.hypot(random.random(), random.random())
-    if d < 1: count_inside += 1
-count += 1
-print 4.0 * count_inside / count
+def est_pi(in_circ, tot):
+    return float(4.0*in_circ)/float(tot)
 
 
-#print '%0.8f' % (4.0 * M / N)
+def sph_pi(in_sph, tot):
+    return float(6.0*in_sph)/float(tot)
 
-count_inside = 0
-for count in range(0, 10000):
-    d = math.hypot(random.random(), random.random())
-    if d < 1: count_inside += 1
-count += 1
-print 6.0 * count_inside / count
+if __name__=="__main__":
+   import sys
+   seed(int(sys.argv[1]))
+   samples=int(sys.argv[2])
+   circ_samples = get_samples(samples, 2)
+   vol_samples = get_samples(samples, 3)
+   in_circ = sum(is_in_circ(circ_samples[:,0],circ_samples[:,1]))
+   in_sph = sum(is_in_sph(vol_samples[:,0],vol_samples[:,1],vol_samples[:,2]))
+   print(est_pi(in_circ, samples/2))
+   print(sph_pi(in_sph, samples/3))
+   
 
 
-#print '%0.8f' % (4.0 * M / N)
+
+
+
+
+
+
 
 
