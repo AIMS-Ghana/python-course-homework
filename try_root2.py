@@ -1,6 +1,6 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python
 
-import bisection
+
 import secant
 
 def bisectf(x):
@@ -13,7 +13,7 @@ out = "{} root of (x-1)(x+10)^2 on ({},{}): {}\nelapsed: {}"
 import time
 
 start = time.clock()
-res = bisection.root(bisectf, rangex)
+res = secant.root(bisectf, rangex)
 elapsed = time.clock() - start
 
 print(out.format(
@@ -28,7 +28,7 @@ res = secant.root(bisectf, rangex)
 elapsed = time.clock() - start
 
 print(out.format(
-    "bisection",
+    "secant",
     rangex[0], rangex[1],
     res,
     elapsed
