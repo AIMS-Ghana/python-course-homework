@@ -21,7 +21,7 @@ def random_pi_circ(seed,N):
  for i in range(0,Nint):  
     x=ran.random()  
     y=ran.random()  
-    if sqrt(x*x+y*y)<=1:  
+    if x*x+y*y <=1:  
         inside+=1  
     pi=4.0*inside/Nint  # 4 from octants
  
@@ -47,7 +47,7 @@ def random_pi_sphere(seed,N):
     x=ran.random()  
     y=ran.random()
     z=ran.random()  
-    if sqrt(x*x+y*y+z*z)<=1:  
+    if x*x+y*y+z*z <=1:  
         inside+=1  
     pi=6.0*inside/Nint  # 6 is 8 (from 3d octants) x (3/4) from sphere to cube ratio....
  
