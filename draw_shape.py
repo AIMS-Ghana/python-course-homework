@@ -40,3 +40,7 @@ def draw(shape,area):
 
 if __name__ == "__main__":
 	draw(shape,area)
+
+    Status API Training Shop Blog About Pricing 
+
+
