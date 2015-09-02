@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 import random
 import sys
+from numpy.random import seed
+import numpy as np
 '''
 1. pick point at random in square(x,y)
 2. set count to 0
 3. check if point lies in circle: x^2 + y^2 < R^2 
 4. if point in circle increment count
 '''
-values = "circle-area pi:{0}\nsphere-volume pi:{0}"
 
 def gen(seed, sample_size):
         num_of_pts_in_circle = 0
@@ -31,6 +32,8 @@ def gen(seed, sample_size):
 
 if __name__ == "__main__":
 	if len(sys.argv) ==3:
+              
+              random.seed(int(sys.argv[1]))
               h,k = gen(int(sys.argv[1]),int(sys.argv[2]))
 	      print 'circle-area pi:',h,'\nsphere-volume pi:',k
               
