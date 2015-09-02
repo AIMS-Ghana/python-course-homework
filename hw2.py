@@ -1,2 +1,4 @@
 #!/usr/bin/python
-print("x",="string")
+import sys
+name = sys.argv[1]
+print 'hello, %s!' % name
