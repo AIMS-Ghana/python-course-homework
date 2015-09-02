@@ -15,7 +15,7 @@ print(out.format(
     "trapeziod",
 
     rangex[0], rangex[-1],
-    trapeziod.integrate(intf, rangex)
+    trapeziod.integrate_trap(intf, rangex)
 ))
 
 from scipy.integrate import quad
