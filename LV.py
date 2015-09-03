@@ -23,7 +23,7 @@ def dX_dt(X, t=0):
     return np.array([ dx , dy ])
 
 
-#################   plot         #####################################
+#################   plot   sols      #####################################
 
 def lv_plot(prey,pred,t):
    
@@ -38,9 +38,20 @@ def lv_plot(prey,pred,t):
     plt.title('Predator and prey populations')
     
     plt.show()
+################ plot phase #############################################
+
+def lv_plot_phase(prey,pred):
+
+    plt.figure()
+    plt.plot(pred, prey, 'r-', label='Phase Plot')
+    plt.grid()
+    plt.legend(loc='best')
+    plt.xlabel('pred')
+    plt.ylabel('preys')
+    plt.title('Predator and prey phase plot')   
 
 
-
+    plt.show()
 ################  Gillespie it       ##############################
 
 def gillespie(X0,t,seed):
@@ -62,11 +73,11 @@ def gillespie(X0,t,seed):
    
     while t < tfinal:
 
-        L = a*x+ c*y + x*y*(b + d)
+        L = a*x+ c*y + x*y*(b + d)           
 
-        twait = npr.exponential(1/L)
+        twait = npr.exponential(1/L)         # exponentially distributed waiting time, parameter 1/L
 
-        prob_xp = a*x/L
+        prob_xp = a*x/L                      # probability an x+ fires in [0,twait]
         prob_xm = b*x*y/L
         prob_yp = d*x*y/L
         prob_ym = c*y/L
@@ -74,11 +85,11 @@ def gillespie(X0,t,seed):
 
         p =[prob_xp, prob_xm, prob_yp, prob_ym]
 
-        #print("before",x,y)
+        #print("before",x,y) # test that updater is working as planned
         
-        chooser =  npr.choice(["xp","xm","yp","ym"],1,p=p)
+        chooser =  npr.choice(["xp","xm","yp","ym"],1,p=p) # pick x+,x-,y+,y- with appropriate weighted prob
        
-       
+        # function for each of x+,x-,y+,y-
 
         update_switch ={
                     "xp" : lambda x,y: (x+1,y),
@@ -86,13 +97,15 @@ def gillespie(X0,t,seed):
                     "yp" : lambda x,y: (x,y+1),
                     "ym" : lambda x,y: (x,y-1),
      	}
-        
+                
+        # run update with correct function
+
         def updater(x,y):
           return update_switch[chooser[0]](x,y)
 
         (x,y) = updater(x,y)
 
-        #print("after",x,y) 
+        #print("after",x,y) # test that updater is working as planned
 
         t = t + twait
    
@@ -109,14 +122,14 @@ def gillespie(X0,t,seed):
 
 if __name__ == "__main__":
 
-    t = np.linspace(0, 10,  1000)     
+    t = np.linspace(0, 10,  2000)     
     X0 = np.array([10, 5])      # initials conditions: 10 prey and 5 predators, also pinched off web 
     seed = 1
     a = 1.   
     b = 0.1  
     c = 1.5  
     d = .075  
-    zed = 0
+    
 
     X = integrate.odeint(dX_dt, X0, t)
 
@@ -124,10 +137,14 @@ if __name__ == "__main__":
     pred = X[:,1]
 
     lv_plot(prey,pred,t)
-    
-    xout,yout,tout = gillespie(X0,t,seed)
 
-    lv_plot(xout,yout,tout)
+    lv_plot_phase(prey,pred)
+    
+    pred,prey,t = gillespie(X0,t,seed)
+
+    lv_plot(pred,prey,t)
+
+    lv_plot_phase(prey,pred)
  
 
 
