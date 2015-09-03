@@ -3,11 +3,12 @@ import sys
 import math
 import shape_objects
 
-def polygon_check(polygon_name, polygon_area):
+def polygon_check(polygon_name, area):
 	
 	if polygon_name.upper() =='TRIANGLE':
 		#find side
-                print shape_objects.Triangle(polygon_area) #new changes to use the shape_object module
+                print area
+                print shape_objects.Triangle(float(area)) #new changes to use the shape_object module
 		'''
 		side =(float(polygon_area*4) / float(math.sqrt(3)) )**(1/2)
 		print '\nEquilateral TRIANGLE, area ', polygon_area, ', side: ',side,' .....\n'
@@ -18,7 +19,7 @@ def polygon_check(polygon_name, polygon_area):
 		
 	elif polygon_name.upper()=='SQUARE':
 		#find side
-                print shape_objects.Square(polygon_area)
+                print shape_objects.Square(float(area))
                 '''
 		side = math.sqrt(float(polygon_area))
 		print '\nSQUARE, area ', polygon_area, ', side: ',side,' .....\n'
@@ -28,7 +29,7 @@ def polygon_check(polygon_name, polygon_area):
 
 	
 	elif polygon_name.upper() =='CIRCLE':
-                print shape_objects.Circle(polygon_area)
+                print shape_objects.Circle(float(area))
                 '''
 		radius = math.sqrt(float(polygon_area)/math.pi)
 		print '\nCIRCLE, area ', polygon_area, ', radius: ',radius,' .....\n'

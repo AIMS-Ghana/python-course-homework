@@ -32,10 +32,10 @@ class Triangle(Shape):
         return "Triangle"
 
     def invert_area(self,area):
-	return (float(area*4) / float(math.sqrt(3)) )**(1/2)
+	return math.sqrt (  float(area*4) / float(math.sqrt(3))    )
 
     def dimname(self):
-        return "Perimeter"
+        return "Side"
 
 
 class Square(Shape):
@@ -46,7 +46,7 @@ class Square(Shape):
 	return (float(area)**(0.5))
 
       def dimname(self):
-        return "Perimeter"
+        return "Side"
 
 from math import pi
 
@@ -63,7 +63,7 @@ class Circle(Shape):
 if __name__ == "__main__":
     circ = Circle(10)
     square = Square(4)
-    triangle = Triangle(4)
+    triangle = Triangle(34)
     print(circ)
     print(square)
     print(triangle)
