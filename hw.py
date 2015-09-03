@@ -1,2 +1,3 @@
+#!/usr/bin/python
 # selom-aims./hw.py
-print("hello, world!")py
+print("hello, world!")

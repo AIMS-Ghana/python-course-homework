@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+
+
 class Shape:
     def kind(self):
         return "Shape"
@@ -28,16 +30,38 @@ class Shape:
         pass
 
 class Triangle(Shape):
-    pass
+    def kind(self):
+        return "Triangle"
+    def dimname(self):
+        return "side"
+    def invert_area(self, area):
+         return (2*(float(area))**0.5)/3**0.25
+
 
 class Square(Shape):
-    pass
+    def kind(self):
+        return "square"
+    def dimname(self):
+        return "length"
+    def invert_area(self, area):
+        return (area**0.5)
+
 
 from math import pi
 
 class Circle(Shape):
-    pass
+    def kind(self):
+        return "circle"
+    def dimname(self):
+        return "radius"
+    def invert_area(self, area):
+        return (area/pi)**0.5
+
 
 if __name__ == "__main__":
     circ = Circle(10)
+    tri = Triangle(5)
+    squa = Square(8)
+    print(squa)
+    print(tri)
     print(circ)
