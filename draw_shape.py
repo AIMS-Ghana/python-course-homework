@@ -1,7 +1,9 @@
 #!/usr/bin/python
 
 import sys
+
 import turtle # Necessary module to draw
+
 from shapes import side
 
 def draw (name, area):
@@ -29,4 +31,4 @@ def draw (name, area):
 		turtle.circle (side1)
 		turtle.home ()
 	turtle.exitonclick()		
-
+draw ("SQUARE", 100)

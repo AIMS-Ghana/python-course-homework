@@ -4,8 +4,18 @@ from visual.graph import * # import graphing features
 from scipy.integrate import *
 
 
+<<<<<<< Updated upstream
 def draw_curve (F, V):
 
+=======
+"""def approprim (a, b, x, g): # g is a function
+	A = float (g (b) - g (a)) / (b - a)
+	B = g (b) - (A * b)
+	return ((float (A) / 2) * (x ** 2)) + (B * x)"""
+
+def draw_curve (F, V):
+
+>>>>>>> Stashed changes
 	def func(m, x):
 		return F (x)
 	
