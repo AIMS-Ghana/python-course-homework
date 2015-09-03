@@ -7,7 +7,7 @@ def polygon_check(polygon_name, polygon_area):
 	
 	if polygon_name.upper() =='TRIANGLE':
 		#find side
-		side = math.sqrt(float(polygon_area*4)/ float(math.sqrt(3)))
+		side =(float(polygon_area*4) / float(math.sqrt(3)) )**(1/2)
 		print '\nEquilateral TRIANGLE, area ', polygon_area, ', side: ',side,' .....\n'
 		values = [polygon_area,side]
 		return values
