@@ -36,7 +36,12 @@ class Square(Shape):
 from math import pi
 
 class Circle(Shape):
-    pass
+    def kind(self):
+        return "Circle"
+    def invert_area(self, area):
+        return (area / pi)**0.5
+    def dimname(self):
+        return "radius"
 
 if __name__ == "__main__":
     circ = Circle(10)
