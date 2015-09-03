@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 # This program estimates the value of pi using random number generation
 
-#Included below is the expected program output
-#$ ./random_pi.py 0 10000
-#circle-area pi: ...
-#sphere-volume pi
+# Included below is the expected program output
+# $ ./random_pi.py 0 10000
+# circle-area pi: ...
+# sphere-volume pi
 
 
 import random
-#Usage random.uniform(0,1)
+# Usage random.uniform(0,1)
 
-#Here is implemented a method based on the area of a quater of a circle in a square
+
+# Here is implemented a method based on the area of a quater of a circle in a square
 def circle_area(seed, size):
     random.seed(seed)
     tally = 0
@@ -21,7 +22,8 @@ def circle_area(seed, size):
             tally += 1
     return 4 * tally/size
 
-#Here is implemented a method based on the volume of an eigth of a ball in a cube
+
+# Here is implemented a method based on the volume of an eigth of a ball in a cube
 def sphere_volume(seed, size):
     random.seed(seed)
     tally = 0
@@ -32,7 +34,6 @@ def sphere_volume(seed, size):
         if x**2 < 1 - y**2 - z**2:
             tally += 1
     return 3/4 * tally/size * 8
-
 
 
 if __name__ == "__main__":

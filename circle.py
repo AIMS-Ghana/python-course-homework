@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-
-#Calculate the area and perimeter of a circle, given its radius
-
+# Calculate the area and perimeter of a circle, given its radius
 from math import pi
+
 
 def perimeter(r):
     check(r)
     return 2*pi*r
 
+
 def area(r):
     check(r)
     return pi*r*r
+
 
 def check(r):
     assert (r > 0), "Where do you find circles with negative radii?"

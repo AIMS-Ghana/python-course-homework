@@ -1,13 +1,16 @@
 #!/usr/bin/python3
 
+
 def perimeter(a,b,c):
     check(a,b,c)
-    return a + b + c 
+    return a + b + c
+
 
 def area(a,b,c):
     check(a,b,c)
     s = perimeter(a,b,c)/2.
     return (s*(s-a)*(s-b)*(s-c))**0.5
+
 
 def check(a,b,c):
     assert (a > 0) & (b > 0) & (c >0), "I'm afraid side lengths can only be positive."
