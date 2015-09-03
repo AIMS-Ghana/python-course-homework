@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-
-from numpy import gradient
 from scipy.integrate import odeint
 
 # I(x) = integral(f)
