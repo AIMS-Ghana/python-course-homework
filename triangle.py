@@ -22,11 +22,13 @@ def area(a,b,c):
 import sys
 
 if __name__ == "__main__":
+	
+
 	a = float(sys.argv[1])
 	b = float(sys.argv[2])
 	c = float(sys.argv[3])
 
-print("area {0}, perimerter {1}".format(area(a,b,c,),perimeter(a,b,c)))
+	print("area {0}, perimerter {1}".format(area(a,b,c,),perimeter(a,b,c)))
 
 
 

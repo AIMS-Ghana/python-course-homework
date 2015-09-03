@@ -1,53 +1,38 @@
 #!/usr/bin/python
 
-import sys
-import shapes
+#!/usr/bin/python3
 import turtle
 
+from shapes import compute
 
-def draw_circle(area):
-    radius=shapes.circle(a)	
+def circle(radius):
     turtle.circle(radius)
-    turtle.exitonclick()
 
-def draw_square(area):
-    side=shapes.square(a)
-    turtle.forward(side)
-    turtle.left(90)
-    turtle.forward(side)
-    turtle.left(90)
-    turtle.forward(side)
-    turtle.left(90)
-    turtle.forward(side)
-    turtle.exitonclick()
-	
-def draw_triangle(area):
-    side=shapes.triangle(a)
-    turtle.forward(side)
-    turtle.left(120)
-    turtle.forward(side)
-    turtle.left(120)
-    turtle.forward(side)
-    turtle.exitonclick()
 
-def draw(name,area):
-    if name=="CIRCLE":
-            draw_circle(area)
-    elif name=="SQUARE":
-            draw_square(area)
-    elif name=="TRIANGLE":
-            draw_triangle(area)
-    else :
-	 pass
+def triangle(side):
+    turtle.triangle(side)
 
-		
+def square(side):
+    turtle.square(side)
 
+figs = {
+    'CIRCLE':circle,
+    'SQUARE':square,
+    'TRIANGLE':triangle
+}
+
+def draw(shape, area, fill="black", cont=False):
+    dim = compute(shape, area)
+    turtle.color(fill)
+    turtle.begin_fill()
+    figs[shape](dim)
+    turtle.end_fill()
+    if not cont:
+        turtle.exitonclick()
+
+import sys
 
 if __name__ == "__main__":
-
-	
-    area=sys.argv[2]
-    name=sys.argv[1]
-    draw(name,area)
-    
-   
+    shape = sys.argv[1]
+    area = float(sys.argv[2])
+    draw(shape, area)

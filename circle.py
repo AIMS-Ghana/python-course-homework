@@ -25,7 +25,7 @@ if __name__ == "__main__":
 	r = float(sys.argv[1])
 	
 
-print("area {}, perimerter {}".format(area(r),perimeter(r)))
+	print("area {}, perimerter {}".format(area(r),perimeter(r)))
 
 
 
