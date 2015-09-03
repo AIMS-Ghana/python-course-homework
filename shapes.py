@@ -5,7 +5,7 @@
 import math
 import sys	
 def triangle(b):
-	side=math.sqrt((float(b)*4)/math.sqrt(3))
+	side=math.sqrt((float(b)*4)/math.sqrt(3))#heros formula calculation of the area to get the side
 	return side
 def square(b):
 	value=math.sqrt(float(b))

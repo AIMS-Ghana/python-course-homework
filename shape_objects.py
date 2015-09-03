@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-
+import math
+import turtle
 class Shape:
     def kind(self):
         return "Shape"
 
     def invert_area(self, area):
-        return area
+       return area
 
     def dimname(self):
         return "HUH?"
@@ -28,16 +29,36 @@ class Shape:
         pass
 
 class Triangle(Shape):
-    pass
+   def kind(self):
+        return "triangle"
+   def invert_area(self, area):
+       return math.sqrt(float((area)*4)/math.sqrt(3))
+   def dimname(self):
+        return "side"
+
 
 class Square(Shape):
-    pass
+    def kind(self):
+        return "square"
+    def dimname(self):
+        return "side"
+    def invert_area(self, area):
+       return area**0.5
 
 from math import pi
 
 class Circle(Shape):
-    pass
+    def kind(self):
+        return "circle"
+    def dimname(self):
+        return "radius"
+    def invert_area(self, area):
+       return float(math.sqrt(area/math.pi)) 
 
 if __name__ == "__main__":
     circ = Circle(10)
+    sq=Square(5)
+    tri=Triangle(5)
     print(circ)
+    print(sq)
+    print(tri)
