@@ -25,12 +25,9 @@ def dX_dt(X, t=0):
 
 #################   plot         #####################################
 
-def lv_plot(X,t):
+def lv_plot(prey,pred,t):
    
-
-    prey=X[:,0]
-    pred=X[:,1]
-
+   
     plt.figure()
     plt.plot(t, prey, 'r-', label='Prey')
     plt.plot(t, pred  , 'b-', label='Predators')
@@ -61,6 +58,7 @@ def gillespie(X0,t,seed):
     xout=[x]
     yout=[y]
     tout=[t]
+    
    
     while t < tfinal:
 
@@ -101,10 +99,15 @@ def gillespie(X0,t,seed):
         tout.append(t)
         xout.append(x)
         yout.append(y)
+    
+  #     
+#####################################################################        
 
     plt.figure()
     plt.plot(tout, xout, 'r-', label='Prey')
-    plt.plot(tout, yout  , 'b-', label='Predators')
+    plt.plot(tout, yout, 'b-', label='Predators')
+    #plt.plot(tout, X[:,0], 'r-', label='Prey')
+    #plt.plot(tout, Y[:,0], 'b-', label='Predators')
     plt.grid()
     plt.legend(loc='best')
     plt.xlabel('time')
@@ -112,7 +115,8 @@ def gillespie(X0,t,seed):
     plt.title('Predator and prey populations')
     
     plt.show()
-
+    
+    return Xout=xout,Yout=yout,Tout=t 
 
 
 
@@ -120,7 +124,7 @@ def gillespie(X0,t,seed):
 
 if __name__ == "__main__":
 
-    t = np.linspace(0, 10,  1000)     
+    t = np.linspace(0, 10,  10)     
     X0 = np.array([10, 5])      # initials conditions: 10 prey and 5 predators, also pinched off web 
     seed = 1
     a = 1.   
@@ -130,8 +134,15 @@ if __name__ == "__main__":
 
     X = integrate.odeint(dX_dt, X0, t)
 
-    lv_plot(X,t)
+    prey = X[:,0]
+    pred = X[:,1]
+
+    lv_plot(prey,pred,t)
     
     gillespie(X0,t,seed)
+
+    print(Xout,Yout,Tout) 
+
+ #   lv_plot(xout,yout,t)
 
 
