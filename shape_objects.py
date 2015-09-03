@@ -1,22 +1,26 @@
-class Shape:
-    def invert_area(area):
-        pass
+#!/usr/bin/env python3
 
-    def dimname():
+class Shape:
+    def kind(self):
+        return "Shape"
+
+    def invert_area(self, area):
+        return area
+
+    def dimname(self):
         return "HUH?"
 
     def __init__(self, area):
         self.__area = area
-        self.__dim = invert_area(area)
-        self.__kind = "WHAT?"
+        self.__dim = self.invert_area(area)
 
     strformat = "{}, area: {}, {}: {}"
 
-    def __str__():
-        return strformat.format(
-          self.__kind,
+    def __str__(self):
+        return Shape.strformat.format(
+          self.kind(),
           self.__area,
-          dimname(),
+          self.dimname(),
           self.__dim
         )
 
@@ -29,5 +33,11 @@ class Triangle(Shape):
 class Square(Shape):
     pass
 
+from math import pi
+
 class Circle(Shape):
     pass
+
+if __name__ == "__main__":
+    circ = Circle(10)
+    print(circ)
