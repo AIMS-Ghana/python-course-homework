@@ -1,18 +1,16 @@
 #!/usr/bin/python
-import math
 import sys
-	 
-def f(a):
-	return  math.exp(a)   
+def root(funcntion, endpoint, tol=0.001, n=100):
+    a, b = endpoint
+    fa = funcntion(a)
+    fb = funcntion(b)
 
-def bisection(x,y):
-	z = (x+y)/2.0
-	if f(z) == 0:
-		return z
-	elif f(a)*f(z) < 0:
-	        y = z
-	 else :
-	        x = z
-	        z = (x+y)/2.0
-         
-	 return z
+    assert fa*fb < 0 
+    h= (a+b)/2
+    f_h = funcntion(midpoint)
+    if (f_h) < tol or (n== 0):
+        return h
+    elif fa*f_h < 0:
+        return root(funcntion,[a,h])
+    else:
+        return root(funcntion, [h,b])

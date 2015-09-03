@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import math
 def perimeter(a,b):
     check(a,b)
     p=(2*a + 2*b)
