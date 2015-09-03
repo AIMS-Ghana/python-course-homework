@@ -1,5 +1,6 @@
 #!/usr/bin/python
-#!/usr/bin/python
+import sys
+import math
 
 def perimeter(a,b):
     check(a,b)
@@ -17,8 +18,12 @@ def check(a,b):
     
 import sys
 if __name__ == "__main__":
-
-    a = float(sys.argv[1])
-    b = float(sys.argv[2])
+	try:
+   		 a = float(sys.argv[1])
+   		 b = float(sys.argv[2])
+		 print "area {},\nperimeter{} ".format(area(a,b), perimeter(a,b))
+	except:
+		a = float(sys.argv[1])
+		print "area {},\nperimeter{} ".format(area(a,a), perimeter(a,a))
     
-    print "area {},\nperimeter {}".format(area(a,b), perimeter(a,b))
+#    print "area {},\nperimeter{} ".format(area(a,b), perimeter(a,b))
