@@ -2,7 +2,6 @@
 
 import math 
 
-
 class Shape:
     def kind(self):
         return "shape"
@@ -46,6 +45,7 @@ class Square(Shape):
       return float(area**0.5)
     def dimname(self):
         return "Side"
+
  
 
 from math import pi
@@ -58,6 +58,8 @@ class Circle(Shape):
     def dimname(self):
         return "Radius"  
 
+ 
+
 
 if __name__ == "__main__":
     circ = Circle(10)
@@ -66,5 +68,4 @@ if __name__ == "__main__":
     print(circ)
     print (tri)
     print (sq)
-
 
