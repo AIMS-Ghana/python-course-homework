@@ -1,8 +1,10 @@
+
 #!/usr/bin/python
 
 import numpy as np
 
 import trapezoid
+import time
 
 def intf(x):
     return np.exp(x)
@@ -12,7 +14,11 @@ rangex = np.linspace(0, 10, 100, endpoint=True)
 out = "{} integration, e^x on ({},{}): {}\nelapsed: {}"
 
 start = time.clock()
+<<<<<<< HEAD
 res = trapezoid.integrate(bisectf, rangex)
+=======
+res = midpoint.integrate(intf, rangex)
+>>>>>>> origin/master
 elapsed = time.clock() - start
 
 print(out.format(
@@ -23,11 +29,15 @@ print(out.format(
 ))
 
 start = time.clock()
-res = trapezoid.integrate(bisectf, rangex)
+res = trapezoid.integrate(intf, rangex)
 elapsed = time.clock() - start
 
 print(out.format(
+<<<<<<< HEAD
     "Trapezoid",
+=======
+    "trapezoid",
+>>>>>>> origin/master
     rangex[0], rangex[-1],
     res,
     elapsed

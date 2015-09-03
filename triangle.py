@@ -14,8 +14,8 @@ def check (a,b,c):
 	assert (s>c) & (d<c), "violated triangle inequality"
 import sys 
 if __name__ == "__main__":
-    a= float(sys.argv[1])
-    b= float(sys.argv[2])
-    c= float(sys.argv[3])
+	a= float(sys.argv[1]) 
+	b= float(sys.argv[2])
+	c= float(sys.argv[3])
 print ("area {0}, perimeter {1}".format (area(a,b,c),perimeter(a,b,c)))
 
