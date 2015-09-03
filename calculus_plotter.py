@@ -2,9 +2,9 @@
 from numpy import gradient
 from scipy.integrate import odeint
 
-
 def sine_and_cos(t):
     return np.sin(t) + np.cos(t)
+
 
 def calc_all(h, rangex, ifxmin = 0):
     hx = h(rangex)
