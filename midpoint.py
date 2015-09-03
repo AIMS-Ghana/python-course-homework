@@ -8,11 +8,7 @@ def integrate(f,p):
         kof = kof + w*h
     return kof
 
-
-
-   
-
 #if __name__ == "__main__":
-#print(integrate(lambda x:x, thing))
+	#print(integrate(lambda x:x, thing))
 
- #main(sys.argv[2:])
+ 

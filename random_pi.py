@@ -3,9 +3,17 @@
 import random  
 import sys
 from numpy import sqrt
-#calculating Pi using Monte Carlo Method
+#calculating Pi using Monte Carlo Method(circle-area method)
 
-seed=int(sys.argv[1]) 
+
+def get_samples(how_many,dim):
+	return uniform(size(how_many//dim,dim))
+def is_in_circle(x,y):
+	return (x**2+y**2)<1
+def is_in_sp()
+
+
+'''seed=int(sys.argv[1]) 
 n=int(sys.argv[2])  
 count_inside=0
 random.seed(seed)
@@ -37,7 +45,7 @@ for i in range(n):
 		pass 
 	pi_spheremethod=6.0*c_inside/n 
 
-print "The sphere-volume method pi:" , pi_spheremethod
+print "The sphere-volume method pi:" , pi_spheremethod'''
 
 
 
