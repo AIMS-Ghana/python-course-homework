@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 
 class Shape:
     def kind(self):
@@ -36,7 +36,7 @@ class Square(Shape):
 from math import pi
 
 class Circle(Shape):
-    pass
+   pass
 
 if __name__ == "__main__":
     circ = Circle(10)
