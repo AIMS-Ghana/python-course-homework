@@ -27,7 +27,7 @@ def root (function,rangex,error_tolerance=1.0e-10):
 
 def func(x): 
     x=root(func,1.0,2.0,error_tolerance=1.0e-10) 
-    print x
+    print (x)
     return x**3-3*x+1     
    
    
