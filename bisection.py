@@ -1,34 +1,35 @@
 #!/usr/bin/python
-import sys
-import math
+def root (function,rangex,error_tolerance=1.0e-10):
+    upper_bound=rangex[1]
+    lower_bound=rangex[0]
+    fu=function(upper_bound)
+    if fu==0.0 :  return upper_bound
+    fl=function(lower_bound)
+    if fl==0.0 :  return lower_bound
+    if fu*fl > 0.0:  
+        return None
+    else:
+        mid=(lower_bound+upper_bound)/2
+        error=(upper_bound-lower_bound)/2
+        while(error>error_tolerance): 
+            fu=function(upper_bound)
+            fl=function(lower_bound)
 
-'''def f(x):
-	return x**3 + x -1
-'''	
-def root(f, V, tol=0.0000001, max_n=100):
-	a = V [0]
-	b = V [1]
-	#if f(c) == 0.0:
-		#return c
-	while abs (b-a) > tol:
-		c = float (a+b) / 2
-		if f(a)*f(c) < 0:
-			b = c
-		if f(b)*f(c) < 0:
-			a = c
-	return a
-	
-def main(argv):
-	if (len(sys.argv) != 4):
-		sys.exit('Usage: bisection.py <a> <b> <tol>')
-	
-	print 'The root is: ',
-	print bisection(int(sys.argv[1]),int(sys.argv[2]),float(sys.argv[3]))
+            if mid==0.0 : return mid
 
-if __name__ == "__main__":
-	main(sys.argv[1:])
+            elif fu*mid < 0.0 : lower_bound=mid
 
+            elif fl*mid < 0.0 : upper_bound=mid
+            
+            mid=(lower_bound+upper_bound)/2
+            error=(upper_bound-lower_bound)/2
+        return mid
 
-
-
+def func(x): 
+    x=root(func,1.0,2.0,error_tolerance=1.0e-10) 
+    print (x)
+    return x**3-3*x+1     
+   
+   
+   
 
