@@ -2,6 +2,7 @@
 from numpy import gradient
 from scipy.integrate import odeint
 
+
 def sine_and_cos(t):
     return np.sin(t) + np.cos(t)
 
@@ -11,7 +12,6 @@ def calc_all(h, rangex, ifxmin = 0):
         'h'  : hx,
         'dh' : gradient(hx),
         'Ih' : odeint(lambda y, x:h(x), 0, rangex)
-        'Ih' : odeint(hx, dh, 0, rangex)
     }
 
 import matplotlib.pyplot as pyplot
