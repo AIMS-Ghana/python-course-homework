@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 class Shape:
     def kind(self):
@@ -8,36 +8,92 @@ class Shape:
         return area
 
     def dimname(self):
-        return "HUH?"
+        return "side"
 
     def __init__(self, area):
-        self.__area = area
-        self.__dim = self.invert_area(area)
+        self.area = area
+        self.dim = self.invert_area(area)
 
     strformat = "{}, area: {}, {}: {}"
 
     def __str__(self):
         return Shape.strformat.format(
           self.kind(),
-          self.__area,
+          self.area,
           self.dimname(),
-          self.__dim
+          self.dim
         )
 
-    def draw(turt):
-        pass
+    def draw(self,turt):
+	pass
+            
 
 class Triangle(Shape):
-    pass
+    def kind(self):
+	    return "Triangle"
+    def invert_area(self,area):
+             return (2*(float( area))**0.5)/3**0.25
+    def draw(self,turt):
+            turtle.color("yellow")
+            turtle.begin_fill()
+            turtle.forward(self.dim)
+            turtle.left(120)
+            turtle.forward(self.dim)
+            turtle.left(120)
+            turtle.forward(self.dim)
+            turtle.end_fill()
 
 class Square(Shape):
-    pass
+    def kind(self):
+	    return "Square"
+    def invert_area(self,area):
+             return (area**2)
+
+    def draw(self,turt):
+        turtle.color("green")
+        turtle.begin_fill()
+        turtle.forward(self.dim)
+        turtle.left(90)
+        turtle.forward(self.dim)
+        turtle.left(90)  
+        turtle.forward(self.dim)
+        turtle.left(90)
+        turtle.forward(self.dim)
+        turtle.left(90) 
+        turtle.end_fill()
 
 from math import pi
 
 class Circle(Shape):
-    pass
+	def kind(self):
+	    return "Circle"
+
+	def dimname(self):
+            return "Radius"
+
+        def invert_area(self,area):
+             return (area/pi)**0.5
+
+        def draw(self,turt):
+            turtle.color("red")
+            turtle.begin_fill()
+            turtle.circle(self.dim)
+            turtle.end_fill()
+         
+
+        
+            
 
 if __name__ == "__main__":
-    circ = Circle(10)
+    import turtle
+    circ = Circle(10000)
+    tri = Triangle(1000)
+    sqr = Square(10)
+    circ.draw(turtle)
+    tri.draw(turtle)
+    sqr.draw(turtle)
+    print tri
     print(circ)
+    print(sqr)
+
+   
