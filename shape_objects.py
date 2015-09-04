@@ -34,7 +34,15 @@ class Triangle(Shape):
         return "side"
     def invert_area(self, area):
         return (2*(float( area))**0.5)/3**0.25
-    
+    def draw(self,turt):
+            turtle.color("yellow")
+            turtle.begin_fill()
+            turtle.forward(self.dim)
+            turtle.left(120)
+            turtle.forward(self.dim)
+            turtle.left(120)
+            turtle.forward(self.dim)
+            turtle.end_fill()
 
 
 class Square(Shape):
@@ -44,6 +52,18 @@ class Square(Shape):
         return "side"
     def invert_area(self, area):
         return (float (area))**.5
+    def draw(self,turt):
+        turtle.color("green")
+        turtle.begin_fill()
+        turtle.forward(self.dim)
+        turtle.left(90)
+        turtle.forward(self.dim)
+        turtle.left(90)  
+        turtle.forward(self.dim)
+        turtle.left(90)
+        turtle.forward(self.dim)
+        turtle.left(90) 
+        turtle.end_fill()
 
 from math import pi
 
@@ -54,11 +74,20 @@ class Circle(Shape):
         return "radius"
     def invert_area(self, area):
         return (area/pi)**.5
+    def draw(self,turt):
+        turtle.color("red")
+        turtle.begin_fill()
+        turtle.circle(self.dim)
+        turtle.end_fill()
+         
 
 if __name__ == "__main__":
-    circ = Circle(10)
-    triang = Triangle(10)
+    circ = Circle(1000)
+    triang = Triangle(1000)
     sqr = Square(10)
     print(circ)
     print(triang)
     print(sqr)
+    circ.draw(turtle)
+    tri.draw(turtle)
+    sqr.draw(turtle)
