@@ -1,4 +1,5 @@
 #!/usr/bin/pyhton
+import sys
+
 print ("hello, Carl!")
-print ("hello, Des!")
 
