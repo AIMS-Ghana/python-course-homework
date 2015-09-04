@@ -3,7 +3,7 @@ from numpy import gradient
 from scipy.integrate import odeint
 
 
-def sine_and_cos(t):
+def sin(t)_and_cos(t):
     return np.sin(t) + np.cos(t)
 
 
