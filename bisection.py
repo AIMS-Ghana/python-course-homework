@@ -1,20 +1,18 @@
 #!/usr/bin/python
-import sys
 
-	
-def root(rangex, bisectf):
+def root(bisectf, rangex):
 	tol=0.001
-	for x in range(0,20):
+	for x in range(len(rangex)-1):
 		c = (rangex[x]+rangex[x+1])/2.0
-		b = bisectf(c)
-		while (rangex[x+1]-rangex[x]) > tol:
-			if b == 0:
+		b =	bisectf(c)
+		while (rangex[x]-rangex[x+1])/2.0 > tol:
+			if f(c) == 0:
 				return c
-			elif b < 0:
+			elif bisectf(rangex[x])*b < 0:
+				rangex[x+1] = c
+			else :
 				rangex[x] = c
-			elif b > 0:
-				rangex[x+1]= c	
-			
+		
 		return c
 	
 
