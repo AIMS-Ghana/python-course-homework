@@ -5,7 +5,7 @@ import turtle
 #import shapes
 import math
 def draw_triangle(side):
-    #window = turtle.Screen()
+    window = turtle.Screen()
     turtle.begin_fill()
     turtle.forward(side) 
     turtle.left(120)
@@ -13,10 +13,10 @@ def draw_triangle(side):
     turtle.left(120)
     turtle.forward(side)
     turtle.end_fill()
-    #window.exitonclick()
+    window.exitonclick()
 
 def draw_square(width):
-    #win = turtle.Screen()
+    win = turtle.Screen()
     turtle.begin_fill()
     turtle.left(90)
     turtle.forward(width)
@@ -28,10 +28,10 @@ def draw_square(width):
     turtle.forward(width)
     turtle.left(90)
     turtle.end_fill()
-   # win.exitonclick() #to exit
+    win.exitonclick() #to exit
 
 def draw_circle(rad):	
-	#window = turtle.Screen()
+    window = turtle.Screen()
     turtle.begin_fill()
     circle_drw = turtle.Turtle()
     circle_drw.speed(20)
