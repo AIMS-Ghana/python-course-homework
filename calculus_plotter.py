@@ -1,4 +1,11 @@
 #!/usr/bin/python
+from scipy.integrate import odeint
+
+# I(x) = integral(f)
+# dIdx = f(x) = ...some user defined f
+# odeint wants f(I,x) to solve for I
+
+
 import sys
 import midpoint
 import numpy as np
@@ -19,7 +26,14 @@ def figures(f,rangex):
        	fig=[fx,df,IF]
 	return fig
 
-
+def plot_all(f, rangex, ifxmin = 0):
+    lines = calc_all(f, rangex, ifxmin)
+    fx, = pyplot.plot(rangex, lines['f'], '-')
+    df, = pyplot.plot(rangex, lines['df'], ":")
+    If, = pyplot.plot(rangex, lines['If'], "--")
+    pyplot.legend([fx, df, If],['function','derivative','integral'])
+    pyplot.show()
+'''
 def main(func):
 	
     x = np.arange(0.0, 5.0, 0.01)
@@ -27,12 +41,13 @@ def main(func):
     fx= pyplot.plot(x,y[0],'-')
     df= pyplot.plot(x,y[1],'-')
     IF= pyplot.plot(x,y[2],'-')
-    #pyplot.plot(x,y[2],'-')
+    #pyplot.legend([fx,diff_f, integral_f],['function','derivative','Integral'])
    
     pyplot.show()
-
+'''
 
 
 if __name__ == "__main__":
 	main(sine_and_cos)
+'''
 

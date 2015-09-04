@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import math
-import sys
+
 
 def root(f, rangex,tol=0.001):
 	a=rangex[0]
