@@ -3,7 +3,7 @@ import sys
 import math
 import shapes
 import turtle
-
+import shape_objects
 
 #Drawing triangle with area equals to 50000
 

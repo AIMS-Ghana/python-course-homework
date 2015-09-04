@@ -7,7 +7,6 @@ def polygon_check(polygon_name, area):
 	
 	if polygon_name.upper() =='TRIANGLE':
 		#find side
-                print area
                 print shape_objects.Triangle(float(area)) #new changes to use the shape_object module
 		'''
 		side =(float(polygon_area*4) / float(math.sqrt(3)) )**(1/2)
