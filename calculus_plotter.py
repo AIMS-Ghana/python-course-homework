@@ -33,7 +33,7 @@ def plot_all(f, rangex, ifxmin = 0):
     If, = pyplot.plot(rangex, lines['If'], "--")
     pyplot.legend([fx, df, If],['function','derivative','integral'])
     pyplot.show()
-'''
+'''./
 def main(func):
 	
     x = np.arange(0.0, 5.0, 0.01)
@@ -47,7 +47,7 @@ def main(func):
 '''
 
 
+
 if __name__ == "__main__":
 	main(sine_and_cos)
-'''
 
