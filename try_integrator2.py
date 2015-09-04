@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import numpy as np
+mport numpy as np
 import midpoint
 import trapezoid
 import time
