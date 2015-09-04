@@ -43,7 +43,7 @@ import sys
 
 
 if __name__== "__main__":
-	assert len(sys.argv)==[3]
+	assert len(sys.argv)== 3, "INPUT SHAPE AND AREA"
 	shape = sys.argv[1]
 	area = float(sys.argv[2])
 	compute(shape,area)
