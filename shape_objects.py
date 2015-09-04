@@ -28,16 +28,36 @@ class Shape:
         pass
 
 class Triangle(Shape):
-    pass
+    def kind(self):
+        return "Triangle"
+    def invert_area(self, area):
+        return ((area*4)**0.5)/3
+    def dimname(self):
+        return "side"
 
 class Square(Shape):
-    pass
+    def kind(self):
+        return "Square"
+    def invert_area(self, area):
+        return area**0.5
+    def dimname(self):
+        return "side"
+
 
 from math import pi
 
 class Circle(Shape):
-    pass
+    def kind(self):
+        return "Circle"
+    def invert_area(self, area):
+        return (area/pi)**0.5
+    def dimname(self):
+        return "side"
 
 if __name__ == "__main__":
     circ = Circle(10)
+    tri = Triangle(10)
+    squa = Square(8)  
     print(circ)
+    print(tri)
+    print(squa)
