@@ -1,12 +1,23 @@
 #!/usr/bin/python
+from math import pi
 import sys
-import math
-result = "area = {0}, perimeter = {1}"
-k=float (sys.argv[1])
-#add two numbers
-sum = 2*math.pi*k
-product = math.pi*k**2
-# display sum
-print(result. format(product,sum))
+def area(r):
+	check (r)
+	area=pi*(r**2)
+	return area
+def perimeter(r):
+    	check (r)
+	perimeter=2*pi*r
+	return perimeter
+def check (r):
+	assert (r>0) , "input positive numbers"
+       
+	
+
+if __name__ == "__main__":
+
+        r =float(sys.argv[1])
+  	
+print ("area {}, perimeter {} ".format(area(r), perimeter(r)) )
 
 
