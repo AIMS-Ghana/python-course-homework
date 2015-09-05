@@ -1,28 +1,44 @@
 #!/usr/bin/python
-# A program that prints the area and the perimeter of a triangle.
-import math
 import shapes
+import sys
+import math
+import turtle
 
-def circle(radius):
-    r = turtle.circle(radius)
+def draw_square(area): 
+	side = shapes.square(area) 
+	turtle.forward(side)
+	turtle.left(90)
+	turtle.forward(side)
+   	turtle.left(90)
+   	turtle.forward(side)
+   	turtle.left(90)
+	turtle.forward(side)
 
-
-def draw_square(side):
-    s = turtle.draw_square(side)
-
-
-def draw_triangle(side):
-    s = turtle.draw_triangle(side)
-
-
-
-
-
-
-
-
-
-
-
-
+def draw_triangle(area):
+	side = shapes.triangle(area)
+	turtle.forward(side)
+   	turtle.left(120)
+   	turtle.forward(side)
+   	turtle.left(120)
+   	turtle.forward(side)
+   	turtle.left(120)
+	turtle.forward(side)
+	
+def draw_circle(area):
+	radius = shapes.circle(area)
+	turtle.circle(radius)
+       
+def draw(name, area):
+    if name == "CIRCLE":
+       draw_circle(area)    	  
+    elif name == "SQUARE":
+       draw_square(area)
+    elif name == "TRIANGLE":
+       draw_triangle(area)
+    else:
+	pass
+if __name__ == "__main__":
+	draw(name, area)
+	for i in range(3):
+            i.draw()
 
