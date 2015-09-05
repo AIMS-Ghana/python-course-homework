@@ -9,8 +9,7 @@ def root(f, guess):
     (x1, x2) = guess
     tol = 10**(-8)
     x3 = xn(f, x1, x2)
-    while abs(f(x3)) >= tol:
-        print(x1,x2,x3)
+    while abs(f(x3)) >= tol and x1 != x2:
         x4 = xn(f, x1, x2)
         x1 = x2
         x2 = x3
