@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 from draw_shape import draw
 
 draw("TRIANGLE",1000) # equilateral triangle

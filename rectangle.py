@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 import math
 def area(a,b):
 	check (a,b)
