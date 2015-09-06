@@ -1,13 +1,13 @@
 #!/usr/bin/python
-import sys  
+def integrate(f, rangex):
+    ss = 0
+    for i in range(len(rangex)-1):
+        w = rangex[i+1] - rangex[i]
+        h = f((rangex[i+1] + rangex[i])/2)
+        ss = ss + w*h
+    return ss
+    # get range widths
+    # get range midpoints
 
-#finding midpoint
-
-def integrate(f,b):
-   for n in range (n-1):
-      h=(b[n]-b[n-1])/n
-      width=(b[n]-b[n-1])
-      midpoint=(b[n]-b[n-1])/2
-      y=midpoint+width*height
-
-   return y
+if __name__ == "__main__":
+    print(integrate(lambda x:x, thing))
