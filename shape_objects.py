@@ -26,16 +26,16 @@ class Shape:
         )
 
     def draw(turt):
-        pass      
+             
 
 class Triangle(Shape):
-        def kind(self):
+      def kind(self):
             return "Triangle"
 
-        def invert_area(self, area):
+      def invert_area(self, area):
             return math.sqrt(float(area*4)/math.sqrt(3))
 
-        def dimname(self):
+      def dimname(self):
                return "sides"
 
 
