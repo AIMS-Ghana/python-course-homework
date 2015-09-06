@@ -4,7 +4,6 @@ import sys
 import shapes
 import turtle
 
-
 # Create a new turtle.
 
 screen = turtle.getscreen()
@@ -20,7 +19,7 @@ def draw_triangle(area):
 		polygon.forward(side)
 		polygon.left(turn)
 	polygon.end_fill()
-	polygon.exitonclick()	
+	turtle.exitonclick()
 
 def draw_square(area): #draw square
 	side = shapes.square_side(area)
