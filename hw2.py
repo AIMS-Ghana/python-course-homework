@@ -2,6 +2,6 @@
 
 import sys 
 
-print (hello, " + sys.argv[0] +"!")
+print ("hello,"+sys.argv[1]+"!")
 
 

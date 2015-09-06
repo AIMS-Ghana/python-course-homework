@@ -1,33 +1,45 @@
- #!/usr/bin/env python
- 
-from math import sqrt
-from math import pi,sqrt
-def TRIANGLE(x):
-    
-    s= math.sqrt((4*x)/math.sqrt(3))
-    return s
+#!/usr/bin/python
+from math import pi
 
-def SQUARE(x):
-    
-    s= math.sqrt(x)
-    return s
+def circle(a):
+    return (a/pi)**0.5
 
-def CIRCLE(x):
-   
-    r=math.sqrt(x/math.pi)
-    return r
+def square(a):
+    return a**0.5
+
+
+def triangle(a):
+    return 2*(a/(3**0.5))**0.5
+
+shaper = {
+  'CIRCLE': circle,
+  'TRIANGLE': triangle,
+  'SQUARE': square
+}
+
+output_mods = {
+    'TRIANGLE':'equilateral '
+}
+
+dim_name = {
+    'CIRCLE':'radius'
+}
+
+def compute(shape, a):
+    assert shape in shaper, "Shape "+shape+" not parseable"
+    return shaper[shape](a)
 
 import sys
-a= sys.argv[1]
-b=float(sys.argv[2])
-if a=="TRIANGLE":
-   print("equilateral TRIANGLE,area {},slide {}".format(b,Triangle(b)))
-if a=="SQUARE":
-    print("SQUARE,area {},slide {}".format(b,SQUARE(b)))
-if a == "CIRCLE":
-     print("CIRCLE,area {},radius {}".format(b,CIRCLE(b)))
-if( (a!="TRIANGLE")&(a!="CIRCLE")&(a!="SQUARE")):
-    print("error indicating unknown shape....")
 
-
-
+if __name__ == "__main__":
+    assert len(sys.argv) == 3, "need SHAPE, area as argv"
+    shape = sys.argv[1]
+    area = float(sys.argv[2])
+    out = "{}{}, area {}, {}: {} "
+    print(out.format(
+      output_mods.get(shape,''),
+      shape,
+      area,
+      dim_name.get(shape,'side'),
+      compute(shape, area)
+    ))

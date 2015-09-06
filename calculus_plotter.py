@@ -22,11 +22,6 @@ def plotter(f):
 	
 	pylab.legend()
 	pylab.show() # show the plot
-<<<<<<< Updated upstream
-=======
 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 #plotter(numpy.cos)

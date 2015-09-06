@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 import triangle
 import rectangle
 import circle
@@ -11,4 +11,3 @@ print("Rectange, sides 4, 5:")
 print("a: {0}, p: {1}".format(rectangle.area(4,5), rectangle.perimeter(4,5)))
 print("Circle, radius 3:")
 print("a: {0}, p: {1}".format(circle.area(3), circle.perimeter(3)))
-

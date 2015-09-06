@@ -13,11 +13,11 @@ def perimeter(r):
    t=2*r*math.pi
    return t
 
-import sys 
-if  __name__ =="__main__":
-  r = float(sys.argv[1])
 
-print("area {},\nperimeter {}".format(area(r), perimeter(r)))
+if  __name__ =="__main__":
+   import sys 	
+   r = float(sys.argv[1])
+   print("area {},\nperimeter {}".format(area(r), perimeter(r)))
  
      
     
