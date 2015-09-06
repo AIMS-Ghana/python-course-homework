@@ -18,6 +18,7 @@ def est_pi_sph(is_in_sphere,out_sphere): # function that estimates the value of 
 
 if __name__ =="__main__":
 	import sys
+	assert len(sys.argv) == 3, "missing values"
 	seed(int(sys.argv[1]))
 	samples = int(sys.argv[2])
 	circle_samples = pick_seed(samples,2)

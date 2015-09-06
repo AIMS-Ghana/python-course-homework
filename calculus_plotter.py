@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.misc import derivative as deriv
 from scipy.integrate import odeint
+import fun_plots
+import fun_plots2
 
 def func(g,x):
 	return g(x)

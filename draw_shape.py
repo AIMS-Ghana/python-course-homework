@@ -5,8 +5,8 @@ import shapes
 import turtle
 
 # Create a new turtle.
-
 screen = turtle.getscreen()
+
 def draw_triangle(area):
 	side = shapes.triangle_side(area)
 	n = 3
@@ -19,7 +19,7 @@ def draw_triangle(area):
 		polygon.forward(side)
 		polygon.left(turn)
 	polygon.end_fill()
-	turtle.exitonclick()
+	#turtle.exitonclick()
 
 def draw_square(area): #draw square
 	side = shapes.square_side(area)
@@ -33,7 +33,7 @@ def draw_square(area): #draw square
 		polygon.forward(side)
 		polygon.left(turn)
 	polygon.end_fill()
-	turtle.exitonclick()	
+	#turtle.exitonclick()	
 	
 def draw_circle(area): #draw circle
 	radius = shapes.circle_radius(area)
@@ -42,7 +42,7 @@ def draw_circle(area): #draw circle
 	polygon.color('red')
 	circle = turtle.circle(radius)
 	polygon.end_fill()
-	turtle.exitonclick()
+	#turtle.exitonclick()
 	
 def draw(shape,area):
 	if shape == 'TRIANGLE':
@@ -53,6 +53,7 @@ def draw(shape,area):
 		draw_circle(area)
 	else:
 		pass
+
 
 #draw(sys.argv[1],int(sys.argv[2]))
 draw("CIRCLE", 5000)
