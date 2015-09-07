@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import math 
+import turtle
 
 class Shape:
     def kind(self):
@@ -13,20 +14,20 @@ class Shape:
         return "HUH?"
 	
     def __init__(self, area):
-        self.__area = area
-        self.__dim = self.invert_area(area)
+        self.area = area
+        self.dim = self.invert_area(area)
 
     strformat = "{}, area: {}, {}: {}"
 
     def __str__(self):
         return Shape.strformat.format(
           self.kind(),
-          self.__area,
+          self.area,
           self.dimname(),
-          self.__dim
+          self.dim
         )
 
-    def draw(turt): #drawing the shapes
+    def draw(self): #drawing the shapes
         pass
 
 class Triangle(Shape):
@@ -36,6 +37,10 @@ class Triangle(Shape):
       return math.sqrt((float(area)*4)/math.sqrt(3))
     def dimname(self):
         return "Side"
+    def draw(self):
+        for i in range(0,3):
+            turtle.forward(self.dim) 
+            turtle.left(120)
 
 
 class Square(Shape):
@@ -45,10 +50,11 @@ class Square(Shape):
       return float(area**0.5)
     def dimname(self):
         return "Side"
+    def draw(self):
+        for i in range(0,4):
+            turtle.forward(self.dim)
+            turtle.left(90)
 
- 
-
-from math import pi
 
 class Circle(Shape):
     def kind(self):
@@ -56,16 +62,19 @@ class Circle(Shape):
     def invert_area(self, area):
       return math.sqrt(float(area)/math.pi)
     def dimname(self):
-        return "Radius"  
+        return "Radius"
+    def draw(self):
+        turtle.circle(self.dim)  
 
- 
 
 
 if __name__ == "__main__":
-    circ = Circle(10)
-    tri= Triangle(5)
-    sq=Square(5)
+    circ = Circle(500)
+    tri= Triangle(500)
+    sq=Square(500)
     print(circ)
     print (tri)
     print (sq)
-
+    circ.draw()
+    tri.draw()
+    sq.draw()

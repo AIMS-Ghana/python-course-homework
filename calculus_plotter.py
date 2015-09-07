@@ -5,8 +5,9 @@ from pylab import *
 from scipy.misc import derivative
 from scipy.integrate import odeint
 import fun_plots
+import fun_plots2
 
-plotlist= [r'$f(x) = x$' , r'$f(x) = 1-e^{-x}$',r'$f(x) = e^{5x}$',r'$f(x) = \sin(t) + \cos(t)$',r'$f(x) = \sin^{2}(t)$']
+plotlist= [r'$f(x) = x$' , r'$f(x) = 1-e^{-x}$',r'$f(x) = e^{5x}$',r'$f(x) = \sin(t) + \cos(t)$',r'$f(x) = \sin^{2}(t)$', r'$f(x) = x$' , r'$f(x) = 1-e^{-x-1}$',r'$f(x) = e^{x}$',r'$f(x) = \cos(t) + \cos(t)$',r'$f(x) = \sin^{2}(t)$']
 
 def fplot(fxn,i):
     figure(i+1),grid(True)
