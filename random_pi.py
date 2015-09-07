@@ -11,4 +11,3 @@ for i in range(0, s):
         quad += 1
 Pi = 4*quad/s
 print pi
- 

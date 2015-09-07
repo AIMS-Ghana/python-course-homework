@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
+
 
 class Shape:
     def kind(self):
@@ -18,25 +19,30 @@ class Shape:
 
     def __str__(self):
         return Shape.strformat.format(
-          self.kind(),
-          self.__area,
-          self.dimname(),
-          self.__dim
+            self.kind(),
+            self.__area,
+            self.dimname(),
+            self.__dim
         )
 
     def draw(turt):
         pass
 
-class Triangle(Shape):
+
+class Triangle(shapes):
     pass
 
-class Square(Shape):
+
+class Square(shapes):
     pass
+
 
 from math import pi
 
-class Circle(Shape):
+
+class Circle(shapes):
     pass
+
 
 if __name__ == "__main__":
     circ = Circle(10)
