@@ -7,7 +7,9 @@ with open('donuts.json') as data_file:
 for i in range(len (data)):
 	for j in range(len(data[i]["batters"]["batter"])):
 		for k in range(len(data[i]["topping"])):
-			print(data[i]["name"]","data[i]["batters"]["batter"][j]["type"]","data[i]["topping"][k]["type"]"\n")
+			print(data[i]["name"]),
+			print(data[i]["batters"]["batter"][j]["type"]),
+			print(data[i]["topping"][k]["type"]+"\n")
 
 ####################
 # An other version #
