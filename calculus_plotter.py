@@ -5,6 +5,7 @@ import scipy.integrate as integrate
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -32,6 +33,8 @@ def plotter(fonction):
 	text(-2.0, -8.0,   r"Inte", horizontalalignment='center', 	     fontsize=18,color='green')
 	show()
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -81,6 +84,9 @@ show()
 print np.cos
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
