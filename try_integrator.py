@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 
 import numpy as np
@@ -25,6 +24,6 @@ print(out.format(
     quad(intf, rangex[0], rangex[-1])
 ))
 
-    Status API Training Shop Blog About Pricing 
+
 
 

@@ -1,13 +1,11 @@
 #!/usr/bin/python
-
+import numpy as np
 def integrate (f, l):
 #l is a list (a, b)
 #f is a function
-	a = l [0]
-	b = l [-1]
 	integration = 0
-	m = abs (b - a) / 100,0
-	p = abs (b - a) * 10
+	m = abs (l [-1] - l [0]) / 100.0
+	p = abs (l [-1] - l [0]) * 10
 	for i in l:
 		integration += m * f(i + m)
 
@@ -27,5 +25,3 @@ def midpoint(f, a, b, n):
     fsum = np.sum(fs)
     return deltaX*fsum
 """
-
-
