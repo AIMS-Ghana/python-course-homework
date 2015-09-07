@@ -1,4 +1,6 @@
 #!/usr/bin/python
+import math
+
 def check (a, b, c):
 	assert a > 0 and b > 0 and c > 0, "negative dimension"
 	s = a + b
