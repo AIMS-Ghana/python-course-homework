@@ -1,61 +1,69 @@
-#!/usr/bin/python3
-
+#!/usr/bin/python
 import sys
 import shapes
 import turtle
+import csv
 
 
-def draw_circle(area):
-    #turtle.color(fill)
-    #turtle.begin_fill()
-    radius=shapes.circle_radius(area)	
+
+
+
+def draw_circle(radius, fill='black'):
+    turtle.color(fill)
+    turtle.begin_fill()
     turtle.circle(radius)
-    #turtle.end_fill()
-    #goto
-    turtle.exitonclick()
+    turtle.end_fill()
 
-def draw_square(area):
-    #turtle.color(fill)
-    #turtle.begin_fill()
-    side=shapes.square_side(area)
-    turtle.forward(side)
-    turtle.left(90)
-    turtle.forward(side)
-    turtle.left(90)
-    turtle.forward(side)
-    turtle.left(90)
-    turtle.forward(side)
-    #turtle.end_fill()
     turtle.exitonclick()
+     
+
+def draw_square(side, fill='red'):
+    turtle.color(fill)
+    turtle.begin_fill()
+    
+   
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.left(90)  
+    turtle.forward(side)
+    turtle.left(90)
+    turtle.forward(side)
+    turtle.left(90)  
+    turtle.end_fill()
 	
-def draw_triangle(area):
-    #turtle.color(fill)
-    #turtle.begin_fill()
-    side=shapes.triangle_side(area)
+    turtle.exitonclick()
+ 
+
+def draw_triangle(side, fill='green', cont=True):
+    turtle.color(fill)
+    turtle.begin_fill()
+    
     turtle.forward(side)
     turtle.left(120)
     turtle.forward(side)
     turtle.left(120)
     turtle.forward(side)
-    #turtle.end_fill()
+    turtle.end_fill()
+
     turtle.exitonclick()
 
-def draw(name,area,fill="black",cont=True):
-    if name=="CIRCLE":
-            draw_circle(area)
-    elif name=="SQUARE":
-            draw_square(area)
-    else:
-            draw_triangle(area)
+def draw(name, area, fill='black', cont=True):
 
-		
+    if name == "TRIANGLE":
+       draw_triangle(area)
+    elif name == "CIRCLE": 
+       draw_circle(area)  
+    elif name == "SQUARE":
+       draw_square(area)
+    if not cont:
+       turtle.exitonclick()
 
 
 if __name__ == "__main__":
+	draw_triangle(shapes.triangle_side(9000))
+	draw_square(shapes.square_side(5000))
+	draw_circle(shapes.circle_radius(3000))
+        
 
-	
-    area=sys.argv[2]
-    name=sys.argv[1]
-    draw(name,area,fill='black')
-    
-   
+

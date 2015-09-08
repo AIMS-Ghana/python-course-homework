@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 
 class Shape:
     def kind(self):
@@ -28,7 +28,9 @@ class Shape:
         pass
 
 class Triangle(Shape):
-    pass
+    def Tri_side():
+        return 
+    def 
 
 class Square(Shape):
     pass
