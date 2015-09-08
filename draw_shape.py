@@ -6,6 +6,7 @@ scale = 10
 
 
 def draw(type, area, fill = 'black', cont = False):
+    turtle.color(fill)
     if type == "TRIANGLE":
        draw_triangle(shapes.triangle(area),fill)
     elif type == "SQUARE":
