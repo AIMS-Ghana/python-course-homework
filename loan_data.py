@@ -5,7 +5,7 @@ mydoc= open('loansData.csv')
 
 total_funds=0
 
-for row in csv.reader(open(mydoc)):
+for row in csv.reader(mydoc):
 
 	if row[5]=="educational":
 		total_funds= total_funds+float(row[1])
