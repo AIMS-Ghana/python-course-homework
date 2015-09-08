@@ -46,10 +46,3 @@ print(out.format(
     res,
     elapsed
 ))
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
