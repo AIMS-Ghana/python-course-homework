@@ -1,10 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 
-class Shape:
+class (Shape):
     def kind(self):
         return "Shape"
 
     def invert_area(self, area):
+        
         return area
 
     def dimname(self):
@@ -25,19 +26,41 @@ class Shape:
         )
 
     def draw(turt):
-        pass
+        
 
 class Triangle(Shape):
-    pass
+     def kind(self):
+         return "Triangle"
+     def dimname(self):
+         return "side"
+     def invert_area(self, area)
+         return(2*(area/(3**0.5))**0.5
+    
 
 class Square(Shape):
-    pass
+    def kind(self):
+        return "square"
+    def dimname(self):
+        return "side"
+    def invert_area(self, area)
+        return(a**0.5)
+    
 
 from math import pi
 
 class Circle(Shape):
-    pass
+     def kind(self):
+         return "Circle"
+     def dimname(self):
+         return "radius"
+     def invert_area(self, area)
+         return(a/pi)**0.5              
+    
 
 if __name__ == "__main__":
     circ = Circle(10)
+    Triangle = Triangle(8)
+    Square = Square(8)
     print(circ)
+    print(Triangle)
+    print(square)

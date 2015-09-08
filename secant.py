@@ -1,24 +1,15 @@
 #!/usr/bin/python
 
-	
-import sys
+def root(f, interval, tolerance=1e-5, steps=100):
+    x0, x1 = interval
+    d = x1 - x0
+    f0 = f(x0)
+    f1 = f(x1)
+    mid = f1 - f0
+    xn = x1-f1*d/mid
+    fn = f(xn)
+    if (fn <= tolerance) or (steps == 0):
+        return xn
+    else:
+        return root(f, [x1, xn], tolerance, steps)	
 
-def f(x):
-      return x**3+x-1
-
-def secant(x0,x1,n):
-      for i in range(n):
-          if f(x1)-f(x0) == 0:
-               return x
-               x_temp = x1 - (f(x1)*(x1-x0)*1.0)/(f(x1)-f(x0))
-               x0 = x1
-               x1 = x_temp
-               return x1
-def main(argv):
-    if (len(sys.argv) != 4):
-         sys.exit('Usage: secant_method.py <x0> <x1> <n>')
-    print 'The root is: ',
-    print secant(float(sys.argv[1]),float(sys.argv[2]),int(sys.argv[3]))
-
-if __name__ == "__main__":
-       main(sys.argv[1:])

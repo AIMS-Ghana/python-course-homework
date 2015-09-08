@@ -1,12 +1,18 @@
 #!/usr/bin/python
 
-def trapezoid(f, a, b, n):
-    c = float(b - a) / n
-    s = 0.0
-    s += f(a)/2.0
-    for i in range(1, n):
-        s += f(a + i*c)
-    s += f(b)/2.0
-    return s * c
+def integrate(f, rangex):
+    ss = 0
+    for i in range(len(rangex)-1):
+        a = rangex[i]
+        b = rangex[i+1]
+        w = b - a
+        fa = f(a)
+        fb = f(b)
+        ss = ss + w*(fa+fb)/2
+    return ss
+    # get range widths
+    # get range midpoints
 
-print( trapezoid(lambda x:x**2, 5, 10, 100))
+if __name__ == "__main__":
+
+    print(integrate(lambda x:x, thing))
