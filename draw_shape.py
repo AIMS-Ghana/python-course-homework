@@ -2,7 +2,7 @@
 
 import shapes
 import turtle
-scale = 10
+scale = 1
 
 
 def draw(type, area, fill = 'black', cont = False):
@@ -24,10 +24,6 @@ def draw(type, area, fill = 'black', cont = False):
 
 
 def draw_triangle(s,fill):
-    turtle.penup()
-    turtle.goto(0,-100)
-    turtle.pendown()
-    turtle.pensize(4)
     turtle.fillcolor(fill)
     turtle.begin_fill()
     turtle.forward(s/2 * scale)
@@ -40,21 +36,12 @@ def draw_triangle(s,fill):
     turtle.end_fill()
 
 def draw_circle(s,fill):
-    turtle.pensize(4)
-    turtle.penup()
-    turtle.forward(s * scale)
-    turtle.left(90)
-    turtle.pendown()
     turtle.fillcolor(fill)
     turtle.begin_fill()
     turtle.circle(s * scale)
     turtle.end_fill()
 
 def draw_rectangle(a,b,fill):
-    turtle.penup()
-    turtle.goto(0,-100)
-    turtle.pendown()
-    turtle.pensize(4)
     turtle.fillcolor(fill)
     turtle.begin_fill()
     turtle.forward(b/2 * scale)

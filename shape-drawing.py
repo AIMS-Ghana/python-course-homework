@@ -9,7 +9,20 @@ import turtle
 
 # inspect data for invalid row specifications
 def check_input(figures):
-    pass
+    count = 0
+    error_format = 'There is a problem with the {0} specified in line {1} of the given input file'
+    checks = { 0 : (lambda x: x in ['SQUARE', 'TRIANGLE', 'RECTANGLE', 'CIRCLE'] , 'type'),
+               1 : (lambda x: x in ['RED','ORANGE','YELLOW','GREEN','BLUE','PURPLE'] , 'colour'),
+               2 : (lambda x: 0 <= float(x) < 360, 'angle'),
+               3 : (lambda x: float(x) > 0 ,  'area'),
+               4 : (True, 'x-coordinate'),
+               5 : (True,'y-coordinate'),
+              }
+    for row in figures:
+        count +=1
+        for i in range(6):
+            assert (checks[i][0](row[i])), error_format.format(checks[i][1], str(count))
+
 
 # deal with given row
 class paint:
@@ -37,6 +50,7 @@ class paint:
 if __name__ == '__main__':
     import csv
     import sys
+    assert (''.join(list(sys.argv[1])[-4:]) == '.csv'), 'The format of the input file is not appropiate. Please specify as \'filename.csv\''
     with open(sys.argv[1]) as input_file:
         figures = csv.reader(input_file, delimiter = ',')
         check_input(figures)
@@ -47,6 +61,6 @@ if __name__ == '__main__':
         if len(sys.argv) == 3:
             # Produce out file if asked to do so
             # Should fix this later so that turtle does not animate at all
-            assert (''.join(sys.argv[-4:]) == '.eps'), 'The format of the output file is not appropiate. Please specify as \'filename.eps\''
+            assert (''.join(list(sys.argv[2])[-4:]) == '.eps'), 'The format of the output file is not appropiate. Please specify as \'filename.eps\''
             ts = turtle.getscreen()
             ts.getcanvas().postscript( file = sys.argv[2])
