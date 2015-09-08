@@ -1,15 +1,12 @@
 #!/usr/bin/python
 import math
 
-import time
-
-def integrate (a, b):
+def integrate (function, rangex):
     n=0.0
-    for i in range(len(b)-1):
+    for x in range(len(rangex)-1):
 
-        w=b[i+1]-b[i]
-        midpoint=float(b[i+1]+b[i]/2)
-        h=a(midpoint)
-        f=n + w*h
+        w=rangex[x+1]-rangex[x]
+        h=function(float((rangex[x+1]+rangex[x])/2))
+        n += w*h
    
-    return f
+    return n
