@@ -65,7 +65,11 @@ class Circle(Shape):
 
 if __name__ == "__main__":
     import sys
-    shapes = {"CIRCLE":Circle, "SQUARE":Square, "TRIANGLE":Triangle}
+    shapes = {
+               "CIRCLE":Circle,
+               "SQUARE":Square,
+               "TRIANGLE":Triangle
+             }
     assert (len(sys.argv) == 3), "Input format not appropriate. Specify type, and then area of shape."
     assert (sys.argv[1] in shapes ), "Shape type not understood"
     given = shapes[sys.argv[1]](10)
