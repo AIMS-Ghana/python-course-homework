@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/usr/bin/python
+=======
+#!/usr/bin/env python3
+>>>>>>> origin/master
 
 import numpy as np
 import midpoint
