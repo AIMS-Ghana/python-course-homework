@@ -1,22 +1,29 @@
 #!/usr/bin/python
 
-import sys
-from random import *
- 
-num = int(sys.argv[2])
-total = 0
-TOTAL = 0
-for i in range (0, num):
-    x = random ()
-    y = random ()
-    if x**2 + y**2 <= 1:
-        total = total + 1
-   
-print "circle-area pi : {}".format(float(4*total)/num)
-for i in range (0, num):
-    X = random ()
-    Y = random ()
-    Z = random () 
-    if X**2 + Y**2 + Z**2 <=1:
-        TOTAL = TOTAL + 1
-print "sphere-volume pi : {}".format(float(6*TOTAL)/num)
+from numpy.random import uniform, seed
+
+def get_samples(how_many, dim):
+     return uniform(size=(how_many//dim, dim))
+
+def is_in_circ(x, y):
+     return (x**2 + y**2)<1
+
+def is_in_sph(x, y, z):
+      return (x**2 + y**2 + z**2)<1
+def est_pi(in_circ, tot):
+     return (4.0*in_circ)/tot
+def est_pi_sphere(in_sph, tot):
+    return (6.0*in_sph)/tot
+
+if __name__ == '__main__':
+     import sys
+     seed(int(sys.argv[1]))
+     samples = int(sys.argv[2])
+     circ_samples = get_samples(samples,2)
+     vol_samples = get_samples(samples, 3)
+     in_circ = sum(is_in_circ(circ_samples[:,0], circ_samples[:, 1]))
+     in_sph = sum(is_in_sph(vol_samples[:, 0], vol_samples[:, 1], vol_samples[:, 2]))
+     print(est_pi(in_circ,samples//2))
+     print(est_pi_sphere(in_sph, samples//3))
+  
+

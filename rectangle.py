@@ -16,11 +16,6 @@ import sys
 
 if __name__ == "__main__":
     a = float(sys.argv[1])
-    b = float(sys.argv[2]) 
-
-if (len(sys.argv) == 3) 
-    else a
-
-print("area {}".format(area(a,b)))
-print("perimeter {}".format(perimeter(a,b)))
-
+    b = float(sys.argv[2]) if (len(sys.argv) == 3) else a
+    print("area {}".format(area(a,b)))
+    print("perimeter {}".format(perimeter(a,b)))

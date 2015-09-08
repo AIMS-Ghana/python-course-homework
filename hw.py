@@ -1,2 +1,3 @@
-#paul-aims./hw.py
-print("hello world!")
+#!/usr/bin/python
+
+print ("hello world!")

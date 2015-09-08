@@ -1,76 +1,35 @@
 #!/usr/bin/python
-
-def root(f, endpoints, tol=1e-5):
-    mid = (endpoints[1]+endpoints[0])/2
-    midval = f(mid)
-    if abs(midval) < tol:
-        return mid
+def root (function,rangex,error_tolerance=1.0e-10):
+    upper_bound=rangex[1]
+    lower_bound=rangex[0]
+    fu=function(upper_bound)
+    if fu==0.0 :  return upper_bound
+    fl=function(lower_bound)
+    if fl==0.0 :  return lower_bound
+    if fu*fl > 0.0:  
+        return None
     else:
-        lowval = f(endpoints[0])
-        if lowval < 0:
-            if midval < 0:
-                low = mid
-                high = endpoints[1]
-            else:
-                low = endpoints[0]
-                high = mid
-        else:
-            if midval > 0:
-                low = mid
-                high = endpoints[1]
-            else:
-                low = endpoints[0]
-                high = mid
-        return root(f, (low,high), tol)
-def root(f, endpoints, tol=1e-5, depth=100):
-    a, b = endpoints
-    fa = f(a)
-    fb = f(b)
-    assert fa*fb < 0, "endpoints have same sign"
-    m = (a+b)/2
-    fm = f(m)
-    if (abs(fm) < tol) or (depth == 0):
-        return m
-    elif fa*fm < 0: # root in a,m
-        return root(f,[a,m],tol,depth-1)
-    else: # root in m, b
-        return root(f,[m,b],tol,depth-1)
- 
-def root2(f, endpoints, tol=1e-5):
-    high = endpoints[1]
-    low = endpoints[0]
-    mid = (low+high)/2
-    midval = f(mid)
-    lowval = f(low)
-    while (abs(midval) > tol):
-        if lowval < 0:
-            if midval < 0:
-                low = mid
-                lowval = midval
-            else:
-                high = mid
-def root2(f, endpoints, tol=1e-5, depth=100):
-    a, b = endpoints
-    fa = f(a)
-    fb = f(b)
-    assert fa*fb < 0, "endpoints have same sign"
-    m = (a+b)/2
-    fm = f(m)
-    while (abs(fm) > tol) or (depth != 0):
-        if fa*fm < 0:
-            b = m
-         else:
-            if midval > 0:
-                low = mid
-                lowval = midval
-            else:
-                high = mid
-        mid = (low+high)/2
-        midval = f(mid)
-    return mid
-            a = m
-            fa = fm
-        m = (a+b)/2
-        fm = f(m)
-        depth = depth - 1
-    return m 
+        mid=(lower_bound+upper_bound)/2
+        error=(upper_bound-lower_bound)/2
+        while(error>error_tolerance): 
+            fu=function(upper_bound)
+            fl=function(lower_bound)
+
+            if mid==0.0 : return mid
+
+            elif fu*mid < 0.0 : lower_bound=mid
+
+            elif fl*mid < 0.0 : upper_bound=mid
+            
+            mid=(lower_bound+upper_bound)/2
+            error=(upper_bound-lower_bound)/2
+        return mid
+
+def func(x): 
+    x=root(func,1.0,2.0,error_tolerance=1.0e-10) 
+    print (x)
+    return x**3-3*x+1     
+   
+   
+   
+
