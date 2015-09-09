@@ -1,9 +1,10 @@
 #!/usr/bin/python
 import sys
 import math
+from draw import t
 import draw_shape
 import csv
-
+import turtle
 
 
 def check(name, area, r, col, x, y):
@@ -12,7 +13,7 @@ def check(name, area, r, col, x, y):
         s = 2 * (math.sqrt((float(area) / math.sqrt(3))))
         # print 'equilateral TRIANGLE, area', area, 'side: ', s
         draw_shape.draw_triangle(s, r, col, x, y)
-        # print s
+        print (name, s, r, col, x, y)
         # return s
 
 
@@ -20,7 +21,7 @@ def check(name, area, r, col, x, y):
         q = math.sqrt(float(area))
         # print 'square, area', area, 'side: ', q
         draw_shape.draw(q, r, col, x, y)
-
+        print(name, q, r, col, x, y)
         # return q
         #  elif name == "G_rect":
     #    draw_shape.
@@ -32,21 +33,27 @@ def check(name, area, r, col, x, y):
         v = math.sqrt((float(area) / math.pi))
         # print 'CIRCLE, area', area, 'radius: ',
         draw_shape.CIRC(v, r, col, x, y)
-        # print r
+        print(name, v, r, col, x, y)
         # return r
 
-
     else:
-        print("Uknown shape")
+
+
+        pass
+        # print("Uknown shape")
 
 
 if __name__ == "__main__":
-    # thing = check(sys.argv[0], sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
-    # print(thing)
 
-    with open('pjct.csv') as csvfile:
-       reader = csv.reader(csvfile)
-       for row in reader:
-          check(str(row[0]), float(row[1]), float(row[2]),str(row[3]), float(row[4]), float(row[5]))
-    # print 'pjct.csv'
 
+
+    filename = 'pjct.csv'
+    filename = (sys.argv[1])
+
+    output = (sys.argv[2])
+    with open(filename) as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            check(str(row[0]), float(row[1]), float(row[2]), str(row[3]), float(row[4]), float(row[5]))
+            ts = turtle.getscreen()
+            ts.getcanvas().postscript(file="output.eps")
