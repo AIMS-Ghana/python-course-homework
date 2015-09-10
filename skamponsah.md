@@ -10,13 +10,21 @@ This plots the SEIR model and plots results using the normal ODE method and also
 Code runs as this:
 
 $ ./project_seir.py withnegativevalues.json
+
 Error: the parameter input had negative values for whichever inputs
+
 $ ./project_seir.py
+
 ... same as next line ...
+
 $ ./project_seir.py -h
+
 ... useful info about usage ...
+
 $ ./project_seir.py config.json
+
 ... rows of numerical output, including header line ...
+
 $ ls plot.png
 ... finds plot you just made ...
 $ ./project_seir.py config2.json target.csv target.png
