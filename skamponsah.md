@@ -41,15 +41,27 @@ $ ls target.*
 This draws different shapes with different colors and sizes on one output.
 
 Code runs as this:
+
 $ ./shape_drawing.py garbageinput.csv
+
 Error: ... indicate what is wrong on the first line with an error ...
+
 $ ./shape_drawing.py
+
 ... same as next line ...
+
 $ ./shape_drawing.py -h
+
 ... useful info about usage ...
+
 $ ./shape_drawing.py input.csv
+
 ... real time animation of shape drawing ...
+
 $ ./shape_drawing.py input.csv output.eps
+
 $ ls output.eps
+
 ... finds plot you just made ...
+
 
