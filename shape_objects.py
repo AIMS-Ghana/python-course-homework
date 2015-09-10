@@ -25,13 +25,13 @@ class Shape:
           self.dim
         )
 
-    def draw(self, turt):
+    def draw(self, turt,fill,degree,x_org,y_org):
         pass
 
 class Triangle(Shape):
   
     def kind(self):
-        return "Triangle"
+        return "Equilateral Triangle"
 
     def invert_area(self,area):
 	return math.sqrt (float(area*4) / float(math.sqrt(3)))
@@ -39,11 +39,17 @@ class Triangle(Shape):
     def dimname(self):
         return "Side"
 
-    def draw(self, turt):
-    	turt.color('red')
+    def draw(self, turt,fill,degree,x_org,y_org):
+        turt.penup()
+        turt.setheading(degree)
+        turt.setposition(x_org,y_org)
+        turt.pendown()
+    	turt.color(fill)
     	turt.fill(True)
 	turt.begin_fill()
+        #turt.left(degree)
 	for i in range(3):
+                
 		turt.forward(self.dim)
 		turt.left(120)
 	turt.end_fill()
@@ -60,11 +66,14 @@ class Square(Shape):
       def dimname(self):
         return "Side"
 
-      def draw(self, turt):
-    	    turt.color('green')
+      def draw(self,turt,fill,degree,x_org,y_org):
+            turt.penup()
+            turt.setposition(x_org,y_org)
+            turt.pendown()
+    	    turt.color(fill)
 	    turt.fill(True)
 	    turt.begin_fill()
-	    turt.left(90)
+	    turt.left(degree)
 	    turt.forward(self.dim)
 	    
 	    turt.left(90)
@@ -79,6 +88,43 @@ class Square(Shape):
 	    turt.left(90)
 	    turt.end_fill()
 
+
+
+class Rectangle(Shape):
+      def kind(self):
+        return "Golden Rectangle"
+
+      def invert_area(self,area):
+        length = (float(area)*1.618)**0.5
+        breadth = float(length)/1.618
+	return [length,breadth]
+
+      def dimname(self):
+        return "Sides"
+
+      def draw(self,turt,fill,degree,x_org,y_org):
+	    turt.penup()
+            turt.setposition(x_org,y_org)
+            turt.pendown()
+    	    turt.color(fill)
+	    turt.fill(True)
+	    turt.begin_fill()
+	    turt.left(degree)
+	    turt.forward(self.dim[0])
+	    
+	    turt.left(90)
+	    turt.forward(self.dim[1])
+	   
+	    turt.left(90)
+	    turt.forward(self.dim[0])
+	    
+	    turt.left(90)
+	    turt.forward(self.dim[1])
+	   
+	    turt.left(90)
+	    turt.end_fill()
+
+
 from math import pi
 
 class Circle(Shape):
@@ -91,8 +137,11 @@ class Circle(Shape):
       def dimname(self):
         return "Radius"
 
-      def draw(self, turt):
-	turt.color('black')
+      def draw(self, turt,fill,degree,x_org,y_org):
+        turt.penup()
+        turt.setpos(x_org,y_org)
+        turt.pendown()
+	turt.color(fill)
         turt.fill(True)
         turt.begin_fill()
 	turt.circle(self.dim)
@@ -107,7 +156,8 @@ if __name__ == "__main__":
     print(circ)
     print(square)
     print(triangle)
+    '''
     triangle.draw(turtle)
     square.draw(turtle)
     circ.draw(turtle)
-    turtle.Screen().exitonclick()
+    '''
