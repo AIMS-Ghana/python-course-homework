@@ -26,12 +26,19 @@ $ ./project_seir.py config.json
 ... rows of numerical output, including header line ...
 
 $ ls plot.png
+
 ... finds plot you just made ...
+
 $ ./project_seir.py config2.json target.csv target.png
+
 $ ls target.*
+
 ... finds the csv and png you just created ...
+
 $ ./project_seir.py config2.json -g 10 target.csv target.png
+
 $ ls target.*
+
 ... finds the csv and png you just created, should be Gillespie runs ...
 
 
