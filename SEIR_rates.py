@@ -1,6 +1,32 @@
 #!/usr/bin/env python
 import json
 import math
+import numpy
+ 
+
+
+#while (I0 > 0 and T0_range < t_max):
+
+
+library = { "infection":numpy.array([-1,1,0,0]),
+	    "illness":numpy.array([0,-1,1,0]),
+	    "recovery":numpy.array([0,0,-1,1]),
+	    "mortE":numpy.array([1,-1,0,0]),
+	    "mortI":numpy.array([1,0,-1,0]),
+	    "mortR":numpy.array([1,0,0,-1])
+}
+		
+def gSEIR(Y, t, mu, beta, sigma, gamma, N):
+  S, E, I, R = Y
+  infection = beta*S*I/N
+  illness = sigma*E
+  recovery = gamma*I
+  mortE, mortI, mortR = mu*Y[1],mu*Y[2],mu*Y[3]
+  rates = numpy.array([infection, illness, recovery, mortE, mortI, mortR])
+  tot_rate = sum(rates)
+  deltaT = numpy.random.exponential(1/tot_rate)
+  which = numpy.random.choice(['infection', 'illness', 'recovery', 'mortE', 'mortI', 'mortR'], p = rates/tot_rate)
+  return numpy.append(deltaT,Y+library[which])
 
 dataSet = "SEIR.json"
 for base_data in json.load(open(dataSet)):
@@ -11,26 +37,8 @@ for base_data in json.load(open(dataSet)):
 	T0_end = base_data['t_max']
         S0,E0,I0,R0 = base_data["Y0"][0],base_data["Y0"][1],base_data["Y0"][2],base_data["Y0"][3]
 
-N= S0 + E0 + I0 + R0
-	
-#while (I0 > 0 and T0_range < t_max):
 
-def bsi(beta,S0,I0,N):
-	return beta*S0*I0/N
+  
 
 
-def mu_rate(mu,S0,I0,N,R0,E0):
-	return mu*(S0+I0+E0+N+R0)
-
-def s_rate(E0):
-	return sigma*E0
-
-def g_rate(I0):
-	return gamma*I0
-
-#if __name__ == "__main__":
-	#print (bsi(beta,S0,I0,N),mu_rate(mu,S0,I0,N,R0,E0),s_rate(E0),g_rate(I0))
-def t_event(bsi, mu_rate,s_rate,g_rate):
-	s=math.exp(bsi(beta,S0,I0,N)+mu_rate(mu,S0,I0,N,R0,E0)+s_rate(E0)+g_rate(I0))
-	return s
 
