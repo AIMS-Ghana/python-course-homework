@@ -58,6 +58,7 @@ def polygon_check(polygon_name,fill,degree,area,x_org,y_org):
                 '''
 	else:
 		print '\n...error indicating unknown shape...\n'
+                exit()
 
 
 

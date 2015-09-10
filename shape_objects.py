@@ -41,13 +41,12 @@ class Triangle(Shape):
 
     def draw(self, turt,fill,degree,x_org,y_org):
         turt.penup()
-        turt.setheading(degree)
         turt.setposition(x_org,y_org)
+        turt.setheading(degree)
         turt.pendown()
-    	turt.color(fill)
+        turt.color(fill)
     	turt.fill(True)
 	turt.begin_fill()
-        #turt.left(degree)
 	for i in range(3):
                 
 		turt.forward(self.dim)
@@ -69,11 +68,12 @@ class Square(Shape):
       def draw(self,turt,fill,degree,x_org,y_org):
             turt.penup()
             turt.setposition(x_org,y_org)
+            turt.setheading(degree)
             turt.pendown()
-    	    turt.color(fill)
+            turt.color(fill)
 	    turt.fill(True)
 	    turt.begin_fill()
-	    turt.left(degree)
+	    #turt.left(degree)
 	    turt.forward(self.dim)
 	    
 	    turt.left(90)
@@ -105,11 +105,14 @@ class Rectangle(Shape):
       def draw(self,turt,fill,degree,x_org,y_org):
 	    turt.penup()
             turt.setposition(x_org,y_org)
+            turt.setheading(degree)
             turt.pendown()
+            fill = str(fill)
+            
     	    turt.color(fill)
 	    turt.fill(True)
 	    turt.begin_fill()
-	    turt.left(degree)
+	    #turt.left(degree)
 	    turt.forward(self.dim[0])
 	    
 	    turt.left(90)
@@ -137,10 +140,14 @@ class Circle(Shape):
       def dimname(self):
         return "Radius"
 
+
       def draw(self, turt,fill,degree,x_org,y_org):
         turt.penup()
         turt.setpos(x_org,y_org)
+        turt.setheading(degree)
         turt.pendown()
+        fill = str(fill)
+        
 	turt.color(fill)
         turt.fill(True)
         turt.begin_fill()

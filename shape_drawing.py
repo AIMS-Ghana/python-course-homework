@@ -47,14 +47,22 @@ if len(sys.argv)==2 or len(sys.argv)==3:
 
 			with open(input_csv,'r') as csvfile:#open file
 				inputData = csv.reader(csvfile,delimiter=',', quotechar='"')
-		                next(inputData)
+		                #next(inputData)
 		                turtle.Screen().title("Welcome to My Project Shapes!")
 		                turtle.setup(10000, 1000)
                                 turtle.speed(500)
+                                
                                 try:
+					i=1
 					for line in inputData:
-                                            print(len(line))
-				            shapes.polygon_check(line[0],str(line[1]),int(line[2]),int(line[3]),int(line[4]),int(line[5]))
+                                        
+                                            if int(line[2].strip())>360 or int(line[2].strip())<0:
+						print "error on line #",i,' Angle ',line[2].strip(),'invalid!!..Choose an angle in the range[0 and 360)!'
+						exit()
+                                            turtle.seth(int(line[2].strip()))
+                                            
+				            shapes.polygon_check(line[0].strip(),line[1].strip().lower(),int(line[2].strip()),float(line[3].strip()),float(line[4].strip()),float(line[5].strip()))
+					    i += 1
 				except csv.Error as e:
 					sys.exit('file %s, line %d: %s' % (filename, inputData.line_num, e))
 				#capture screen and save if output file is provided
@@ -62,31 +70,8 @@ if len(sys.argv)==2 or len(sys.argv)==3:
 		                	output_filename, extension = os.path.splitext(str(sys.argv[2]))
 		                	ts = turtle.getscreen()
 		                	ts.getcanvas().postscript(file=str(output_filename)+".eps")
-                                ###########################################################################
-				#additional Drawings
-				'''
-                                smiles = turtle.Turtle()    
-				smiles.penup()
-				smiles.goto(-75,150)
-				smiles.pendown()
-				smiles.circle(10)     #eye one
-
-				smiles.penup()
-				smiles.goto(75,150)
-				smiles.pendown()
-				smiles.circle(10)     #eye two
-
-				smiles.penup()
-				smiles.goto(0,0)
-				smiles.pendown()
-				smiles.circle(100,90)   #right smile
-
-				smiles.penup()           
-				smiles.setheading(180) # <-- look West
-				smiles.goto(0,0)
-				smiles.pendown()
-				smiles.circle(-100,90)
-				'''
+                               
+				
 		                turtle.Screen().exitonclick()
 		except IOError as e:
 		    print "\nI/O error({0}): {1}.\n Please make sure you have with name", input_csv," in your current directory!!\n".format(e.errno, e.strerror)

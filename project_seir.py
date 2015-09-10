@@ -127,15 +127,16 @@ if __name__	==  "__main__":
 				else:
 					print 'beta = ',jsonData['beta'],' is negative, provide a non-negative number!!'
 					exit()
-				if float(jsonData['gamma'])>=0:
-					gamma 	= jsonData['gamma']
-				else:
-					print 'gamma = ', jsonData['gamma'],' is negative, provide a non-negative number!!'
-					exit()
+				
 				if float(jsonData['sigma']) >=0:
 					sigma   	= jsonData['sigma']
 				else:
 					print 'sigma =',jsonData['sigma'],' is negative, provide a non-negative number!!'
+					exit()
+                                if float(jsonData['gamma'])>=0:
+					gamma 	= jsonData['gamma']
+				else:
+					print 'gamma = ', jsonData['gamma'],' is negative, provide a non-negative number!!'
 					exit()
 				if float(jsonData['mu']) >=0:
 					mu 	= jsonData['mu']
@@ -154,78 +155,93 @@ if __name__	==  "__main__":
 		                E = seir[:, 1]
 				I = seir[:, 2]
 				R = seir[:, 3]
-			
+			        if '-g' in sys.argv:
+					pass
+				else:
+					out = open('out.csv','w')
+					out.write('t,S,E,I,R\n')
+    					for s in S:
+						for e in E: 
+                                                       for i in I:
+                                                            for r in R:
+					         	        out.write(str(s)+','+str(e)+str(i)+','+str(r)+'\n')#Write header of csv file
+					out.close()
 				#Plot graph using ODE method
 				plt.figure()		
 				plt.plot(T,S,'-b')
 				plt.plot(T,E,'-y')
 				plt.plot(T,I,'-r')
 				plt.plot(T,R,'-g')
-
-		                gN = 1 
-				try:
-					if sys.argv[2] != '':
-						if sys.argv[2] == '-g':
-				        		gN = int(sys.argv[3]) 
-						else:
-							try:
-		                                                
-							    	filename, file_extension = os.path.splitext(str(sys.argv[2]))
-								filecsv  = str(filename)+'.csv'
-								print filecsv
-								myfile_out = open(str(filecsv),'w')
-								myfile_out.write('n,t,S,E,I,R\n')#Write header of csv file
-								    
-							except IndexError:
-								pass
+  
+                                if  sys.argv[1] !='':
 					
-				except IndexError:
-					pass
-		                try:
-		                    if sys.argv[4] !='':
-					filename, file_extension = os.path.splitext(str(sys.argv[4]))
-		                        filecsv  = str(filename)+'.csv'
-		                        print filecsv
-					myfile_out = open(str(filecsv),'w')
-					myfile_out.write('n,t,S,E,I,R\n')
-					    
-				except IndexError:
-					pass
-				run=1# set initial number of run for gillepise
-				for i in range(gN):
-					deltaT = 0
-					deltaT_list = np.array([deltaT])
-					S_list = [Y0[0]]
-					E_list = [Y0[1]]
-					I_list = [Y0[2]]
-					R_list = [Y0[3]]
-					Y = Y0
-		        
-					while(deltaT<tMax):  
-					      values = derivs_gm(Y, deltaT,beta, gamma,sigma, mu,N)
-					      Y = values[1:]
-					      S_list = np.append(S_list,values[1])
-					      E_list = np.append(E_list,values[2])
-					      I_list = np.append(I_list,values[3])
-					      R_list = np.append(R_list,values[4])
-					      deltaT += values[0]
-					      deltaT_list = np.append(deltaT_list, deltaT)
-					      try:
-		                     			myfile_out.write(str(run)+','+str(Y[0])+','+str(Y[1])+','+str(Y[2])+','+str(Y[3]) +'\n')
-		                                        
-					      except NameError:
-							pass
+
+				        gN = 1 
+					try:
+						if sys.argv[2] != '':
+							if sys.argv[2] == '-g':
+								gN = int(sys.argv[3]) 
+							else:
+								try:
+				                                        
+								    	filename, file_extension = os.path.splitext(str(sys.argv[2]))
+									filecsv  = str(filename)+'.csv'
+									
+									myfile_out = open(str(filecsv),'w')
+									myfile_out.write('n,t,S,E,I,R\n')#Write header of csv file
+									    
+								except IndexError:
+									pass
+					
+					except IndexError:
+						pass
+				        try:
+				            if sys.argv[4] !='':
+						filename, file_extension = os.path.splitext(str(sys.argv[4]))
+				                filecsv  = str(filename)+'.csv'
+				                print filecsv
+						myfile_out = open(str(filecsv),'w')
+						myfile_out.write('n,t,S,E,I,R\n')
+						    
+					except IndexError:
+						pass
+                                         
+					run=1# set initial number of run for gillepise
+					for i in range(gN):
+						deltaT = 0
+						deltaT_list = np.array([deltaT])
+						S_list = [Y0[0]]
+						E_list = [Y0[1]]
+						I_list = [Y0[2]]
+						R_list = [Y0[3]]
+						Y = Y0
 				
-					plt.step(deltaT_list,S_list,'-b')
-					plt.step(deltaT_list,E_list,'-y')
-					plt.step(deltaT_list,I_list,'-r')
-					plt.step(deltaT_list,R_list,'-g')
-					run +=1
-				try:
+						while(deltaT<tMax):  
+						      values = derivs_gm(Y, deltaT,beta, gamma,sigma, mu,N)
+						      Y = values[1:]
+						      S_list = np.append(S_list,values[1])
+						      E_list = np.append(E_list,values[2])
+						      I_list = np.append(I_list,values[3])
+						      R_list = np.append(R_list,values[4])
+						      deltaT += values[0]
+						      deltaT_list = np.append(deltaT_list, deltaT)
+						      try:
+				             			myfile_out.write(str(run)+','+str(Y[0])+','+str(Y[1])+','+str(Y[2])+','+str(Y[3]) +'\n')
+				                                
+						      except NameError:
+								pass
+                                               
+						if '-g' in sys.argv:
+							plt.step(deltaT_list,S_list,'-b')
+							plt.step(deltaT_list,E_list,'-y')
+							plt.step(deltaT_list,I_list,'-r')
+							plt.step(deltaT_list,R_list,'-g')
+						run +=1
+					try:
 				
-					myfile_out.close()
-				except NameError:
-					pass
+						myfile_out.close()
+					except NameError:
+						pass
 				plt.xlabel('Time')
 				plt.ylabel('Proportion')
 
