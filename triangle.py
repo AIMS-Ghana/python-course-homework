@@ -9,7 +9,7 @@ def check(a,b,c):
 
 
 def area(a,b,c):
-	check(a,b,c)
+	#check(a,b,c)
 	s = (a + b + c) / 2
 
 	# calculate the area
@@ -18,7 +18,7 @@ def area(a,b,c):
 
 
 def perimeter(a,b,c):
-	check(a,b,c)
+	#check(a,b,c)
 	ress=a+b+c
 	return ress
 
