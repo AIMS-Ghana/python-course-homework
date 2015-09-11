@@ -226,7 +226,7 @@ if __name__	==  "__main__":
 						      deltaT += values[0]
 						      deltaT_list = np.append(deltaT_list, deltaT)
 						      try:
-				             			myfile_out.write(str(run)+','+str(Y[0])+','+str(Y[1])+','+str(Y[2])+','+str(Y[3]) +'\n')
+				             			myfile_out.write(str(run)+','+str(values[0])+','+str(Y[0])+','+str(Y[1])+','+str(Y[2])+','+str(Y[3]) +'\n')
 				                                
 						      except NameError:
 								pass
