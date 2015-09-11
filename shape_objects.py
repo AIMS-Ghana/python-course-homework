@@ -8,34 +8,33 @@ class Shape:
         return area
 
     def dimname(self):
-        return "HUH?"
+        return "side"
 
     def __init__(self, area):
-        self.__area = area
-        self.__dim = self.invert_area(area)
+        self.area = area
+        self.dim = self.invert_area(area)
 
     strformat = "{}, area: {}, {}: {}"
 
     def __str__(self):
         return Shape.strformat.format(
           self.kind(),
-          self.__area,
+          self.area,
           self.dimname(),
-          self.__dim
+          self.dim
         )
 
-    def draw(turt):
-        pass
+    def draw(self,turt):
+	pass
+            
 
 class Triangle(Shape):
     def kind(self):
-        return "TRIANGLE"
-    def dimname(self):
-        return "side"
-    def invert_area(self, area):
-        return (2*(float( area))**0.5)/3**0.25
+	    return "Triangle"
+    def invert_area(self,area):
+             return (2*(float( area))**0.5)/3**0.25
     def draw(self,turt):
-            turtle.color("yellow")
+            turtle.color("blue")
             turtle.begin_fill()
             turtle.forward(self.dim)
             turtle.left(120)
@@ -44,16 +43,14 @@ class Triangle(Shape):
             turtle.forward(self.dim)
             turtle.end_fill()
 
-
 class Square(Shape):
     def kind(self):
-        return "SQUARE"
-    def dimname(self):
-        return "side"
-    def invert_area(self, area):
-        return (float (area))**.5
+	    return "Square"
+    def invert_area(self,area):
+             return (area**2)
+
     def draw(self,turt):
-        turtle.color("green")
+        turtle.color("gray")
         turtle.begin_fill()
         turtle.forward(self.dim)
         turtle.left(90)
@@ -68,26 +65,30 @@ class Square(Shape):
 from math import pi
 
 class Circle(Shape):
-    def kind(self):
-        return "CIRCLE"
-    def dimname(self):
-        return "radius"
-    def invert_area(self, area):
-        return (area/pi)**.5
-    def draw(self,turt):
-        turtle.color("red")
-        turtle.begin_fill()
-        turtle.circle(self.dim)
-        turtle.end_fill()
-         
+	def kind(self):
+	    return "Circle"
 
+	def dimname(self):
+            return "Radius"
+
+        def invert_area(self,area):
+             return (area/pi)**0.5
+
+        def draw(self,turt):
+            turtle.color("violet")
+            turtle.begin_fill()
+            turtle.circle(self.dim)
+            turtle.end_fill()
+         
 if __name__ == "__main__":
-    circ = Circle(1000)
-    triang = Triangle(1000)
-    sqr = Square(10)
+    import turtle
+    circ = Circle(10000)
+    triag = Triangle(1000)
+    squa = Square(12)  
+    print (triag)
     print(circ)
-    print(triang)
-    print(sqr)
+    print(squa)
     circ.draw(turtle)
-    tri.draw(turtle)
-    sqr.draw(turtle)
+    triag.draw(turtle)
+    squa.draw(turtle)
+   

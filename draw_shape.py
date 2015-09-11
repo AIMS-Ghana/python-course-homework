@@ -32,8 +32,6 @@ def draw_triangle(area):
 
 def draw(name,area,fill="black", cont=False):
     turtle.begin_fill()
-    #turtle.color ('red')
-    #turtle.circle (40, steps = 3)
     turtle.end_fill()
     if name=="CIRCLE":
             draw_circle(area)
