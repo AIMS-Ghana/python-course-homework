@@ -28,9 +28,9 @@ def draw_square(width):
 
 def draw_circle(rad):	
 	#window = turtle.Screen()
-	circle_drw = turtle.Turtle()
-	circle_drw.speed(20)
-        circle_drw.circle(rad)
+    circle_drw = turtle.Turtle()
+    circle_drw.speed(20)
+    circle_drw.circle(rad)
 	
 
 def draw(a,b):

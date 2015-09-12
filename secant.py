@@ -2,16 +2,17 @@
 
 #Secant method is used to find a root of a function
 
-def root(f, n):
-    x=f(n[0])
-    y=f(n[1])
-    p=y
-    for i in range(len(n)):
-	if f(x)-f(y)==0:
-	   p=y-(f(y)*(y-x))/(f(y)-f(x))
-	   x=y
-           y=p
-	   return p
-	    
+def root(f, interval, tol=1e-5, steps=100):
+    b0, b1 = interval
+    d = b1 - b0
+    f0 = f(b0)
+    f1 = f(b1)
+    m = f1 - f0
+    bn = b1-f1*d/m
+    fn = f(bn)
+    if (fn <= tol) or (steps == 0):
+        return bn
+    else:
+        return root(f, [b1, bn], tol, steps)
     
 

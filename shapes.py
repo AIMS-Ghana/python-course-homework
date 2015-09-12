@@ -19,11 +19,11 @@ def check():
     shape=sys.argv[1]
     area=sys.argv[2]
     
-    if shape=="SQUARE":
+    if shape=="Square":
         print 'area: ',area,'side:',square(area)
-    elif shape=="CIRCLE":
+    elif shape=="Circle":
         print 'area: ',area,'side:',circle(area)
-    elif shape=="TRIANGLE":
+    elif shape=="Triangle":
         print 'equilateral triangle, area: ',area,'side: ',triangle(area)
     else:
 	 print " error indicating unknown shape"	
