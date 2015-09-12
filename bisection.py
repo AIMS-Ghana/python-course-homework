@@ -1,3 +1,4 @@
+#!/usr/bin/python
 def root(f, endpoints, tol=1e-5, depth=100):
     a, b = endpoints
     fa = f(a)

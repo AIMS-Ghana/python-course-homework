@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-
-
 import bisection
 import secant
 import time
