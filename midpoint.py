@@ -3,11 +3,14 @@ import math
 import sys
 #calculate the midpoint using the midpoint rule
 
-def integrate(f, nbins):
+def integrate(f, rangex):
 	m=0.0
-	for n in range(len(nbins)-1):
-		w=nbins[n+1]-nbins[n]
-		mid_point=float(nbins[n+1]+nbins[n]/2)
+	for i in range(len(rangex)-1):
+		w=rangex[n+1]-rangex[n]
+		mid_point=float(rangex[n+1]+rangex[n]/2)
 		height=f(mid_point)
-		d=m+w*height
-	return d
+		m=mid_point+w*height
+	return m
+#if __name__=="__main__":
+	#print (integrate(lambda x:x, value))
+
