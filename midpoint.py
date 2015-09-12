@@ -11,6 +11,5 @@ def integrate(f, rangex):
 		height=f(mid_point)
 		m=mid_point+w*height
 	return m
-#if __name__=="__main__":
-	#print (integrate(lambda x:x, value))
+
 
