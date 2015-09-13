@@ -24,12 +24,12 @@ try:
 			    if int(row[2]) in range(0, 360):
 				pass
                             else:
-				print "Error, Accepts only non negative values"
+				print "Error, rotation angle should be between 0 and 360"
 				exit()
 			    if float(row[3])>0:
 				pass
                             else:
-				print "Error, Accepts only non negative values"
+				print "Error, Accepts only non negative values for area"
 				exit()
 			    if row[0].lower() == "triangle": #convering uppercase words to lowercase
 				side=math.sqrt((float(row[3])*4)/math.sqrt(3))
