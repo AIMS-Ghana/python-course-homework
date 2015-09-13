@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 
+#to calculate the seir model using the odient algorithm and the gillespie method on the same diagram.
+#define the variables first assigning each variable and define the rates as well.
+#formulate an arrray to explicitly show the order of sequence in the events.
+#define the gillespie by outlining the conditions outlined.
+#plot the the gillespie.
+#finally outline the odient and plot it.
+##
 
-import json
-import os
-import sys
-import math
+import json,os,sys,math
 from scipy.integrate import odeint
 import numpy as np
 import scipy, scipy.integrate
@@ -13,7 +17,7 @@ from pylab import *
 import argparse
 
 
-def derivs(Y, t, beta, gamma,sigma, mu):
+def ode(Y, t, beta, gamma,sigma, mu):
     
     S, E, I, R = Y
     N = sum(Y)
@@ -36,24 +40,24 @@ events = {
   "infection" :np.array([-1, 1, 0, 0]),
   "illness": np.array([0,-1,1,0]),
   "recovery":np.array([0,0,-1,1]),
-  "mortE":np.array([1,-1,0,0]),
-  "mortI":np.array([1,0,-1,0]),
-  "mortR":np.array([1,0,0,-1])
+  "E_S":np.array([1,-1,0,0]),
+  "I_S":np.array([1,0,-1,0]),
+  "R_S":np.array([1,0,0,-1])
 }
 
-def derivs_gm(Y, t, beta, gamma,sigma, mu,N):
+def gillespie(Y, t, beta, gamma,sigma, mu,N):
         S, E, I, R = Y
         
         infection  = beta*S*I/N    
         illness = sigma*E
         recovery = gamma * I
- 	mortE = mu * Y[1]
-        mortI = mu * Y[2]
-        mortR = mu * Y[3]
-        rates = np.array([infection,illness,recovery,mortE,mortI,mortR])
+ 	E_S = mu * Y[1]
+        I_S = mu * Y[2]
+        R_S = mu * Y[3]
+        rates = np.array([infection,illness,recovery,E_S,I_S,R_S])
 	tot_rate = sum(rates)
 	deltaT = np.random.exponential(1/tot_rate)
-	which_type = np.random.choice(['infection','illness','recovery','mortE','mortI','mortR'],p = rates/tot_rate) 
+	which_type = np.random.choice(['infection','illness','recovery','E_S','I_S','R_S'], p = rates/tot_rate) 
         return np.append(deltaT,Y + events[which_type])
    	
 	
@@ -67,82 +71,72 @@ if len(sys.argv) >=2 and len(sys.argv)<=6:
 		print("\n", args, args.inp)
 
 	else:
-		#Get file name and extension
 		filename, file_extension = os.path.splitext(str(sys.argv[1]))
 		input_json = str(filename)+'.json'
 		try:
 
-			with open(input_json) as jsonfile:#open file
+			with open(input_json) as jsonfile:
 				jsonData = json.load(jsonfile)
                            		
-			# Initial condition
 			Y0 =[]
 			for n in jsonData['Y0']:
 				if int(n)>=0:
-					Y0 	= np.append(Y0,n)
-					
+					Y0 	= np.append(Y0,n)					
 				else:
-					print jsonData['Y0'], ' contains a negative number, provide a non-negative numbers only!!'
+					print jsonData['Y0'], 'takes positive numbers only'
 					exit()
-
-
 			if float(jsonData['tmax'])>0:
 				tMax 	= jsonData['tmax']
 			else:
-				print jsonData['tmax'],' is negative, provide a non-negative number!!'
+				print jsonData['tmax'],' takes positive numbers only'
 				exit()
                         if float(jsonData['beta'])>=0:
 				beta 	= jsonData['beta']
 			else:
-				print jsonData['beta'],' is negative, provide a non-negative number!!'
+				print jsonData['beta'],' takes positive numbers only'
 				exit()
 			if float(jsonData['gamma'])>=0:
 		        	gamma 	= jsonData['gamma']
 			else:
-				print jsonData['gamma'], ' is negative, provide a non-negative number!!'
+				print jsonData['gamma'], ' takes positive numbers only'
 				exit()
 			if float(jsonData['sigma']) >=0:
 				sigma   	= jsonData['sigma']
 			else:
-				print jsonData['sigma'],' is negative, provide a non-negative number!!'
+				print jsonData['sigma'],' takes positive numbers only'
 				exit()
 			if float(jsonData['mu']) >=0:
 				mu 	= jsonData['mu']
 			else:
-				print jsonData['mu'],' is negative, provide a non-negative number!!'
+				print jsonData['mu'],' takes positive numbers only'
 				exit()
 
 			N = sum(Y0)
 
 			T = np.arange(0, tMax, 1)
-                        solution = scipy.integrate.odeint(derivs,
+                        solution = scipy.integrate.odeint(ode,
                                   Y0,
                                   T,
                                   args = (beta, gamma,sigma, mu))
+
                         S = solution[:, 0]
                         E = solution[:, 1]
 			I = solution[:, 2]
 			R = solution[:, 3]
 			
-			#N = S + E + I + R
-
-		        #Gellipse method
-
-	
-			#Plot all graphs
-			
 			plt.figure()
 			
 			
-			plt.plot(T,S,'-b')
-			plt.plot(T,E,'-y')
-			plt.plot(T,I,'-r')
+			plt.plot(T,S,'-y')
+			plt.plot(T,E,'-r')
+			plt.plot(T,I,'-b')
 			plt.plot(T,R,'-g')
-                        gN = 1
+                        R = 1
+
 			try:
 				if sys.argv[2] != '':
 					if sys.argv[2] == '-g':
-		                		gN = int(sys.argv[3])
+		                		R = int(sys.argv[3])
 					else:
 						try:
                                                         
@@ -169,7 +163,7 @@ if len(sys.argv) >=2 and len(sys.argv)<=6:
 			except IndexError:
 				pass
 			run=1
-			for i in range(gN):
+			for i in range(R):
 				deltaT = 0
 				deltaT_list = np.array([deltaT])
 				S_list = [Y0[0]]
@@ -179,7 +173,7 @@ if len(sys.argv) >=2 and len(sys.argv)<=6:
 				Y = Y0
                 
 				while(deltaT<tMax):  
-				      values = derivs_gm(Y, deltaT,beta, gamma,sigma, mu,N)
+				      values = gillespie(Y, deltaT,beta, gamma,sigma, mu,N)
 				      Y = values[1:]
 				      S_list = np.append(S_list,values[1])
 				      E_list = np.append(E_list,values[2])
@@ -193,9 +187,9 @@ if len(sys.argv) >=2 and len(sys.argv)<=6:
 				      except NameError:
 						pass
 				
-				plt.step(deltaT_list,S_list,'-b')
-				plt.step(deltaT_list,E_list,'-y')
-				plt.step(deltaT_list,I_list,'-r')
+				plt.step(deltaT_list,S_list,'-y')
+				plt.step(deltaT_list,E_list,'-r')
+				plt.step(deltaT_list,I_list,'-b')
 				plt.step(deltaT_list,R_list,'-g')
 				run +=1
 			try:
@@ -206,9 +200,8 @@ if len(sys.argv) >=2 and len(sys.argv)<=6:
 			plt.xlabel('Time')
 			plt.ylabel('Proportion')
 
-			plt.legend([ 'Susceptible', 'Exposed','Infective', 'Recovered' ])
+			plt.legend([ 'Susceptible', 'Exposed','Infected', 'Recovered' ])
 
-			# Actually display the plot
 			
 		       
                         try:
@@ -228,11 +221,11 @@ if len(sys.argv) >=2 and len(sys.argv)<=6:
 			
 			plt.show()
 		except IOError as e:
-		    print "\nI/O error({0}): {1}.\n Please make sure you have with name", input_json," in your current directory!!\n".format(e.errno, e.strerror)
+		    print "\nI/O error({0}): {1}.\n start with name", input_json," in your directory!!\n".format(e.errno, e.strerror)
 
 
 		except TypeError:
-			print "File contains invalid data record!!"
+			print "Invalid data"
 
 		
 

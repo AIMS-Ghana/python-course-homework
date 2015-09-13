@@ -1,24 +1,22 @@
 #!/usr/bin/env python
-import turtle
-import sys
-import csv
-import math
-import draw_shape #importing shapes
-import argparse
+import math, argparse,csv,sys,turtle
+import draw_shape 
 
-#drawing shapes and saving files as .eps
+#importing draw_shape that defines the drawing functions of each shape.
+
+
 
 
 try:
 	if sys.argv[1] == 'garbageinput.csv':
-		print "Please input correct file, unable to read the garbageinput.csv file"
+		print "Please input correct csv file"
 
-	elif sys.argv[1] == '-h' or sys.argv[1] == '': #checking for 1st argument
-		print ("Drawing Realtime shapes using an input from a csv file")
+	elif sys.argv[1] == '-h' or sys.argv[1] == '':
+		print ("drawing shapes from a csv file")
 		
         elif sys.argv[1] !='-h':
 			inputfile = open(sys.argv[1], 'r')
-			reader = csv.reader(inputfile,skipinitialspace=True) #checking for spaces in csv file
+			reader = csv.reader(inputfile,skipinitialspace=True) #skips spaces if any in a csv file
 			for row in reader:
 			    if int(row[2]) in range(0, 360):
 				pass
@@ -30,7 +28,7 @@ try:
                             else:
 				print "Error, input positive values only"
 				exit()
-			    if row[0].lower() == "triangle": #convets uppercase to lower case
+			    if row[0].lower() == "triangle": 
 				side=math.sqrt((float(row[3])*4)/math.sqrt(3))
 				draw_shape.draw_triangle(side, str(row[1]), int(row[2]), float(row[4]), float(row[5]))
 		
@@ -54,7 +52,7 @@ try:
              	        try:
 				if sys.argv[2]!='':				
 					ts=turtle.getscreen()
-					ts.getcanvas().postscript(file=sys.argv[2])
+					ts.getcanvas().postscript(file=sys.argv[2])#saves the shape of the fileas .eps
 			except IndexError:
 				pass
     		  	turtle.exitonclick()
@@ -63,5 +61,5 @@ try:
 
 
 except IndexError:
-       print "Drawing Realtime shapes using an input from a csv file"
+       print "drawing shapes from a csv file"
        exit()
