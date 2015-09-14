@@ -3,8 +3,8 @@ import turtle
 
 from shapes import compute
 
-def circle(a):
-    turtle.circle(a)
+def circle(radius):
+    turtle.circle(radius)
 
 def ngon(n, side):
     turn = 180 - (n-2)*180.0/n

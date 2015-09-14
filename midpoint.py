@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 def integrate(f, rangex):
     ss = 0
     for i in range(len(rangex)-1):

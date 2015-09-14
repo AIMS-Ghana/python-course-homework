@@ -1,23 +1,24 @@
 #!/usr/bin/python
 
-def check(u,v):
-    assert (u>0) & (v>0) ,"negative side lenghth"
+def checkdim(a, b):
+    assert (a >= 0) & (b >= 0), "Passed negative dimensions"
+    pass
 
-def area(u,v):
-    check(u,v)
-    res = u*v
-    return res
+def area(a, b):
+    checkdim(a, b)
+    return a*b
 
-def perimeter(u,v):
-    check(u,v)
-    return (2*u)+(2*v)
+def perimeter(a, b):
+    checkdim(a, b)
+    return 2*(a+b)
 
 import sys
 
-if __name__=="__main__":
+if __name__ == "__main__":
 
-    u = float(sys.argv[1])
-    v = float(sys.argv[2])
-
-print(" area {}, \n perimeter {}".format(area(u,v),perimeter(u,v)))
-
+     a = float(sys.argv[1])
+     b = float(sys.argv[2]) if (len(sys.argv) == 3) else a
+     print("area {}".format(area(a,b)))
+     print("perimeter {}".format(perimeter(a,b)))
+	 
+     

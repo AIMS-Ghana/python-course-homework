@@ -14,6 +14,6 @@ for row in data_set:
 		pass
 
 print Total_amount
-import
+
 
 

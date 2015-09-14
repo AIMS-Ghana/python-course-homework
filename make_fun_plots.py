@@ -1,21 +1,12 @@
-import numpy as np
+#!/usr/bin/python
 
-def easy(x):
-    return x
+import matplotlib.pyplot as plt
 
-def exp_saturation(x):
-    return 1 - np.exp(-x)
+import calculus_plotter, fun_plots
 
-def exp_growth(x):
-    return np.exp(5*x)
+from numpy import *
 
-def sine_and_cos(t):
-    return np.sin(t) + np.cos(t)
-
-def sine_sq(t):
-    return np.sin(t)**2
-
-funclist = [
-    easy, exp_saturation,
-    exp_growth, sine_and_cos,
-    sine_s
+for i in arange(0,5):
+  calculus_plotter.plot_all(fun_plots.funclist[i],
+  arange(0,10,0.01))
+    
