@@ -123,10 +123,14 @@ if __name__ == '__main__':
     import json
 
     input_file = sys.argv[1]
-    output_file = sys.argv[2]
-    output_image = sys.argv[3]
-    csvfile = open(output_file,'w')
-    write = csv.writer(csvfile)
+    if len(sys.argv) > 2:
+        output_file = sys.argv[2]
+        csvfile = open(output_file,'w')
+        write = csv.writer(csvfile)
+    if len(sys.argv) > 3:
+        output_image = sys.argv[3]
+  
+   
 
     config = json.load(open(input_file)) # config is a dictionary that is keyed by the required parameters.
     check_config(config) # inspect the configuration for appropriateness
@@ -134,14 +138,17 @@ if __name__ == '__main__':
     N = sum(Y0)
     n = 10
 
-    if n == 1:
+    if n == 1 and len(sys.argv) > 2:
         write.writerow(['t','s','e','i','r'])
-    else:
+    elif n!=1 and len(sys.argv) > 2:
         write.writerow(['n','t','s','e','i','r'])
 
     plotter(ode_solve())
-    for i in range(n):
-        plotter(gpe(i + 1,file = True))
+    for i in range(3):
+        plotter(gpe(i + 1,file = len(sys.argv) > 2))
     #pyplot.show()
-    pyplot.savefig(output_image)
+    if len(sys.argv) > 3:
+        pyplot.savefig(output_image)
+    else:
+        pyplot.show()
 

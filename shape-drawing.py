@@ -20,17 +20,18 @@ def check_input(figures):
               }
     for row in figures:
         count +=1
-        for i in range(6):
-            assert (checks[i][0](row[i])), error_format.format(checks[i][1], str(count))
+        for i in range(4):
+            assert (checks[i][0](row[i].split()[0])), error_format.format(checks[i][1], str(count))
+    return None
 
 
 # deal with given row
 class paint:
     def __init__(self, row):
-        self.__area = float(row[3])
-        self.__color = row[1]
-        self.__kind = row[0]
-        self.__angle, self.__x, self.__y = float(row[2]),float(row[4]),float(row[5])
+        self.__area = float(row[3].split()[0])
+        self.__color = row[1].split()[0]
+        self.__kind = row[0].split()[0]
+        self.__angle, self.__x, self.__y = float(row[2].split()[0]),float(row[4].split()[0]),float(row[5].split()[0])
 
 
     def position(self, angle, x, y):
@@ -54,6 +55,7 @@ if __name__ == '__main__':
     with open(sys.argv[1]) as input_file:
         figures = csv.reader(input_file, delimiter = ',')
         check_input(figures)
+        input_file.seek(0)
         for row in figures:
             #Do diagram justice with data on turtle canvas
             thingy_bobby = paint(row)
