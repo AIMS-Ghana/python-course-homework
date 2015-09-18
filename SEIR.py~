@@ -129,8 +129,8 @@ if __name__ == '__main__':
         write = csv.writer(csvfile)
     if len(sys.argv) > 3:
         output_image = sys.argv[3]
-
-
+  
+   
 
     config = json.load(open(input_file)) # config is a dictionary that is keyed by the required parameters.
     check_config(config) # inspect the configuration for appropriateness
@@ -151,3 +151,4 @@ if __name__ == '__main__':
         pyplot.savefig(output_image)
     else:
         pyplot.show()
+

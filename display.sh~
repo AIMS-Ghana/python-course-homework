@@ -1,0 +1,29 @@
+
+printf "\n \n \n"
+echo -e "\e[1;34m Checking file permissions \e[0m"
+ls -l triangle.py
+ls -l rectangle.py
+ls -l circle.py
+
+printf "\n \n \n"
+echo -e "\e[1;34m Running triangle example \e[0m"
+python triangle.py 1 1 1 
+printf "\n \n \n"
+echo -e "\e[1;34m Running rectangle example \e[0m"
+python rectangle.py 5 3
+printf "\n \n \n"
+echo -e "\e[1;34m Running circle example \e[0m"
+python circle.py 2
+printf "\n \n \n"
+echo -e "\e[1;34m Checking basic shapes \e[0m"
+python basic_shapes.py
+
+printf "\n \n \n"
+echo -e "\e[1;34m triangle.py \e[0m"
+cat triangle.py
+printf "\n \n \n"
+echo -e "\e[1;34m rectangle.py \e[0m"
+cat rectangle.py
+printf "\n \n \n"
+echo -e "\e[1;34m circle.py \e[0m"
+cat circle.py
