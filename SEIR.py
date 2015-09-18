@@ -136,7 +136,7 @@ if __name__ == '__main__':
     check_config(config) # inspect the configuration for appropriateness
     beta, sigma, mu, gamma, Y0, tmax = config['beta'], config['sigma'],config['mu'],config['gamma'], np.array(config['Y0']), config['tmax']
     N = sum(Y0)
-    n = 10
+    n = 100
 
     if n == 1 and len(sys.argv) > 2:
         write.writerow(['t','s','e','i','r'])
@@ -144,7 +144,7 @@ if __name__ == '__main__':
         write.writerow(['n','t','s','e','i','r'])
 
     plotter(ode_solve())
-    for i in range(3):
+    for i in range(50):
         plotter(gpe(i + 1,file = len(sys.argv) > 2))
     #pyplot.show()
     if len(sys.argv) > 3:
